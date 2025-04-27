@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <link rel="icon" href="{% static 'iconist.png' %}" type="image/x-icon"/>
+    
+    <title>{% block title %}Default Title{% endblock %}</title>
+
+    <!-- Base CSS -->
+    <link rel="stylesheet" href="{% static 'style/home.css' %}" />
+    <link rel="stylesheet" href="{% static 'style/data_Karyawan.css' %}" />
+    <link rel="stylesheet" href="{% static 'style/score_Karyawan.css' %}" />
+
+    <!-- Interface.JS -->
+    <script src="{% static 'js/event_interface.js' %}"></script>
+
+    <!-- Interface.JS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open Sans:wght@400&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Red Hat Display:wght@600;700&display=swap" />
+
+    <!-- Font Awesome CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <div class="homepage">
+
+        {% include 'part/navbar.html' %}
+        
+        {% block content %}
+        {% endblock %}
+
+        <!-- <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus quibusdam, sequi debitis dolores excepturi ex quaerat illum, expedita iusto reprehenderit quam earum velit, dolorem magni enim ea corrupti sint laudantium.
+        </p> -->
+
+        {% include 'part/sidebar.html' %}
+        
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,536 @@
+.cari-alamat-disini {
+    flex: 1;
+    position: relative;
+    letter-spacing: 0.02em;
+    line-height: 150%;
+}
+.search-icon {
+    width: 24px;
+    position: relative;
+    height: 24px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.search {
+    flex: 1;
+    border-radius: 8px;
+    background-color: #fff;
+    border: 1px solid #d2d5da;
+    box-sizing: border-box;
+    height: 43px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px;
+    gap: 10px;
+    font-size: 16px;
+    color: #9ca3af;
+    font-family: 'Open Sans';
+}
+.button {
+    position: relative;
+    line-height: 120%;
+    font-weight: 500;
+}
+.text-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+.button-state-mobile {
+    border-radius: 22px;
+    background-color: #3a4970;
+    height: 44px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.button-state-mobile-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.text-btn1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.button-state-mobile1 {
+    border-radius: 22px;
+    background-color: #27a3b8;
+    height: 44px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.search-parent {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 20px;
+}
+.no {
+    position: relative;
+    line-height: 120%;
+    font-weight: 600;
+}
+/* .nama-pelanggan {
+    width: 50px;
+    height: 34px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+} */
+.nama-pelanggan1 {
+    width: 70px;
+    height: 34px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.nama-pelanggan2 {
+    width: 125px;
+    height: 34px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.email {
+    width: 85px;
+    height: 34px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.riwayat-terbaru {
+    width: 90px;
+    height: 34px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.riwayat-terbaru1 {
+    width: 120px;
+    height: 34px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.title-table {
+    /* align-self: stretch; */
+    background-color: #f9fbfc;
+    border-bottom: 1px solid #d2d5da;
+    /* display: flex; */
+    /* flex-direction: row; */
+    /* align-items: center; */
+    /* justify-content: space-between; */
+    padding: 8px 20px;
+    /* gap: 0px; */
+    font-size: 16px;
+    color: #6d7280;
+    font-family: Rubik;
+    text-align: center;
+}
+.div {
+    position: relative;
+    letter-spacing: 0.02em;
+    line-height: 150%;
+}
+/* .nama-pelanggan4 {
+    width: 50px;
+    height: 34px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+.nama-pelanggan5 {
+    width: 70px;
+    height: 34px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+} */
+.bima-adi {
+    margin-block-start: 0;
+    margin-block-end: 8px;
+}
+.nugraha {
+    margin: 0;
+}
+.nama-pelanggan6 {
+    width: 125px;
+    height: 34px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+.email2 {
+    width: 85px;
+    height: 34px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.edit-icon {
+    width: 20px;
+    position: relative;
+    height: 20px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.aksi1 {
+    width: 90px;
+    height: 34px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.title-table1 {
+    /* align-self: stretch; */
+    background-color: #fff;
+    border-bottom: 1px solid #d2d5da;
+    /* display: flex; */
+    /* flex-direction: row; */
+    align-items: center;
+    /* justify-content: space-between; */
+    padding: 12px 20px;
+    /* gap: 0px; */
+    text-align: center;
+}
+.khuzainil-syarif {
+    width: 125px;
+    position: relative;
+    letter-spacing: 0.02em;
+    line-height: 150%;
+    display: inline-block;
+    flex-shrink: 0;
+}
+.nama-pelanggan10 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.khuzainilsyarif-iconplncoi {
+    align-self: stretch;
+    width: 105px;
+    position: relative;
+    letter-spacing: 0.02em;
+    line-height: 150%;
+    display: inline-block;
+    flex-shrink: 0;
+}
+.table {
+    /* align-self: stretch; */
+    border-radius: 8px 8px 0px 0px;
+    border: 1px solid #d2d5da;
+    /* overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start; */
+    color: #000;
+    font-family: 'Open Sans';
+    width: 100%;
+}
+.div4 {
+    border-radius: 4px;
+    background-color: #3a4970;
+    height: 21px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 8px;
+    box-sizing: border-box;
+    color: #fff;
+}
+.div6 {
+    border-radius: 4px;
+    height: 21px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 8px;
+    box-sizing: border-box;
+}
+.div10 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+.div13 {
+    position: relative;
+    font-size: 14px;
+    line-height: 175%;
+    font-family: 'DM Sans';
+}
+.pagination {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    font-size: 12px;
+    color: #111827;
+}
+.content {
+    width: 80%;
+    left: 8.5%;
+    top: 4%;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 8px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 15px;
+    box-sizing: border-box;
+    gap: 20px;
+    text-align: left;
+    font-size: 14px;
+    color: #fff;
+    font-family: Rubik;
+}
+
+.nama-pelanggan_header {
+    align-items: center;
+    font-size: 15px;
+    border-bottom: 1px #D2D5DA solid;
+}
+
+.nama-pelanggan {
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    padding: 10px;
+}
+
+.download-template-upload {
+    position: relative;
+    text-decoration: underline;
+}
+.tambah-data-data {
+    align-self: stretch;
+    position: relative;
+}
+.masukkan-file-excel {
+    flex: 1;
+    position: relative;
+}
+.masukkan-file-excel-disini-wrapper {
+    align-self: stretch;
+    border-radius: 8px;
+    background-color: #eaeaea;
+    border: 1px dashed #9f9f9f;
+    box-sizing: border-box;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 12px 16px;
+    text-align: center;
+    font-size: 14px;
+    color: #9f9f9f;
+}
+.fields {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 8px;
+    font-size: 16px;
+    color: #000;
+}
+.span {
+    color: #ff0000;
+}
+.format-yang-diupload-adalah-x {
+    margin: 0;
+}
+.total-maksimal-file-yang-diupl {
+    margin: 0;
+    color: #000;
+}
+.format-yang-diupload-container {
+    position: relative;
+    font-size: 10px;
+    color: #161616;
+}
+.hyperlink {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 32px;
+    z-index: 0;
+}
+.carbonclose-outline-icon {
+    width: 24px;
+    position: absolute;
+    margin: 0 !important;
+    top: 20px;
+    left: 376px;
+    height: 24px;
+    overflow: hidden;
+    flex-shrink: 0;
+    z-index: 1;
+}
+
+.pop-up {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 12px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 32px;
+    box-sizing: border-box;
+    gap: 10px;
+    text-align: left;
+    font-size: 14px;
+    color: #27a3b8;
+    font-family: Rubik;
+    z-index: 2;
+}
+
+#modal_import_data_Karyawan {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(76 76 76 / 50%);
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+}
+
+#modal_hapus_data_Karyawan {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(76 76 76 / 50%);
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+}
+
+#modal_tambah_data_Karyawan {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(76 76 76 / 50%);
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+}
+
+.pop-up.active {
+    opacity: 1;
+    visibility: visible;
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -55%) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+#modal_remove_div{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#tombol_simpan_data_Karyawan {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: flex-start;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* #table_Karyawan_detail_kinerja th, 
+#table_Karyawan_detail_kinerja td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #0079b5;
+
+} */
+
+
+#table_detail_riwayat_Karyawan td {
+    padding: 10px;
+}
+
+#table_detail_riwayat_Karyawan tr {
+    text-align: center;
+    border: 1px solid #dfdfdf;
+} 

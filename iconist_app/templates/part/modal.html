@@ -1,0 +1,135 @@
+<!-- IMPORT DATA -->
+<div id="modal_import_data_Karyawan">
+    <div class="pop-up" id="import_data">
+        <div class="hyperlink">
+            <div class="download-template-upload">DOWNLOAD TEMPLATE UPLOAD EXCEL</div>
+            <div class="fields">
+                <div class="tambah-data-data">Tambah Data Karyawan</div>
+                <div class="masukkan-file-excel-disini-wrapper">
+                    <div class="masukkan-file-excel">Masukkan file excel disini</div>
+                </div>
+            </div>
+            <div class="format-yang-diupload-container">
+                <p class="format-yang-diupload-adalah-x">
+                    <span class="span">*</span>
+                    <span>format yang diupload adalah .xls .csv</span>
+                </p>
+                <p class="total-maksimal-file-yang-diupl">
+                    <span class="span">*</span>
+                    <span>Total maksimal file yang diupload adalah 1 file</span>
+                </p>
+            </div>
+        </div>
+        <i class="fa-regular fa-circle-xmark" id="close_modal_data_Karyawan" onclick="close_import_modal_data_Karyawan()"
+            style="color: red;cursor: pointer;"></i>
+    </div>
+</div>
+
+
+<!-- HAPUS DATA -->
+<div id="modal_hapus_data_Karyawan">
+    <div class="pop-up" id="hapus_data"
+        style="padding-left: 60px !important; padding-right: 60px !important;flex-direction: column !important;">
+        <div class="hyperlink" style="gap:1px !important;font-family: sans-serif;">
+            <div class="fields" style="justify-content: center !important;flex-direction: row !important;">
+                <b>
+                    <div class="tambah-data-data">Hapus Data Karyawan</div>
+                </b>
+            </div>
+            <div class="format-yang-diupload-container" style="font-size: 14px !important;color:#6D7280">
+                <p style="line-height: 150%;letter-spacing: 0.21px;text-align: center;opacity: 0.8;">
+                    Apakah kamu yakin menghapus <br> seluruh data dari karyawan ini?
+                </p>
+            </div>
+        </div>
+
+        <div id="modal_remove_div">
+            <div style="color: red;width: 100px; text-align: center;cursor: pointer;" onclick="close_hapus_data_Karyawan()">
+                Batalkan
+            </div>
+            <div>
+                <button
+                    style="border-radius: 22px; background: #3A4970; padding: 10px; width: 100px; color: white;cursor: pointer;">Hapus</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- TAMBAH DATA -->
+<div id="modal_tambah_data_Karyawan">
+    <div class="pop-up" id="add_data" style="width: 40%;flex-direction: column !important;">
+        <div class="hyperlink" style="gap: unset !important;font-family: sans-serif;">
+            <div class="fields"
+                style="justify-content: center !important;flex-direction: row !important;padding-bottom: 30px;">
+                <b>
+                    <div class="tambah-data-data">Tambah Data Karyawan</div>
+                </b>
+            </div>
+
+            <div style="width: 100%;">
+                <div style="padding-bottom: 5px; color: black; opacity: 0.7; font-family: sans-serif;">Nama
+                    Karyawan</div>
+                <div class="format-yang-diupload-container"
+                    style="font-size: 14px !important;color:#6D7280;">
+                    <input type="text" class="search" placeholder="Masukkan Nama Karyawan"
+                        style="height: 30px; font-size: 12px;width: 100%;">
+                </div>
+            </div>
+
+            <div style="width: 100%;margin-top: 20px;">
+                <div style="padding-bottom: 5px; color: black; opacity: 0.7; font-family: sans-serif;">Email</div>
+                <div class="format-yang-diupload-container"
+                    style="font-size: 14px !important;color:#6D7280;width: 100%;">
+                    <input type="text" class="search" placeholder="Masukkan Email Korporat"
+                        style="height: 30px; font-size: 12px;width: 100%;">
+                </div>
+            </div>
+
+            <div style="width: 100%;margin-top: 20px;">
+                <div style="padding-bottom: 5px; color: black; opacity: 0.7; font-family: sans-serif;">Vendor</div>
+                <div class="format-yang-diupload-container"
+                    style="font-size: 14px !important;color:#6D7280;width: 100%;">
+                    <input type="text" class="search" placeholder="Masukkan Nama Vendor"
+                        style="height: 30px; font-size: 12px;width: 100%;">
+                </div>
+            </div>
+
+            <div style="width: 100%;margin-top: 20px;">
+                <div style="padding-bottom: 5px; color: black; opacity: 0.7; font-family: sans-serif;">Seksi</div>
+                <div class="format-yang-diupload-container"
+                    style="font-size: 14px !important;color:#6D7280;width: 100%;">
+                    <input type="text" class="search" placeholder="Masukkan Nama Seksi"
+                        style="height: 30px; font-size: 12px;width: 100%;">
+                </div>
+            </div>
+
+            <div style="width: 100%;margin-top: 20px;">
+                <div style="padding-bottom: 5px; color: black; opacity: 0.7; font-family: sans-serif;">Aplikasi</div>
+                <div class="format-yang-diupload-container"
+                    style="font-size: 14px !important;color:#6D7280;width: 100%;">
+                    <input type="text" class="search" placeholder="Masukkan Aplikasi"
+                        style="height: 30px; font-size: 12px;width: 100%;">
+                </div>
+            </div>
+
+            <div style="width: 100%;margin-top: 20px;">
+                <div style="padding-bottom: 5px; color: black; opacity: 0.7; font-family: sans-serif;">Project</div>
+                <div class="format-yang-diupload-container"
+                    style="font-size: 14px !important;color:#6D7280;width: 100%;">
+                    <input type="text" class="search" placeholder="Masukkan Jumlah Project"
+                        style="height: 30px; font-size: 12px;width: 100%;">
+                </div>
+            </div>
+        </div>
+
+        <div id="tombol_simpan_data_Karyawan">
+            <div onclick="close_add_data_Karyawan()">
+                <button style="border-radius: 22px; background: #4dbfd3d6;; padding: 10px; width: 100px; color: white;cursor: pointer;border:none">Batal</button>
+            </div>
+            <div>
+                <button style="border-radius: 22px; background: #3A4970; padding: 10px; width: 100px; color: white;cursor: pointer;border:none">Simpan</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,81 @@
+{% load static %}
+<div class="sidebar-spv">
+      <div class="icon4">
+            <img class="iconist2-1" alt="" src="{% static 'asset_home/ICONIST.png' %}">
+
+            <img class="iconist-3-1-removebg-preview" alt="" src="{% static 'asset_home/logo.png' %}">
+
+      </div>
+      <div class="dashboard-parent" style="font-size: 14px;">
+            <a href="{% url 'home' %}" style="text-decoration: none;color:#9ca3af;">
+                  <div class="{% if active_page == 'home' %}dashboard{% else %}karyawan{% endif %}">
+                        <!-- <div class="dashboard"> -->
+                        <div class="photo-1">
+                              <div class="home-parent">
+                                    <i class="fa-solid fa-house" style="font-size: 18px;"></i>
+                                    <div class="data-karyawan">Dashboard</div>
+                                    <div class="chevron">
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
+            </a>
+            <a href="{% url 'data_Karyawan' %}" style="text-decoration: none;color:#9ca3af;">
+                  <div class="{% if active_page == 'data_Karyawan' %}dashboard{% else %}karyawan{% endif %}">
+                        <!-- <div class="karyawan"> -->
+                        <div class="photo-1">
+                              <div class="home-parent">
+                                    <i class="fa-solid fa-user-group" style="font-size: 18px;"></i>
+                                    <div class="data-karyawan">Data Karyawan</div>
+                                    <div class="chevron">
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
+            </a>
+            <div class="karyawan" style="cursor: pointer;">
+                  <div class="photo-1">
+                        <div class="home-parent" onclick="master_Karyawan()">
+                              <i class="fa-solid fa-users-gear" style="font-size: 18px;"></i>
+                              <div class="master-Karyawan">Master Karyawan</div>
+                              <img class="chevron-icon" alt="" style="transform: rotate(90deg);margin-left: 25px;"
+                                    src="{% static 'asset_home/Chevron.png' %}">
+                        </div>
+                  </div>
+                  <ul id="submenu" class="submenu" style="margin-block-end: 0px !important;">
+                        <a href="{% url 'penilaian' %}" style="text-decoration: none;color:#9ca3af;" onclick="open_submenu()">
+                              <li class="submenu-item" style="font-size: 13px;">Penilaian</li>
+                        </a>
+
+                        <a href="{% url 'riwayat' %}" style="text-decoration: none;color:#9ca3af;">
+                              <li class="submenu-item" style="font-size: 13px;">Riwayat</li>
+                        </a>
+                  </ul>
+            </div>
+
+            <div class="karyawan" style="cursor: pointer;">
+                  <div class="photo-1">
+                        <div class="home-parent" onclick="kont_skor()">
+                              <i class="fa-solid fa-chart-line" style="font-size: 18px;"></i>
+                              <div class="master-Karyawan">Periode Berjalan</div>
+                              <img class="chevron-icon2" style="transform: rotate(90deg);" alt=""
+                                    src="{% static 'asset_home/Chevron.png' %}">
+                        </div>
+                  </div>
+                  <ul id="submenu2" class="submenu" style="margin-block-end: 0px !important;">
+                        <a href="{% url 'score_Karyawan' %}" style="text-decoration: none;color:#9ca3af;">
+                              <li class="submenu-item" style="font-size: 13px;">Score Karyawan</li>
+                        </a>
+                        <li class="submenu-item" style="font-size: 13px;">MTTR Performance</li>
+                  </ul>
+            </div>
+
+      </div>
+      <img class="sidebar-spv-child" alt="" src="{% static 'asset_home/element_bottom.png' %}">
+
+      <img class="logo-bumn-tanpa-background-1-j-icon" alt=""
+            src="{% static 'logo-bumn-tanpa-background-1-jasalogocepat 1.png' %}">
+
+      <img class="sidebar-spv-item" alt="" src="Vector 2.svg">
+
+</div>

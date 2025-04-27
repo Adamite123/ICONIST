@@ -1,0 +1,177 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Detail Karyawan{% endblock %}
+
+{% block content %}
+
+<div class="content"
+    style="background-color: inherit !important;color: black;color: black; display: flex ; flex-direction: row; flex-wrap: wrap; align-content: center; align-items: center;">
+    <div style="display: flex ; flex-direction: column; flex-wrap: wrap; gap: 20px;">
+        <div
+            style="width: fit-content;display: flex ; flex-direction: column; flex-wrap: wrap; gap: 10px; background-color: white; padding: 30px; border-radius: 20px;">
+            <img src="{% static 'asset_home/p1.png' %}" style="border-radius: 50%; width: 50%;">
+            <div>
+                <p style="font-size: 12px;color: #A0AEC0;">Data Karyawan</p>
+                <p style="font-weight: bold;">Bima Agta Nugraha</p>
+                <p style="color: #27A3B8; font-size: 12px;">Pelayanan - LPC</p>
+            </div>
+            <div style="display: flex ; gap: 20px; flex-direction: row; flex-wrap: wrap; align-content: center;">
+                <div>
+                    <div style="padding-bottom: 10px;color: #A0AEC0;"">Aplikasi</div>
+                    <div>VIP</div>
+                </div>
+                <div>
+                    <div style=" padding-bottom: 10px;color: #A0AEC0;"">Email</div>
+                    <div>Bima.adi@iconpln.co.id</div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <table border="1" style="text-align: center;font-weight: bold; font-family: serif;"
+                id="table_Karyawan_detail_kinerja">
+                <tr>
+                    <td colspan="3" style="background-color: #ECECEC;">SKOR KINERJA</td>
+                </tr>
+
+                <tr>
+                    <td style="background-color: #ECECEC;">SKOR</td>
+                    <td style="background-color: #ECECEC;">SKOR TOTAL</td>
+                    <td style="background-color: #ECECEC;">TINGKAT</td>
+                </tr>
+
+                <tr>
+                    <td style="background-color: #ffd55a;">1.18</td>
+                    <td rowspan="3">3.77</td>
+                    <td rowspan="3">FAIR</td>
+                </tr>
+
+                <tr>
+                    <td style="background-color: #ffd55a;">1.15</td>
+                </tr>
+
+                <tr>
+                    <td style="background-color: #ffd55a;">1.40</td>
+                </tr>
+            </table>
+        </div>
+
+        <div>
+            <div style="display: flex ; flex-direction: row; justify-content: space-between;">
+                <table style="width: 500px;border-radius: 10px;overflow: hidden;font-family: Arial, sans-serif;width: 100%;font-size: 12px;">
+
+                    <tbody>
+                        <tr>
+                            <td>
+                                <!-- <div style="font-weight: bold; font-size: 18px; font-family: sans-serif;padding-bottom: 10px;">
+                                    Total Feedback </div> -->
+
+                                <div style="font-weight: bold; font-size: 18px; font-family: sans-serif;padding-bottom: 10px; display: flex ; flex-direction: row; flex-wrap: nowrap; justify-content: space-between;">
+                                    <div>Total Feedback</div>
+                                    <div style="font-weight: normal; color: gray; font-size: 12px; text-decoration: underline;">
+                                        5+ See More</div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td
+                                style="padding: 15px 20px;text-align: left;border: 1px solid #DADADA; border-radius: 10px;width: 53% ! important;">
+                                <div style="font-weight: bold; color: #333; margin-bottom: 5px;">
+                                    Ali Nurfuad
+                                </div>
+                                <div
+                                    style="color: #555; margin-bottom: 12px;color:#AEAEAE;">
+                                    ali.nurfuad@iconpln.co.id
+                                </div>
+                                <div style="border-top: 2px solid red; margin: 10px 0;"></div>
+                                <div style="display: flex; justify-content: space-between;color: #222;">
+                                    <div style="font-weight: bold;">Score</div>
+                                    <div style="color: #02AF64; font-weight: 600;">4.5 (GOOD)</div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+    <div style="display: flex ; flex-direction: column; gap: 30px;width: 70%;">
+        
+
+        <div>
+            <div style="display: flex ; flex-direction: row; flex-wrap: nowrap; justify-content: space-between; align-items: center;margin-bottom: 30px;">
+                <div>RIWAYAT SKOR Karyawan</div>
+                <div>
+                    <button style="padding: 12px; font-size: 10px; background-color: #27A3B8; border: none; border-radius: 50px; color: #effdff; padding-left: 20px; padding-right: 20px; font-weight: bold; font-family: sans-serif;">
+                        EXPORT EXCEL</button>
+                    <button style="padding: 12px; font-size: 10px; background-color: #3A4970; border: none; border-radius: 50px; color: #effdff; padding-left: 20px; padding-right: 20px; font-weight: bold; font-family: sans-serif;">
+                        Periode 2 (Desember 2024)</button>
+                </div>
+            </div>
+            <div style="display: flex ; flex-direction: row; flex-wrap: nowrap; justify-content: space-between; align-items: center;">
+                <div>Kompetensi Inti</div>
+                <div>Total Maksimal Skor : 40%</div>
+            </div>
+            <table id="table_detail_riwayat_Karyawan" style="border-collapse: collapse !important; ">
+                <tr>
+                    <td style="background-color: #F9FBFC">Integritas(20%)</td>
+                    <td style="background-color: #F9FBFC">Orientasi Seksi dan Perusahaan(20%)</td>
+                    <td style="background-color: #F9FBFC">Komunikasi(20%)</td>
+                    <td style="background-color: #F9FBFC">Teamwork & Inisiatif(20%)</td>
+                    <td style="background-color: #F9FBFC">Kehandalan(20%)</td>
+                </tr>
+
+                <tr>
+                    <td style="background-color: #ffffff">4</td>
+                    <td style="background-color: #ffffff">3</td>
+                    <td style="background-color: #ffffff">3.5</td>
+                    <td style="background-color: #ffffff">4</td>
+                </tr>
+            </table>
+        </div>
+
+        <div>
+            <div style="display: flex ; flex-direction: row; flex-wrap: nowrap; justify-content: space-between; align-items: center;">
+                <div>Kompetensi Teknis</div>
+                <div>Total Maksimal Skor : 30%</div>
+            </div>
+            <table id="table_detail_riwayat_Karyawan" style="border-collapse: collapse !important; width: 100%;">
+                <tr>
+                    <td style="background-color: #F9FBFC">Operasional(40%)</td>
+                    <td style="background-color: #F9FBFC">Efisiensi, Efektifitas & Produktifitas Kerja (30%)</td>
+                    <td style="background-color: #F9FBFC">Kualitas Kerja(30%)</td>
+                </tr>
+
+                <tr>
+                    <td style="background-color: #ffffff">4</td>
+                    <td style="background-color: #ffffff">3</td>
+                    <td style="background-color: #ffffff">3.5</td>
+                </tr>
+            </table>
+        </div>
+
+        <div>
+            <div style="display: flex ; flex-direction: row; flex-wrap: nowrap; justify-content: space-between; align-items: center;">
+                <div>Sikap & Perilaku</div>
+                <div>Total Maksimal Skor : 30%</div>
+            </div>
+            <table id="table_detail_riwayat_Karyawan" style="border-collapse: collapse !important; width: 100%;">
+                <tr>
+                    <td style="background-color: #F9FBFC">Operasional(80%)</td>
+                    <td style="background-color: #F9FBFC">Efisiensi, Efektifitas & Produktifitas Kerja (20%)</td>
+                </tr>
+
+                <tr>
+                    <td style="background-color: #ffffff">4</td>
+                    <td style="background-color: #ffffff">3</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

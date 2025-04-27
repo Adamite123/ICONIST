@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Penilaian{% endblock %}
+
+{% block content %}
+
+<div style="margin-left: 20%;">
+    <p><b> Periode Penilaian pada Tanggal 3 - 7 Februari 2025, Silahkan melakukan Penilaian Sebelum Tanggal Jatuh Tempo!
+        </b></p>
+
+    <table>
+        <tr>
+            <td>Bank Soal</td>
+            <td style="padding-left: 20px;">
+                <select name="" id="" style="border-radius: 8px;
+                background-color: #fff;justify-content: flex-start;
+                padding: 7px 10px;text-align: left;
+                font-size: 14px;color: #404040;
+                font-family: Rubik;">
+                    <option value="">SOAL KOPINTI 2024 VER 1.1</option>
+                    <option value="">SOAL KOPINTI 2024 VER 1.2</option>
+                    <option value="">SOAL KOPINTI 2024 VER 1.3</option>
+                    <option value="">SOAL KOPINTI 2025 VER 1.0</option>
+                </select>
+            </td>
+            <td style="padding-left: 20px;"> 
+                <button style="padding: 7px;
+                padding-left: 18px;
+                padding-right: 18px;
+                border-radius: 10px;
+                width: 90px;
+                background-color: #3A4970;
+                color: white;
+                font-weight: 600;
+                font-size: 11px;">Load</button>
+            </td>
+        </tr>
+    </table>
+</div>
+
+{% endblock %}

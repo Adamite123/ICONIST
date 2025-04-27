@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <link rel="stylesheet"  href="{% static 'style/index.css' %}" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" />
+</head>
+<body>
+    <div class="flex-container">
+        <!-- Bagian Gambar -->
+        <div class="image-section">
+            <img class="bg" alt="" src="{% static 'bg.png' %}">
+        </div>
+
+        <!-- Bagian Login -->
+        <div class="login">
+            <div class="logos-container">
+                <img class="logo-bumn-tanpa-background-1-j-icon" style="width: 15%;" alt="" src="{% static 'logo-bumn-tanpa-background-1-jasalogocepat 1.png' %}">
+                <img class="icon-plus-logo-1" alt="" src="{% static 'ICON_PLUS_LOGO_1.png' %}">
+                <img class="iconist-removebg-preview-1" alt="" src="{% static 'small_iconist.png' %}">
+            </div>
+            
+            <div class="login-content">
+                <div class="selamat-datang-iconers">Selamat Datang, Iconers!</div>
+                <div class="fields">
+                    <div class="fields1">
+                        <div class="emailusername">Email/username</div>
+                        <input class="masukkan-email-atau-username-k-wrapper" placeholder="Masukkan Email atau Username" />
+                    </div>
+                    <div class="fields1">
+                        <div class="emailusername">Password</div>
+                        <input class="masukkan-email-atau-username-k-wrapper" placeholder="Masukkan Password" />
+                        <div class="lupa-kata-sandi"><a href="forgot_pas.html" style="text-decoration: none;color:unset">Lupa kata sandi?</a></div>
+                    </div>
+                </div>
+                <div class="btn">
+                    <div class="button-state-mobile">
+                        <div class="text-btn">
+                            <div class="button">Masuk</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <img class="corner-image" src="{% static 'element_bottom.png' %}" alt="Decoration">
+    </div>
+</body>
+</html>

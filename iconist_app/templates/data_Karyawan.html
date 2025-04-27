@@ -1,0 +1,169 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Data Karyawan{% endblock %}
+
+{% block content %}
+
+<div class="content">
+	<div class="search-parent">
+		<input type="text" class="search" placeholder="Cari berdasarkan nama">
+		<i class="fa-solid fa-magnifying-glass"></i>
+		<!-- <div class="search">
+			<div class="cari-alamat-disini">Cari berdasarkan nama</div>
+			<i class="fa-solid fa-magnifying-glass"></i>
+		</div> -->
+		<div class="button-state-mobile-wrapper">
+			<div class="button-state-mobile">
+				<div class="text-btn">
+					<div class="button">Filter</div>
+					<i class="fa-solid fa-arrow-up-z-a"></i>
+				</div>
+			</div>
+		</div>
+		<div class="button-state-mobile1" onclick="modal_import_data_Karyawan()">
+			<div class="text-btn">
+				<div class="button">IMPORT DATA Karyawan</div>
+				<i class="fa-solid fa-upload"></i>
+			</div>
+		</div>
+		<div id="button_tambah_data" class="button-state-mobile" onclick="modal_add_Karyawan()">
+			<div class="text-btn">
+				<div class="button">Tambah Data</div>
+				<i class="fa-solid fa-circle-plus"></i>
+			</div>
+		</div>
+	</div>
+
+	<table class="table">
+		<thead>
+			<tr class="title-table">
+				<th class="nama-pelanggan_header" style="padding: 15px;">
+					<div class="no">No</div>
+				</th>
+				<th class="nama-pelanggan_header">
+					<div class="no">NIP</div>
+				</th>
+				<th class="nama-pelanggan_header">
+					<div class="no">Nama</div>
+				</th>
+				<th class="nama-pelanggan_header">
+					<div class="no">Email</div>
+				</th>
+				<th class="nama-pelanggan_header">
+					<div class="no">Aplikasi</div>
+				</th>
+				<th class="nama-pelanggan_header">
+					<div class="no">Mitra</div>
+				</th>
+				<th class="nama-pelanggan_header">
+					<div class="no">Tgl Masuk</div>
+				</th>
+				<th class="nama-pelanggan_header">
+					<div class="no">Masa Kerja</div>
+				</th>
+				<th class="nama-pelanggan_header">
+					<div class="no">Action</div>
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class="title-table1">
+				<td class="nama-pelanggan">
+					<div class="bima-adi">1</div>
+				</td>
+				<td class="nama-pelanggan">
+					<div class="bima-adi">499356</div>
+				</td>
+				<td class="nama-pelanggan">
+					<p class="bima-adi">Bima Adi Nugraha</p>
+				</td>
+				<td class="nama-pelanggan">
+					<p class="bima-adi">bima.adi@iconpln.co.id</p>
+				</td>
+				<td class="nama-pelanggan">
+					<div class="bima-adi">VIP</div>
+				</td>
+				<td class="nama-pelanggan">
+					<div class="bima-adi">DPP</div>
+				</td>
+				<td class="nama-pelanggan">
+					<div class="bima-adi">Jan 13, 2025</div>
+				</td>
+				<td class="nama-pelanggan">
+					<div class="bima-adi">2 Bulan</div>
+				</td>
+				<td class="aksi1">
+					<i class="fa-solid fa-pencil" style="color: #FFA500;"></i>
+					<a href="{% url 'detail_riwayat_Karyawan' %}"><i class="fa-solid fa-eye" style="color: #27A3B8;"></i></a>
+					<i class="fa-solid fa-trash" style="color: #E44258;cursor: pointer;" onclick="modal_hapus_Karyawan()"></i>
+				</td>
+			</tr>
+
+			<tr class="title-table1">
+				<td class="nama-pelanggan">
+					<div class="bima-adi">2</div>
+				</td>
+				<td class="nama-pelanggan">
+					<div class="bima-adi">499356</div>
+				</td>
+				<td class="nama-pelanggan">
+					<p class="bima-adi">Khuzainil Syarif</p>
+				</td>
+				<td class="nama-pelanggan">
+					<p class="bima-adi">Khuzainil.syarif@iconpln.co.id</p>
+				</td>
+				<td class="nama-pelanggan">
+					<div class="bima-adi">VIP, P2APST</div>
+				</td>
+				<td class="nama-pelanggan">
+					<div class="bima-adi">MUST</div>
+				</td>
+				<td class="nama-pelanggan">
+					<div class="bima-adi">Jan 13, 2025</div>
+				</td>
+				<td class="nama-pelanggan">
+					<div class="bima-adi">2 Bulan</div>
+				</td>
+				<td class="aksi1">
+					<i class="fa-solid fa-pencil" style="color: #FFA500;"></i>
+					<a href="{% url 'detail_riwayat_Karyawan' %}"><i class="fa-solid fa-eye" style="color: #27A3B8;"></i></a>
+					<i class="fa-solid fa-trash" style="color: #E44258;cursor: pointer;" onclick="modal_hapus_Karyawan()"></i>
+				</td>
+			</tr>
+
+		</tbody>
+	</table>
+
+
+	<div class="pagination">
+		<div class="text-btn">
+			<i class="fa-solid fa-chevron-left"></i>
+			<div class="div4">
+				<div class="button">1</div>
+			</div>
+			<div class="div6">
+				<div class="button">2</div>
+			</div>
+			<div class="div6">
+				<div class="button">3</div>
+			</div>
+			<div class="div10">
+				<div class="div6">
+					<div class="button">4</div>
+				</div>
+			</div>
+			<div class="div13">.....</div>
+			<div class="div6">
+				<div class="button">20</div>
+			</div>
+			<i class="fa-solid fa-chevron-right"></i>
+		</div>
+	</div>
+
+	{% include 'part/modal.html' %}
+	
+
+</div>
+
+{% endblock %}

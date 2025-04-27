@@ -1,0 +1,36 @@
+#score, #score th, #score td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+}
+
+#score thead{
+    background-color: #ECECEC;
+}
+
+.pagination_score_Karyawan {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 20px auto;
+    flex-direction: row;
+    left: 10%;
+    position: relative;
+}
+.pagination_score_Karyawan div {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.pagination_score_Karyawan div:hover {
+    background-color: #a7f2ff;
+}
+

@@ -1,0 +1,553 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<div class="monitoring-itsm">
+	<div class="monitoring-itsm1">MONITORING ITSM</div>
+	<div class="itsm">
+		<div class="total-tiket">
+			<div class="icon1">
+				<div class="container">
+				</div>
+				<img class="material-symbols-lightpending-icon" alt="" src="{% static 'asset_home/graph.png' %}">
+			</div>
+			<div class="txt">
+				<div class="div">
+					<div class="total-employees">Total Tiket</div>
+					<b class="b">12,5K</b>
+				</div>
+				<div class="div1">
+					<b class="b1">+35%</b>
+					<div class="this-month">Bulan ini</div>
+				</div>
+			</div>
+		</div>
+		<div class="total-tiket">
+			<div class="icon1">
+				<div class="container2">
+				</div>
+				<img class="material-symbols-lightpending-icon" alt="" src="{% static 'asset_home/report.png' %}">
+			</div>
+			<div class="txt">
+				<div class="div">
+					<div class="total-employees">Total 3rd Party</div>
+					<b class="b">20</b>
+				</div>
+				<div class="div3">
+					<b class="b1">-8%</b>
+					<div class="this-month">Bulan ini</div>
+				</div>
+			</div>
+		</div>
+		<div class="total-tiket">
+			<div class="icon1">
+				<div class="container3">
+				</div>
+				<img class="guidancetime-icon" alt="" src="{% static 'asset_home/alert.png' %}">
+
+			</div>
+
+			<div class="txt">
+				<div class="div">
+					<div class="total-employees">Total SLA</div>
+					<b class="b">12</b>
+				</div>
+				<div class="div3">
+					<b class="b1">-6%</b>
+					<div class="this-month">Bulan ini</div>
+				</div>
+			</div>
+		</div>
+		<div class="total-tiket">
+			<div class="icon1">
+				<div class="container4">
+				</div>
+				<img class="guidancetime-icon" alt="" src="{% static 'asset_home/guidance_time.png' %}">
+
+			</div>
+			<div class="txt">
+				<div class="div">
+					<div class="total-employees">Respons tiket</div>
+					<b class="b">3 Jam</b>
+				</div>
+				<div class="div1">
+					<b class="b1">+23%</b>
+					<div class="this-month">Bulan ini</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="karyawan-teladan">
+	<div class="head">
+		<div class="data-karyawan-teladan">Data Karyawan Teladan</div>
+		<div class="see-all">See all</div>
+	</div>
+	<div class="parent">
+		<div class="div8">
+			<div class="group">
+				<div class="div9">1#</div>
+				<div class="photo-1">
+					<img class="photo-icon" alt="" src="{% static 'asset_home/p1.png' %}" style="border-radius: 55px;">
+
+				</div>
+			</div>
+			<div class="txt4">
+				<div class="score">
+					<div class="nanda">4,70</div>
+				</div>
+				<div class="nama">
+					<div class="nanda">Nanda</div>
+					<div class="vip">VIP</div>
+				</div>
+			</div>
+		</div>
+		<div class="div11">
+			<div class="group">
+				<div class="div12">2#</div>
+				<div class="photo-3">
+					<img class="photo-icon" alt="" src="{% static 'asset_home/p3.png' %}" style="border-radius: 55px;">
+				</div>
+			</div>
+			<div class="txt5">
+				<div class="score">
+					<div class="nanda">4,67</div>
+				</div>
+				<div class="nama">
+					<div class="melli">Melli</div>
+					<div class="p2apst">P2APST</div>
+				</div>
+			</div>
+		</div>
+		<div class="div11">
+			<div class="group">
+				<div class="div12">2#</div>
+				<div class="photo-1">
+					<img class="photo-icon" alt="" src="{% static 'asset_home/p2.png' %}" style="border-radius: 55px;">
+
+				</div>
+			</div>
+			<div class="txt6">
+				<div class="score">
+					<div class="nanda">4,60</div>
+				</div>
+				<div class="nama">
+					<div class="nanda">Khuzen</div>
+					<div class="p2apst">MODIV</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="card-title-parent">
+	<div class="card-title">Data Karyawan Dibawah Rata-rata</div>
+	<div class="table-content-karyawan">
+		<div class="header">
+			<div class="cell">
+				<img class="check-icon" alt="" src="{% static 'check.svg' %}">
+
+			</div>
+			<div class="cell1">
+				<div class="label">Nama Data Karyawan</div>
+				<div class="arrow-sort">
+				</div>
+			</div>
+			<div class="cell1">
+				<div class="label">Aplikasi</div>
+				<div class="arrow-sort">
+				</div>
+			</div>
+			<div class="cell3">
+				<div class="label">Role</div>
+				<div class="arrow-sort">
+				</div>
+			</div>
+			<div class="cell1">
+				<div class="label">Skor</div>
+				<div class="arrow-sort">
+				</div>
+			</div>
+		</div>
+		<div class="divider">
+		</div>
+		<div class="rows">
+			<div class="cell5">
+				<img class="check-icon" alt="" src="{% static 'check.svg' %}">
+
+			</div>
+			<div class="cell6">
+				<img class="avatar-icon2" alt="" src="{% static 'Avatar.png' %}">
+
+				<div class="label4">Sandi Mardiansyah</div>
+			</div>
+			<div class="cell7">
+				<div class="label5">ACMT</div>
+			</div>
+			<div class="cell8">
+				<div class="label4">Front End Developer</div>
+			</div>
+			<div class="cell7">
+				<div class="label4">3,25</div>
+			</div>
+		</div>
+		<div class="divider">
+		</div>
+		<div class="rows">
+			<div class="cell5">
+				<img class="check-icon" alt="" src="{% static 'check.svg' %}">
+
+			</div>
+			<div class="cell6">
+				<img class="avatar-icon2" alt="" src="{% static 'Avatar.png' %}">
+
+				<div class="label4">Recky el Nazar</div>
+			</div>
+			<div class="cell7">
+				<div class="label5">MODIV</div>
+			</div>
+			<div class="cell8">
+				<div class="label4">Front End Developer</div>
+			</div>
+			<div class="cell7">
+				<div class="label4">3,55</div>
+			</div>
+		</div>
+		<div class="divider">
+		</div>
+		<div class="rows">
+			<div class="cell5">
+				<img class="check-icon" alt="" src="{% static 'check.svg' %}">
+
+			</div>
+			<div class="cell6">
+				<img class="avatar-icon2" alt="" src="{% static 'Avatar.png' %}">
+
+				<div class="label4">Adi Margonda</div>
+			</div>
+			<div class="cell7">
+				<div class="label5">CSMS</div>
+			</div>
+			<div class="cell8">
+				<div class="label4">Front End Developer</div>
+			</div>
+			<div class="cell7">
+				<div class="label4">3,75</div>
+			</div>
+		</div>
+		<div class="divider">
+		</div>
+		<div class="divider">
+		</div>
+		<div class="rows3">
+			<div class="cell5">
+				<img class="check-icon" alt="" src="{% static 'check.svg' %}">
+
+			</div>
+			<div class="cell21">
+				<img class="avatar-icon2" alt="" src="{% static 'Avatar.png' %}">
+
+				<div class="label4">Nadila Sania Ulfa</div>
+			</div>
+			<div class="cell22">
+				<div class="label4">Analyst</div>
+			</div>
+			<div class="cell8">
+				<div class="label4">Quality Assurance</div>
+			</div>
+			<div class="cell24">
+				<img class="avatar-icon2" alt="" src="{% static 'Avatar.png' %}">
+
+				<div class="label-wrapper">
+					<div class="label19">Hadir</div>
+				</div>
+			</div>
+			<div class="cell25">
+				<div class="label4">08:21</div>
+			</div>
+			<div class="cell25">
+				<div class="label4">17:56</div>
+			</div>
+			<div class="cell27">
+				<img class="dots-vertical-icon" alt="" src="{% static 'dots-vertical.png' %}">
+
+			</div>
+		</div>
+		<div class="rows3">
+			<div class="cell5">
+				<img class="check-icon" alt="" src="{% static 'check.svg' %}">
+
+			</div>
+			<div class="cell21">
+				<img class="avatar-icon2" alt="" src="{% static 'Avatar.png' %}">
+
+				<div class="label4">Darren Panjaitan</div>
+			</div>
+			<div class="cell22">
+				<div class="label4">Analyst</div>
+			</div>
+			<div class="cell8">
+				<div class="label4">Quality Assurance</div>
+			</div>
+			<div class="cell24">
+				<img class="avatar-icon2" alt="" src="{% static 'Avatar.png' %}">
+
+				<div class="label-wrapper">
+					<div class="label19">Hadir</div>
+				</div>
+			</div>
+			<div class="cell25">
+				<div class="label4">08:21</div>
+			</div>
+			<div class="cell25">
+				<div class="label4">17:56</div>
+			</div>
+			<div class="cell27">
+				<img class="dots-vertical-icon" alt="" src="dots-vertical.png">
+
+			</div>
+		</div>
+		<div class="rows3">
+			<div class="cell5">
+				<img class="check-icon" alt="" src="check.svg">
+
+			</div>
+			<div class="cell21">
+				<img class="avatar-icon2" alt="" src="Avatar.png">
+
+				<div class="label4">Albert Situmorang</div>
+			</div>
+			<div class="cell22">
+				<div class="label4">Analyst</div>
+			</div>
+			<div class="cell8">
+				<div class="label4">Quality Assurance</div>
+			</div>
+			<div class="cell24">
+				<img class="avatar-icon2" alt="" src="Avatar.png">
+
+				<div class="label-wrapper">
+					<div class="label19">Hadir</div>
+				</div>
+			</div>
+			<div class="cell25">
+				<div class="label4">08:21</div>
+			</div>
+			<div class="cell25">
+				<div class="label4">17:56</div>
+			</div>
+			<div class="cell27">
+				<img class="dots-vertical-icon" alt="" src="dots-vertical.png">
+
+			</div>
+		</div>
+		<div class="rows3">
+			<div class="cell5">
+				<img class="check-icon" alt="" src="check.svg">
+
+			</div>
+			<div class="cell21">
+				<img class="avatar-icon2" alt="" src="Avatar.png">
+
+				<div class="label4">Daniel Alfadhli</div>
+			</div>
+			<div class="cell22">
+				<div class="label4">Analyst</div>
+			</div>
+			<div class="cell8">
+				<div class="label4">Quality Assurance</div>
+			</div>
+			<div class="cell24">
+				<img class="avatar-icon2" alt="" src="Avatar.png">
+
+				<div class="label-wrapper">
+					<div class="label19">Hadir</div>
+				</div>
+			</div>
+			<div class="cell25">
+				<div class="label4">08:21</div>
+			</div>
+			<div class="cell25">
+				<div class="label4">17:56</div>
+			</div>
+			<div class="cell27">
+				<img class="dots-vertical-icon" alt="" src="dots-vertical.png">
+
+			</div>
+		</div>
+	</div>
+</div>
+<div class="chart-design">
+	<div class="head">
+		<div class="diagram-skor-data">Diagram Skor Data Karyawan </div>
+		<div class="bar-kuning-skor-diatas-4-parent">
+			<div class="bar-kuning">Bar Kuning : Skor diatas 4</div>
+			<div class="bar-biru">Bar Biru : Bar dibawah 4</div>
+		</div>
+	</div>
+	<div class="chart">
+		<img class="chart-child" alt="" src="Line 1.svg">
+
+		<img class="chart-item" alt="" src="Line 2.svg">
+
+		<img class="chart-inner" alt="" src="Line 3.svg">
+
+		<img class="line-icon" alt="" src="Line 4.svg">
+
+		<img class="chart-child1" alt="" src="Line 5.svg">
+
+		<img class="chart-child2" alt="" src="Line 6.svg">
+
+		<div class="frame-parent">
+			<div class="rectangle-parent">
+				<div class="frame-child">
+				</div>
+				<div class="frame-item">
+				</div>
+			</div>
+			<div class="jan">Jan</div>
+		</div>
+		<div class="parent2">
+			<div class="div17">5</div>
+			<div class="div17">4</div>
+			<div class="div17">3</div>
+			<div class="div17">2</div>
+			<div class="div17">1</div>
+			<div class="div17">0</div>
+		</div>
+		<div class="frame-group">
+			<div class="frame-wrapper">
+				<div class="rectangle-group">
+					<div class="frame-inner">
+					</div>
+					<div class="rectangle-div">
+					</div>
+				</div>
+			</div>
+			<div class="feb-wrapper">
+				<div class="feb">Feb</div>
+			</div>
+		</div>
+		<div class="group-parent">
+			<div class="rectangle-container">
+				<div class="group-child">
+				</div>
+				<div class="group-item">
+				</div>
+			</div>
+			<div class="mar">Mar</div>
+		</div>
+		<div class="frame-container">
+			<div class="frame-wrapper1">
+				<div class="rectangle-parent1">
+					<div class="frame-child1">
+					</div>
+					<div class="frame-child2">
+					</div>
+				</div>
+			</div>
+			<div class="apr-wrapper">
+				<div class="feb">Apr</div>
+			</div>
+		</div>
+		<div class="frame-parent1">
+			<div class="rectangle-parent2">
+				<div class="frame-child3">
+				</div>
+				<div class="frame-child4">
+				</div>
+			</div>
+			<div class="may">May</div>
+		</div>
+		<div class="frame-parent2">
+			<div class="rectangle-parent2">
+				<div class="frame-child5">
+				</div>
+				<div class="frame-child6">
+				</div>
+			</div>
+			<div class="may">Jun</div>
+		</div>
+		<div class="frame-parent3">
+			<div class="rectangle-parent2">
+				<div class="frame-child7">
+				</div>
+				<div class="frame-child8">
+				</div>
+			</div>
+			<div class="jul">Jul</div>
+		</div>
+	</div>
+</div>
+<div class="chart-design1">
+	<div class="rata-rata-skor-by-sistem-wrapper">
+		<div class="data-karyawan-teladan">Rata -rata Skor By Sistem</div>
+	</div>
+	<div class="chart1">
+		<img class="chart-child" alt="" src="Line 1.svg">
+
+		<img class="chart-item" alt="" src="Line 2.svg">
+
+		<img class="chart-inner" alt="" src="Line 3.svg">
+
+		<img class="line-icon" alt="" src="Line 4.svg">
+
+		<img class="chart-child1" alt="" src="Line 5.svg">
+
+		<img class="chart-child2" alt="" src="Line 6.svg">
+
+		<div class="parent3">
+			<div class="div17">5</div>
+			<div class="div17">4</div>
+			<div class="div17">3</div>
+			<div class="div17">2</div>
+			<div class="div17">1</div>
+			<div class="div17">0</div>
+		</div>
+		<div class="jul1">Jul</div>
+		<div class="agus">Agus</div>
+		<div class="sep">Sep</div>
+		<div class="okt">Okt</div>
+		<div class="nov">Nov</div>
+		<div class="des">Des</div>
+
+	</div>
+</div>
+<div class="copyright-by-pln">Copyright by PLN Icon Plus 2025</div>
+<div class="absen-kehadiran">
+	<div class="chart2">
+		<img class="group-icon" alt="" src="{% static 'asset_home/Donat_pie.png' %}">
+
+		<div class="div29">25%</div>
+		<div class="div30">28%</div>
+		<div class="div31">22%</div>
+		<div class="div32">25%</div>
+	</div>
+	<div class="div33">2025</div>
+	<div class="absen-kehadiran1">Absen Kehadiran</div>
+	<div class="group-container">
+		<div class="ellipse-parent">
+			<div class="group-inner">
+			</div>
+			<div class="wfh">WFH</div>
+		</div>
+		<div class="ellipse-group">
+			<div class="group-child1">
+			</div>
+			<div class="wfh">WFO</div>
+		</div>
+		<div class="ellipse-container">
+			<div class="group-child2">
+			</div>
+			<div class="cuti">Cuti</div>
+		</div>
+		<div class="group-div">
+			<div class="group-child3">
+			</div>
+			<div class="lainnya">Lainnya</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}
