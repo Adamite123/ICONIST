@@ -31,6 +31,10 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+TAILWIND_APP_NAME = 'theme'
+
+NPM_BIN_PATH=config('NPM_BIN_PATH', default='C:/laragon/bin/nodejs/node-v20/npm.cmd')
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -39,6 +43,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'iconist_app',
+    'tailwind',
+    'theme',
+    'django_browser_reload',
 ]
 
 MIDDLEWARE = [
@@ -49,6 +56,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_browser_reload.middleware.BrowserReloadMiddleware',
 ]
 
 ROOT_URLCONF = 'iconist.urls'

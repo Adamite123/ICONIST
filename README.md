@@ -24,7 +24,7 @@ cd ICONIST
 
 ```bash
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+source venv/bin/activate  # On Windows: venv\Scripts\activate or .\Scripts\activate
 ```
 
 3. **Install Dependencies**  
@@ -46,6 +46,10 @@ python manage.py migrate
 
 ```bash
 python manage.py runserver
+```
+
+```bash
+python manage.py tailwind start
 ```
 
 6. **Access the Application**  
