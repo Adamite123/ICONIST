@@ -7,7 +7,7 @@ def home(request):
     context = {
         'active_page': 'home',
     }
-    return render(request, "home.html", context)
+    return render(request, "home2.html", context)
 
 def data_Karyawan(request):
     context = {

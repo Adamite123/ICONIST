@@ -1,81 +1,110 @@
 {% load static %}
-<div class="sidebar-spv">
-      <div class="icon4">
-            <img class="iconist2-1" alt="" src="{% static 'asset_home/ICONIST.png' %}">
+<div
+  id="sidebar"
+  class="fixed top-0 left-0 flex flex-col items-center justify-start w-64 h-screen overflow-y-auto bg-white gap-4 text-gray-400 font-['Red_Hat_Display'] transition-all duration-300 md:translate-x-0 -translate-x-full z-30">
+  <div class="relative w-[168.6px] h-[51px] bg-white">
+    <img
+      class="absolute top-0 left-14 w-[113.6px] h-[57px] object-cover"
+      alt=""
+      src="{% static 'asset_home/ICONIST.png' %}" />
+    <img
+      class="absolute top-0 left-0 w-16 h-[57px] object-cover"
+      alt=""
+      src="{% static 'asset_home/logo.png' %}" />
+  </div>
 
-            <img class="iconist-3-1-removebg-preview" alt="" src="{% static 'asset_home/logo.png' %}">
-
+  <div class="flex flex-col items-end justify-start w-full text-sm">
+    <!-- Dashboard -->
+    <a href="{% url 'home' %}" class="no-underline text-gray-400">
+      <div
+        class="{% if active_page == 'home' %}bg-gray-100{% else %}karyawan{% endif %} flex flex-col items-start justify-start px-8 py-4">
+        <div class="flex items-center gap-6 w-48">
+          <i class="fa-solid fa-house text-[18px]"></i>
+          <div class="flex-1 relative font-semibold leading-[150%]">
+            Dashboard
+          </div>
+        </div>
       </div>
-      <div class="dashboard-parent" style="font-size: 14px;">
-            <a href="{% url 'home' %}" style="text-decoration: none;color:#9ca3af;">
-                  <div class="{% if active_page == 'home' %}dashboard{% else %}karyawan{% endif %}">
-                        <!-- <div class="dashboard"> -->
-                        <div class="photo-1">
-                              <div class="home-parent">
-                                    <i class="fa-solid fa-house" style="font-size: 18px;"></i>
-                                    <div class="data-karyawan">Dashboard</div>
-                                    <div class="chevron">
-                                    </div>
-                              </div>
-                        </div>
-                  </div>
-            </a>
-            <a href="{% url 'data_Karyawan' %}" style="text-decoration: none;color:#9ca3af;">
-                  <div class="{% if active_page == 'data_Karyawan' %}dashboard{% else %}karyawan{% endif %}">
-                        <!-- <div class="karyawan"> -->
-                        <div class="photo-1">
-                              <div class="home-parent">
-                                    <i class="fa-solid fa-user-group" style="font-size: 18px;"></i>
-                                    <div class="data-karyawan">Data Karyawan</div>
-                                    <div class="chevron">
-                                    </div>
-                              </div>
-                        </div>
-                  </div>
-            </a>
-            <div class="karyawan" style="cursor: pointer;">
-                  <div class="photo-1">
-                        <div class="home-parent" onclick="master_Karyawan()">
-                              <i class="fa-solid fa-users-gear" style="font-size: 18px;"></i>
-                              <div class="master-Karyawan">Master Karyawan</div>
-                              <img class="chevron-icon" alt="" style="transform: rotate(90deg);margin-left: 25px;"
-                                    src="{% static 'asset_home/Chevron.png' %}">
-                        </div>
-                  </div>
-                  <ul id="submenu" class="submenu" style="margin-block-end: 0px !important;">
-                        <a href="{% url 'penilaian' %}" style="text-decoration: none;color:#9ca3af;" onclick="open_submenu()">
-                              <li class="submenu-item" style="font-size: 13px;">Penilaian</li>
-                        </a>
+    </a>
 
-                        <a href="{% url 'riwayat' %}" style="text-decoration: none;color:#9ca3af;">
-                              <li class="submenu-item" style="font-size: 13px;">Riwayat</li>
-                        </a>
-                  </ul>
-            </div>
-
-            <div class="karyawan" style="cursor: pointer;">
-                  <div class="photo-1">
-                        <div class="home-parent" onclick="kont_skor()">
-                              <i class="fa-solid fa-chart-line" style="font-size: 18px;"></i>
-                              <div class="master-Karyawan">Periode Berjalan</div>
-                              <img class="chevron-icon2" style="transform: rotate(90deg);" alt=""
-                                    src="{% static 'asset_home/Chevron.png' %}">
-                        </div>
-                  </div>
-                  <ul id="submenu2" class="submenu" style="margin-block-end: 0px !important;">
-                        <a href="{% url 'score_Karyawan' %}" style="text-decoration: none;color:#9ca3af;">
-                              <li class="submenu-item" style="font-size: 13px;">Score Karyawan</li>
-                        </a>
-                        <li class="submenu-item" style="font-size: 13px;">MTTR Performance</li>
-                  </ul>
-            </div>
-
+    <!-- Data Karyawan -->
+    <a href="{% url 'data_Karyawan' %}" class="no-underline text-gray-400">
+      <div
+        class="{% if active_page == 'data_Karyawan' %}bg-gray-100{% else %}karyawan{% endif %} flex flex-col items-start justify-start px-8 py-4">
+        <div class="flex items-center gap-6 w-48">
+          <i class="fa-solid fa-user-group text-[18px]"></i>
+          <div class="flex-1 relative font-semibold leading-[150%]">
+            Data Karyawan
+          </div>
+        </div>
       </div>
-      <img class="sidebar-spv-child" alt="" src="{% static 'asset_home/element_bottom.png' %}">
+    </a>
 
-      <img class="logo-bumn-tanpa-background-1-j-icon" alt=""
-            src="{% static 'logo-bumn-tanpa-background-1-jasalogocepat 1.png' %}">
+    <!-- Master Karyawan -->
+    <div
+      class="flex flex-col items-start justify-start px-8 py-4 cursor-pointer">
+      <div class="flex items-center gap-6 w-48" id="toggle-master">
+        <i class="fa-solid fa-users-gear text-[18px]"></i>
+        <div class="relative font-semibold leading-[150%]">Master Karyawan</div>
+        <img
+          class="w-5 h-5 ml-6 transform transition-transform rotate-90"
+          alt=""
+          src="{% static 'asset_home/Chevron.png' %}" />
+      </div>
 
-      <img class="sidebar-spv-item" alt="" src="Vector 2.svg">
+      <ul id="submenu" class="hidden ml-5 mt-2 mb-0">
+        <a href="{% url 'penilaian' %}" class="no-underline text-gray-400">
+          <li class="py-2 text-[13px] cursor-pointer">Penilaian</li>
+        </a>
+        <a href="{% url 'riwayat' %}" class="no-underline text-gray-400">
+          <li class="py-2 text-[13px] cursor-pointer">Riwayat</li>
+        </a>
+      </ul>
+    </div>
 
+    <!-- Periode Berjalan -->
+    <div
+      class="flex flex-col items-start justify-start px-8 py-4 cursor-pointer">
+      <div class="flex items-center gap-6 w-48" id="toggle-periode">
+        <i class="fa-solid fa-chart-line text-[18px]"></i>
+        <div class="relative font-semibold leading-[150%]">
+          Periode Berjalan
+        </div>
+        <img
+          class="w-5 h-5 transform transition-transform rotate-90"
+          alt=""
+          src="{% static 'asset_home/Chevron.png' %}" />
+      </div>
+
+      <ul id="submenu2" class="hidden ml-5 mt-2 mb-0">
+        <a href="{% url 'score_Karyawan' %}" class="no-underline text-gray-400">
+          <li class="py-2 text-[13px] cursor-pointer">Score Karyawan</li>
+        </a>
+        <li class="py-2 text-[13px] cursor-pointer">MTTR Performance</li>
+      </ul>
+    </div>
+  </div>
+
+  <img
+    class="absolute bottom-0 left-0 w-64 h-[172.1px] z-20"
+    alt=""
+    src="{% static 'asset_home/element_bottom.png' %}" />
+  <img
+    class="absolute top-[441px] left-[-45%] w-[140%] h-[30%] object-contain rotate-90 z-30"
+    alt=""
+    src="{% static 'logo-bumn-tanpa-background-1-jasalogocepat 1.png' %}" />
+  <img
+    class="absolute top-[71px] left-1 w-64 max-h-full z-40"
+    alt=""
+    src="{% static 'Vector 2.svg' %}" />
 </div>
+
+<!-- Tombol buka sidebar di mobile -->
+<button
+  id="toggleSidebar"
+  class="fixed top-4 left-4 z-50 p-2 text-black rounded md:hidden">
+  <i id="toggleIcon" class="fa fa-bars"></i>
+</button>
+
+<!-- Overlay untuk menutup sidebar ketika diklik -->
+<div id="overlay" class="fixed inset-0 bg-black opacity-50 z-20 hidden"></div>
