@@ -14,8 +14,11 @@
     <!-- <link rel="stylesheet" href="{% static 'style/score_Karyawan.css' %}" /> -->
 
     <!-- Interface.JS -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
     <script src="{% static 'js/event_interface.js' %}"></script>
     <script src="{% static 'js/sidebar.js' %}"></script>
+    <script src="{% static 'js/home.js' %}"></script>
 
     {% tailwind_css %}
 
@@ -44,11 +47,13 @@
       {% include 'part/navbar.html' %}
 
       <div
-        class="flex h-full flex-col md:ml-[200px] md:w-[calc(100%-200px)] lg:ml-[260px] lg:w-[calc(100%-260px)]">
+        class="h-full min-h-screen overflow-y-auto md:ml-[200px] md:w-[calc(100%-200px)] lg:ml-[260px] lg:w-[calc(100%-260px)]">
         {% block content %} {% endblock %}
       </div>
 
       {% include 'part/sidebar.html' %}
     </div>
+
+    {% block js %} {% endblock %}
   </body>
 </html>

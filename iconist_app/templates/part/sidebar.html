@@ -17,7 +17,7 @@
     <!-- Dashboard -->
     <a href="{% url 'home' %}" class="no-underline text-gray-400">
       <div
-        class="{% if active_page == 'home' %}bg-gray-100{% else %}karyawan{% endif %} flex flex-col items-start justify-start px-8 py-4">
+        class="{% if active_page == 'home' %}bg-gray-100 text-[#0097B2] border-[#0097B2] border-l-8 {% else %}karyawan{% endif %} flex flex-col items-start justify-start px-7 py-4">
         <div class="flex items-center gap-6 w-48">
           <i class="fa-solid fa-house text-[18px]"></i>
           <div class="flex-1 relative font-semibold leading-[150%]">
@@ -30,7 +30,7 @@
     <!-- Data Karyawan -->
     <a href="{% url 'data_Karyawan' %}" class="no-underline text-gray-400">
       <div
-        class="{% if active_page == 'data_Karyawan' %}bg-gray-100{% else %}karyawan{% endif %} flex flex-col items-start justify-start px-8 py-4">
+        class="{% if active_page == 'data_Karyawan' %}bg-gray-100 text-[#0097B2] border-[#0097B2] border-l-8 {% else %}karyawan{% endif %} flex flex-col items-start justify-start px-7 py-4">
         <div class="flex items-center gap-6 w-48">
           <i class="fa-solid fa-user-group text-[18px]"></i>
           <div class="flex-1 relative font-semibold leading-[150%]">
@@ -42,7 +42,7 @@
 
     <!-- Master Karyawan -->
     <div
-      class="flex flex-col items-start justify-start px-8 py-4 cursor-pointer">
+      class="flex flex-col items-start justify-start px-7 py-4 cursor-pointer">
       <div class="flex items-center gap-6 w-48" id="toggle-master">
         <i class="fa-solid fa-users-gear text-[18px]"></i>
         <div class="relative font-semibold leading-[150%]">Master Karyawan</div>
@@ -64,7 +64,7 @@
 
     <!-- Periode Berjalan -->
     <div
-      class="flex flex-col items-start justify-start px-8 py-4 cursor-pointer">
+      class="flex flex-col items-start justify-start px-7 py-4 cursor-pointer">
       <div class="flex items-center gap-6 w-48" id="toggle-periode">
         <i class="fa-solid fa-chart-line text-[18px]"></i>
         <div class="relative font-semibold leading-[150%]">

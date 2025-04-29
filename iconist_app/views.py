@@ -13,7 +13,7 @@ def data_Karyawan(request):
     context = {
         'active_page': 'data_Karyawan',
     }
-    return render(request, "data_Karyawan.html", context)
+    return render(request, "karyawan/index.html", context)
 
 # ======================== MASTER Karyawan START =================================
 def penilaian(request):

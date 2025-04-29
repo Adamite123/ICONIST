@@ -1,10 +1,35 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
-<div class="flex flex-col p-10">
-  <div class="grid grid-cols-1 md:grid-cols-12 gap-3">
+<div class="p-10 flex flex-col gap-5">
+  <div class="grid grid-cols md:grid-cols-12 gap-3">
     <div
-      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 md:col-span-7 gap-4">
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 md:col-span-7 gap-3">
       <div
-        class="rounded-xl bg-white flex flex-col items-start justify-center p-10 md:p-6 gap-8 w-full max-w-xs">
+        class="rounded-xl bg-white flex flex-col items-start justify-center p-10 md:p-6 gap-8 w-full md:max-w-xs">
+        <div class="relative w-24 h-10 flex-shrink-0">
+          <div
+            class="absolute top-0 left-0 w-10 h-10 bg-[#1BC5BD] rounded-lg"></div>
+          <img
+            class="absolute top-2 left-2 w-6 h-6"
+            alt=""
+            src="{% static 'asset_home/graph.png' %}" />
+        </div>
+        <div
+          class="w-full md:w-24 flex flex-col items-start justify-center gap-6">
+          <div class="flex flex-col items-start justify-center gap-2">
+            <div class="text-gray-700 opacity-70 text-center text-sm">
+              Total Tiket
+            </div>
+            <b class="text-2xl">12,5K</b>
+          </div>
+          <div class="flex items-center gap-1 text-xs text-[#4ab58e]">
+            <b>+35%</b>
+            <div class="text-gray-700 opacity-40">Bulan ini</div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="rounded-xl bg-white flex flex-col items-start justify-center p-10 md:p-6 gap-8 w-full md:max-w-xs">
         <div class="relative w-24 h-10 flex-shrink-0">
           <div
             class="absolute top-0 left-0 w-10 h-10 bg-[#1BC5BD] rounded-lg"></div>
@@ -28,7 +53,7 @@
       </div>
 
       <div
-        class="rounded-xl bg-white flex flex-col items-start justify-center p-10 md:p-6 gap-8 w-full max-w-xs">
+        class="rounded-xl bg-white flex flex-col items-start justify-center p-10 md:p-6 gap-8 w-full md:max-w-xs">
         <div class="relative w-24 h-10 flex-shrink-0">
           <div
             class="absolute top-0 left-0 w-10 h-10 bg-[#1BC5BD] rounded-lg"></div>
@@ -52,31 +77,7 @@
       </div>
 
       <div
-        class="rounded-xl bg-white flex flex-col items-start justify-center p-10 md:p-6 gap-8 w-full max-w-xs">
-        <div class="relative w-24 h-10 flex-shrink-0">
-          <div
-            class="absolute top-0 left-0 w-10 h-10 bg-[#1BC5BD] rounded-lg"></div>
-          <img
-            class="absolute top-2 left-2 w-6 h-6"
-            alt=""
-            src="{% static 'asset_home/graph.png' %}" />
-        </div>
-        <div class="w-24 flex flex-col items-start justify-center gap-6">
-          <div class="flex flex-col items-start justify-center gap-2">
-            <div class="text-gray-700 opacity-70 text-center text-sm">
-              Total Tiket
-            </div>
-            <b class="text-2xl">12,5K</b>
-          </div>
-          <div class="flex items-center gap-1 text-xs text-[#4ab58e]">
-            <b>+35%</b>
-            <div class="text-gray-700 opacity-40">Bulan ini</div>
-          </div>
-        </div>
-      </div>
-
-      <div
-        class="rounded-xl bg-white flex flex-col items-start justify-center p-10 md:p-6 gap-8 w-full max-w-xs">
+        class="rounded-xl bg-white flex flex-col items-start justify-center p-10 md:p-6 gap-8 w-full md:max-w-xs">
         <div class="relative w-24 h-10 flex-shrink-0">
           <div
             class="absolute top-0 left-0 w-10 h-10 bg-[#1BC5BD] rounded-lg"></div>
@@ -100,9 +101,142 @@
       </div>
     </div>
 
-    <div class="grid grid-cols-4 col-span-5 bg-white rounded-lg shadow-md p-5">
-      <div>Data Karyawan Teladan</div>
+    <div
+      class="md:col-span-5 bg-white rounded-xl p-5 flex flex-col items-center justify-center gap-3">
+      <div class="w-full flex flex-row items-center justify-between">
+        <div class="font-semibold">Data Karyawan Teladan</div>
+        <div class="font-medium text-gray-400">See all</div>
+      </div>
+      <div
+        class="flex flex-row items-start justify-start gap-6 text-[20px] text-pink-400 flex-wrap md:gap-10">
+        <!-- Item 1 -->
+        <div
+          class="w-[99px] h-[184px] flex flex-col items-center justify-center gap-2 text-yellow-400">
+          <div class="w-full flex flex-row items-center justify-center gap-2">
+            <div class="flex flex-row items-center justify-start">
+              <img
+                class="w-[60px] h-[60px] rounded-full object-cover"
+                src="{% static 'asset_home/p1.png' %}"
+                alt="" />
+            </div>
+          </div>
+          <div
+            class="flex flex-col items-start justify-start gap-5 text-[24px] text-yellow-500">
+            <div class="w-full flex flex-col items-center">
+              <div class="font-medium">4,70</div>
+            </div>
+            <div
+              class="w-full flex flex-col items-center text-gray-900 gap-1 text-center">
+              <div class="font-semibold">Nanda</div>
+              <div class="text-[12px] font-light text-gray-400">VIP</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div
+          class="w-[99px] h-[184px] flex flex-col items-center justify-center gap-2 text-yellow-400">
+          <div class="w-full flex flex-row items-center justify-center gap-2">
+            <div class="flex flex-row items-center justify-start">
+              <img
+                class="w-[60px] h-[60px] rounded-full object-cover"
+                src="{% static 'asset_home/p3.png' %}"
+                alt="" />
+            </div>
+          </div>
+          <div
+            class="flex flex-col items-start justify-start gap-5 text-[24px] text-yellow-500">
+            <div class="w-full flex flex-col items-center">
+              <div class="font-medium">4,67</div>
+            </div>
+            <div
+              class="w-full flex flex-col items-center text-gray-900 gap-1 text-center">
+              <div class="font-semibold">Melli</div>
+              <div class="text-[12px] font-light text-gray-400">P2APST</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div
+          class="w-[99px] h-[184px] flex flex-col items-center justify-center gap-2 text-yellow-400">
+          <div class="w-full flex flex-row items-center justify-center gap-2">
+            <div class="flex flex-row items-center justify-start">
+              <img
+                class="w-[60px] h-[60px] rounded-full object-cover"
+                src="{% static 'asset_home/p2.png' %}"
+                alt="" />
+            </div>
+          </div>
+          <div
+            class="flex flex-col items-start justify-start gap-5 text-[24px] text-yellow-500">
+            <div class="w-full flex flex-col items-center">
+              <div class="font-medium">4,60</div>
+            </div>
+            <div
+              class="w-full flex flex-col items-center text-gray-900 gap-1 text-center">
+              <div class="font-semibold">Khuzen</div>
+              <div class="text-[12px] font-light text-gray-400">MODIV</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-  {% endblock %}
+
+  <div class="grid grid-cols md:grid-cols-2 gap-3">
+    <div class="bg-white rounded-xl p-5 gap-3">
+      <div class="w-full flex flex-row items-center justify-between">
+        <div class="font-semibold">Diagram Skor Data Karyawan</div>
+        <div class="flex flex-col items-center justify-center gap-1">
+          <span class="text-green-400">Bar Kuning : Skor diatas 4</span>
+          <span class="text-red-400">Bar Biru : Bar dibawah 4</span>
+        </div>
+      </div>
+      <div class="mt-3" id="diagram3"></div>
+    </div>
+    <div class="bg-white rounded-xl p-5 gap-3">
+      <div class="font-semibold text-center">Rata -rata Skor By Sistem</div>
+      <div class="mt-3" id="diagram2"></div>
+    </div>
+  </div>
+
+  <div class="grid grid-cols md:grid-cols-2 gap-3">
+    <div class="bg-white rounded-xl p-5 gap-3">
+      <div class="font-semibold">Absen Kehadiran</div>
+      <div class="mt-3" id="diagram1"></div>
+    </div>
+    <div class="bg-white rounded-xl p-5 gap-3">
+      <div class="font-semibold">Data Karyawan Dibawah Rata-rata</div>
+      <div class="mt-3">
+      <table class="table-auto w-full text-center">
+        <thead>
+        <tr>
+          <th class="px-4 py-2">Nama Data Karyawan</th>
+          <th class="px-4 py-2">Aplikasi</th>
+          <th class="px-4 py-2">Skor</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="hover:bg-gray-50">
+          <td class="border-b border-gray-300 px-4 py-2">Sandi Mardiansyah</td>
+          <td class="border-b border-gray-300 px-4 py-2">ACMT</td>
+          <td class="border-b border-gray-300 px-4 py-2">3,25</td>
+        </tr>
+        <tr class="hover:bg-gray-50">
+          <td class="border-b border-gray-300 px-4 py-2">Sandi Mardiansyah</td>
+          <td class="border-b border-gray-300 px-4 py-2">ACMT</td>
+          <td class="border-b border-gray-300 px-4 py-2">3,25</td>
+        </tr>
+        <tr class="hover:bg-gray-50"></tr>
+          <td class="border-b border-gray-300 px-4 py-2">Sandi Mardiansyah</td>
+          <td class="border-b border-gray-300 px-4 py-2">ACMT</td>
+          <td class="border-b border-gray-300 px-4 py-2">3,25</td>
+        </tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+  </div>
 </div>
+{% endblock %}
