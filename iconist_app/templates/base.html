@@ -41,11 +41,12 @@
 
   <body>
     <div class="w-full h-screen bg-[#f7f9fb] relative overflow-hidden">
-      {% include 'part/navbar.html' %} {% block content %} {% endblock %}
+      {% include 'part/navbar.html' %}
 
-      <!-- <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus quibusdam, sequi debitis dolores excepturi ex quaerat illum, expedita iusto reprehenderit quam earum velit, dolorem magni enim ea corrupti sint laudantium.
-        </p> -->
+      <div
+        class="flex h-full flex-col md:ml-[200px] md:w-[calc(100%-200px)] lg:ml-[260px] lg:w-[calc(100%-260px)]">
+        {% block content %} {% endblock %}
+      </div>
 
       {% include 'part/sidebar.html' %}
     </div>
