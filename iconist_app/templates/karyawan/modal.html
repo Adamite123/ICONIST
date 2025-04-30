@@ -1,0 +1,139 @@
+<!-- Modal Konfirmasi Hapus -->
+<div
+  id="deleteModal"
+  class="fixed inset-0 z-50 hidden flex items-center justify-center bg-black bg-opacity-50">
+  <div
+    id="deleteModalContent"
+    class="bg-white rounded-lg shadow-lg w-full max-w-md p-6 text-center">
+    <h2 class="text-xl font-semibold mb-4">Mengapus Data Karyawan</h2>
+    <p class="mb-6 text-gray-700">
+      Apakah kamu yakin menghapus seluruh data dari karyawan ini?
+    </p>
+    <div class="flex justify-center gap-3">
+      <button
+        id="cancelDelete"
+        class="px-4 py-3 rounded-full bg-white hover:bg-gray-300 text-red-600">
+        Batalkan
+      </button>
+      <button
+        id="confirmDelete"
+        class="px-4 py-3 rounded-full bg-[#3A4970] hover:bg-[#2b3a5d] text-white">
+        Ya, Hapus
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Import excel -->
+<div
+  id="importModal"
+  class="fixed inset-0 z-50 hidden flex items-center justify-center bg-black bg-opacity-50">
+  <div
+    id="importModalContent"
+    class="bg-white rounded-lg shadow-lg w-full max-w-md p-6">
+    <a href="#" class="text-[#27A3B8] underline"
+      >DOWNLOAD TEMPLATE UPLOAD EXCEL</a
+    >
+    <h2 class="text-xl font-semibold mb-4">Import Data Karyawan</h2>
+    <form action="/file-upload" class="dropzone mb-3 rounded-lg"></form>
+
+    <div class="">
+      <p class="text-xs">
+        <span class="text-red-600">*</span>format yang diupload adalah .xls .csv
+      </p>
+      <p class="text-xs">
+        <span class="text-red-600">*</span>Total maksimal file yang diupload
+        adalah 1 file
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- modal tambah data -->
+<div
+  id="addModal"
+  class="fixed inset-0 z-50 hidden flex items-center justify-center bg-black bg-opacity-50">
+  <div
+    id="addModalContent"
+    class="bg-white rounded-lg shadow-lg w-full max-w-xl p-6">
+    <h2 class="text-xl font-semibold mb-4">Tambah Data Karyawan</h2>
+    <form action="/add-karyawan" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="mb-4">
+        <label for="name" class="block text-gray-700 mb-2">Nama</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          required />
+      </div>
+      <div class="mb-4">
+        <label for="email" class="block text-gray-700 mb-2">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          required />
+      </div>
+      <div class="mb-4">
+        <label for="vendor" class="block text-gray-700 mb-2">Nama Vendor</label>
+        <select
+          id="vendor"
+          name="vendor"
+          class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          required>
+          <option value="" disabled selected>Pilih Vendor</option>
+          <option value="vendor1">Vendor 1</option>
+          <option value="vendor2">Vendor 2</option>
+          <option value="vendor3">Vendor 3</option>
+        </select>
+      </div>
+      <div class="mb-4">
+        <label for="seksi" class="block text-gray-700 mb-2">Seksi</label>
+        <select
+          id="seksi"
+          name="seksi"
+          class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          required>
+          <option value="" disabled selected>Pilih Seksi</option>
+          <option value="seksi1">Seksi 1</option>
+          <option value="seksi2">Seksi 2</option>
+          <option value="seksi3">Seksi 3</option>
+        </select>
+      </div>
+      <div class="mb-4">
+        <label for="aplikasi" class="block text-gray-700 mb-2">Aplikasi</label>
+        <select
+          id="aplikasi"
+          name="aplikasi"
+          class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          required>
+          <option value="" disabled selected>Pilih Aplikasi</option>
+          <option value="aplikasi1">Aplikasi 1</option>
+          <option value="aplikasi2">Aplikasi 2</option>
+          <option value="aplikasi3">Aplikasi 3</option>
+        </select>
+      </div>
+      <div class="mb-4">
+        <label for="project" class="block text-gray-700 mb-2">Project</label>
+        <input
+          type="text"
+          id="project"
+          name="project"
+          class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          required />
+      </div>
+
+      <!-- button simpan -->
+      <div class="flex justify-end gap-3 mt-4">
+        <button
+          type="submit"
+          id="confirmAdd"
+          class="px-4 py-2 rounded-full bg-[#3A4970] hover:bg-[#2b3a5d] text-white">
+          Simpan
+        </button>
+    </form>
+  </div>
+</div>

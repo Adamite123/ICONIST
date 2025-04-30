@@ -44,12 +44,16 @@
           </div>
         </div>
 
-        <button class="rounded-full bg-[#27A3B8] p-3 text-white w-full">
+        <button
+          class="rounded-full bg-[#27A3B8] p-3 text-white w-full"
+          id="importBtn">
           <span class="mr-1">Import Excel</span>
           <i class="fa-solid fa-upload"></i>
         </button>
 
-        <button class="rounded-full bg-[#3A4970] p-3 text-white w-full">
+        <button
+          class="rounded-full bg-[#3A4970] p-3 text-white w-full"
+          id="addBtn">
           <span class="mr-1">Tambah Data</span>
           <i class="fa-solid fa-circle-plus"></i>
         </button>
@@ -84,9 +88,12 @@
               <td class="p-3">2023-01-01</td>
               <td class="p-3">1 Year</td>
               <td class="p-3">
-                <i class="fa-solid fa-pencil text-[#FFA500] mr-2"></i>
-                <i class="fa-solid fa-eye text-[#27A3B8] mr-2"></i>
-                <i class="fa-solid fa-trash text-[#E44258]"></i>
+                <i
+                  class="fa-solid fa-pencil text-[#FFA500] mr-2 hover:cursor-pointer"></i>
+                <i
+                  class="fa-solid fa-eye text-[#27A3B8] mr-2 hover:cursor-pointer"></i>
+                <i
+                  class="fa-solid fa-trash text-[#E44258] delete-btn hover:cursor-pointer"></i>
               </td>
             </tr>
             <tr>
@@ -99,9 +106,12 @@
               <td class="p-3">2022-06-15</td>
               <td class="p-3">1.5 Years</td>
               <td class="p-3">
-                <i class="fa-solid fa-pencil text-[#FFA500] mr-2"></i>
-                <i class="fa-solid fa-eye text-[#27A3B8] mr-2"></i>
-                <i class="fa-solid fa-trash text-[#E44258]"></i>
+                <i
+                  class="fa-solid fa-pencil text-[#FFA500] mr-2 hover:cursor-pointer"></i>
+                <i
+                  class="fa-solid fa-eye text-[#27A3B8] mr-2 hover:cursor-pointer"></i>
+                <i
+                  class="fa-solid fa-trash text-[#E44258] delete-btn hover:cursor-pointer"></i>
               </td>
             </tr>
           </tbody>
@@ -131,19 +141,99 @@
   </div>
 </div>
 
-{% endblock %} {% block js %}
+{% include 'karyawan/modal.html' %} {% endblock %} {% block js %}
 <script>
-  const filterBtn = document.getElementById("filterBtn");
-  const filterMenu = document.getElementById("filterMenu");
+  document.addEventListener("DOMContentLoaded", function () {
+    const filterBtn = document.getElementById("filterBtn");
+    const filterMenu = document.getElementById("filterMenu");
 
-  filterBtn.addEventListener("click", () => {
-    filterMenu.classList.toggle("hidden");
-  });
+    filterBtn.addEventListener("click", () => {
+      filterMenu.classList.toggle("hidden");
+    });
 
-  // Optional: close menu when click outside
-  window.addEventListener("click", function (e) {
-    if (!filterBtn.contains(e.target) && !filterMenu.contains(e.target)) {
-      filterMenu.classList.add("hidden");
+    // Optional: close menu when click outside
+    window.addEventListener("click", function (e) {
+      if (!filterBtn.contains(e.target) && !filterMenu.contains(e.target)) {
+        filterMenu.classList.add("hidden");
+      }
+    });
+
+    // Delete confirmation modal
+    const deleteBtns = document.querySelectorAll(".delete-btn");
+    const deleteModal = document.getElementById("deleteModal");
+
+    deleteBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        deleteModal.classList.remove("hidden");
+      });
+    });
+
+    const cancelDelete = document.getElementById("cancelDelete");
+    const confirmDelete = document.getElementById("confirmDelete");
+
+    cancelDelete.addEventListener("click", () => {
+      closeModal();
+    });
+
+    confirmDelete.addEventListener("click", () => {
+      closeModal();
+    });
+
+    const modalContent = document.getElementById("deleteModalContent");
+    deleteModal.addEventListener("click", (e) => {
+      if (e.target === deleteModal) {
+        closeModal();
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        closeModal();
+      }
+    });
+
+    const importBtn = document.getElementById("importBtn");
+    const importModal = document.getElementById("importModal");
+    const fileInput = document.getElementById("fileInput");
+
+    importBtn.addEventListener("click", () => {
+      importModal.classList.remove("hidden");
+    });
+
+    importModal.addEventListener("click", (e) => {
+      if (e.target === importModal) {
+        importModal.classList.add("hidden");
+      }
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        importModal.classList.add("hidden");
+      }
+    });
+
+    const addBtn = document.getElementById("addBtn");
+    const addModal = document.getElementById("addModal");
+    const addModalContent = document.getElementById("addModalContent");
+
+    addBtn.addEventListener("click", () => {
+      addModal.classList.remove("hidden");
+    });
+
+    addModal.addEventListener("click", (e) => {
+      if (e.target === addModal) {
+        addModal.classList.add("hidden");
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        addModal.classList.add("hidden");
+      }
+    });
+
+    function closeModal() {
+      deleteModal.classList.add("hidden");
+      selectedRow = null;
     }
   });
 </script>
