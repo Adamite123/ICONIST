@@ -28,9 +28,9 @@
     </a>
 
     <!-- Data Karyawan -->
-    <a href="{% url 'data_Karyawan' %}" class="no-underline text-gray-400">
+    <a href="{% url 'employee_list' %}" class="no-underline text-gray-400">
       <div
-        class="{% if active_page == 'data_Karyawan' %}bg-gray-100 text-[#0097B2] border-[#0097B2] border-l-8 {% else %}karyawan{% endif %} flex flex-col items-start justify-start px-7 py-4">
+        class="{% if active_page == 'employee_list' %}bg-gray-100 text-[#0097B2] border-[#0097B2] border-l-8 {% else %}karyawan{% endif %} flex flex-col items-start justify-start px-7 py-4">
         <div class="flex items-center gap-6 w-48">
           <i class="fa-solid fa-user-group text-[18px]"></i>
           <div class="flex-1 relative font-semibold leading-[150%]">

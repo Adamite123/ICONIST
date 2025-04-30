@@ -3,20 +3,23 @@
 <div class="p-10">
   <div class="bg-white">
     <div class="grid grid-cols-1 xl:grid-cols-5 p-7 gap-3 items-center">
-      <div class="xl:col-span-3 relative">
-        <form method="get">
-          <input
-            type="text"
-            name="q"
-            value="{{ request.GET.q }}"
-            class="rounded-md w-full"
-            placeholder="Cari berdasarkan nama" />
-        </form>
+      <div class="xl:col-span-4 relative">
+        <input
+          type="text"
+          class="rounded-md w-full"
+          placeholder="Cari berdasarkan nama" />
         <i
           class="fa-solid fa-magnifying-glass absolute right-3 top-1/2 transform -translate-y-1/2"></i>
       </div>
 
-      <div class="grid grid-cols-1 xl:grid-cols-3 gap-3 xl:col-span-2">
+      <div class="grid grid-cols-1 xl:grid-cols-2 gap-3 xl:col-span-1">
+        <button
+          class="rounded-full bg-[#27A3B8] p-3 text-white w-full"
+          id="exportBtn">
+          <span class="mr-1">Export Excel</span>
+          <i class="fa-solid fa-file-excel"></i>
+        </button>
+
         <!-- Wrapper button + menu -->
         <div class="relative inline-block text-left">
           <!-- Filter Button -->
@@ -47,20 +50,6 @@
             </div>
           </div>
         </div>
-
-        <button
-          class="rounded-full bg-[#27A3B8] p-3 text-white w-full"
-          id="importBtn">
-          <span class="mr-1">Import Excel</span>
-          <i class="fa-solid fa-upload"></i>
-        </button>
-
-        <button
-          class="rounded-full bg-[#3A4970] p-3 text-white w-full"
-          id="addBtn">
-          <span class="mr-1">Tambah Data</span>
-          <i class="fa-solid fa-circle-plus"></i>
-        </button>
       </div>
     </div>
 
@@ -73,35 +62,50 @@
               <th class="p-3">No</th>
               <th class="p-3">NIP</th>
               <th class="p-3">Nama</th>
-              <th class="p-3">Email</th>
+              <th class="p-3">Jabatan</th>
+              <th class="p-3">Sub Bidang</th>
               <th class="p-3">Aplikasi</th>
               <th class="p-3">Mitra</th>
-              <th class="p-3">Tgl Masuk</th>
-              <th class="p-3">Masa Kerja</th>
+              <th class="p-3">Periode</th>
+              <th class="p-3">Score</th>
               <th class="p-3">Action</th>
             </tr>
           </thead>
           <tbody>
-            {% for employee in employees %}
             <tr>
-              <td class="p-3">{{ employees.start_index|add:forloop.counter0 }}</td>
-              <td class="p-3">{{ employee.nip }}</td>
-              <td class="p-3">{{ employee.name }}</td>
-              <td class="p-3">{{ employee.email }}</td>
-              <td class="p-3">ss</td>
-              <td class="p-3">ss</td>
-              <td class="p-3">ss</td>
-              <td class="p-3">ss</td>
+              <td class="p-3">1</td>
+              <td class="p-3">123456</td>
+              <td class="p-3">John Doe</td>
+              <td class="p-3">john.doe@example.com</td>
+              <td class="p-3">App A</td>
+              <td class="p-3">Mitra X</td>
+              <td class="p-3">2023-01-01</td>
+              <td class="p-3">1 Year</td>
+              <td class="p-3">4.0</td>
               <td class="p-3">
                 <i
                   class="fa-solid fa-pencil text-[#FFA500] mr-2 hover:cursor-pointer"></i>
                 <i
                   class="fa-solid fa-eye text-[#27A3B8] mr-2 hover:cursor-pointer"></i>
-                <i
-                  class="fa-solid fa-trash text-[#E44258] delete-btn hover:cursor-pointer"></i>
               </td>
             </tr>
-            {% endfor %}
+            <tr>
+              <td class="p-3">2</td>
+              <td class="p-3">654321</td>
+              <td class="p-3">Jane Smith</td>
+              <td class="p-3">jane.smith@example.com</td>
+              <td class="p-3">App B</td>
+              <td class="p-3">Mitra Y</td>
+              <td class="p-3">2022-06-15</td>
+              <td class="p-3">1.5 Years</td>
+              <td class="p-3">3.5</td>
+              <td class="p-3">
+                <i
+                  class="fa-solid fa-pencil text-[#FFA500] mr-2 hover:cursor-pointer"></i>
+                <i
+                  class="fa-solid fa-eye text-[#27A3B8] mr-2 hover:cursor-pointer"></i>
+              </td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -109,40 +113,23 @@
 
     <!-- pagination -->
     <div class="flex justify-end items-center px-7 py-3">
-    <div class="flex space-x-2">
-        {% if employees.has_previous %}
-            <a href="?page={{ employees.previous_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}" class="px-2 py-1 hover:bg-[#3a4970] hover:text-white">
-                <i class="fa-solid fa-chevron-left"></i>
-            </a>
-        {% else %}
-            <span class="px-2 py-1 text-gray-400 cursor-not-allowed">
-                <i class="fa-solid fa-chevron-left"></i>
-            </span>
-        {% endif %}
-
-        {% for num in employees.paginator.page_range %}
-            {% if num == employees.number %}
-                <span class="bg-[#3A4970] text-white px-2 py-1 rounded-md">{{ num }}</span>
-            {% elif num >= employees.number|add:"-2" and num <= employees.number|add:"2" %}
-                <a href="?page={{ num }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}" class="px-2 py-1 hover:bg-[#3a4970] hover:text-white">{{ num }}</a>
-            {% elif num == 1 or num == employees.paginator.num_pages %}
-                <a href="?page={{ num }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}" class="px-2 py-1 hover:bg-[#3a4970] hover:text-white">{{ num }}</a>
-            {% elif num == employees.number|add:"-3" or num == employees.number|add:"3" %}
-                <span class="px-2 py-1">...</span>
-            {% endif %}
-        {% endfor %}
-
-        {% if employees.has_next %}
-            <a href="?page={{ employees.next_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}" class="px-2 py-1 hover:bg-[#3a4970] hover:text-white">
-                <i class="fa-solid fa-chevron-right"></i>
-            </a>
-        {% else %}
-            <span class="px-2 py-1 text-gray-400 cursor-not-allowed">
-                <i class="fa-solid fa-chevron-right"></i>
-            </span>
-        {% endif %}
+      <div class="flex space-x-2">
+        <button class="px-2 py-1 hover:bg-[#3a4970] hover:text-white">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button class="bg-[#3A4970] text-white px-2 py-1 rounded-md">1</button>
+        <button class="px-2 py-1 hover:bg-[#3a4970] hover:text-white">2</button>
+        <button class="px-2 py-1 hover:bg-[#3a4970] hover:text-white">3</button>
+        <button class="px-2 py-1 hover:bg-[#3a4970] hover:text-white">4</button>
+        <span class="px-2 py-1">....</span>
+        <button class="px-2 py-1 hover:bg-[#3a4970] hover:text-white">
+          20
+        </button>
+        <button class="px-2 py-1 hover:bg-[#3a4970] hover:text-white">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
     </div>
-</div>
   </div>
 </div>
 
