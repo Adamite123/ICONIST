@@ -1,16 +1,10 @@
 {% load static %}
-<div
-  id="sidebar"
+<div id="sidebar"
   class="fixed top-0 left-0 flex flex-col items-center justify-start w-64 h-screen overflow-y-auto bg-white gap-4 text-gray-400 font-['Red_Hat_Display'] transition-all duration-300 md:translate-x-0 -translate-x-full z-30">
   <div class="relative w-[168.6px] h-[51px] bg-white">
-    <img
-      class="absolute top-0 left-14 w-[113.6px] h-[57px] object-cover"
-      alt=""
+    <img class="absolute top-0 left-14 w-[113.6px] h-[57px] object-cover" alt=""
       src="{% static 'asset_home/ICONIST.png' %}" />
-    <img
-      class="absolute top-0 left-0 w-16 h-[57px] object-cover"
-      alt=""
-      src="{% static 'asset_home/logo.png' %}" />
+    <img class="absolute top-0 left-0 w-16 h-[57px] object-cover" alt="" src="{% static 'asset_home/logo.png' %}" />
   </div>
 
   <div class="flex flex-col items-end justify-start w-full text-sm">
@@ -41,14 +35,11 @@
     </a>
 
     <!-- Master Karyawan -->
-    <div
-      class="flex flex-col items-start justify-start px-7 py-4 cursor-pointer">
+    <div class="flex flex-col items-start justify-start px-7 py-4 cursor-pointer">
       <div class="flex items-center gap-6 w-48" id="toggle-master">
         <i class="fa-solid fa-users-gear text-[18px]"></i>
         <div class="relative font-semibold leading-[150%]">Master Karyawan</div>
-        <img
-          class="w-5 h-5 ml-6 transform transition-transform rotate-90"
-          alt=""
+        <img class="w-5 h-5 ml-6 transform transition-transform rotate-90" alt=""
           src="{% static 'asset_home/Chevron.png' %}" />
       </div>
 
@@ -62,17 +53,36 @@
       </ul>
     </div>
 
+    <!-- Master Karyawan -->
+    <div class="flex flex-col items-start justify-start px-7 py-4 cursor-pointer">
+      <div class="flex items-center gap-6 w-48" id="toggle-konfigurasi">
+        <i class="fa-solid fa-chart-bar text-[18px]"></i>
+        <div class="relative font-semibold leading-[150%]">Master Konfigurasi</div>
+        <img class="w-5 h-5 ml-6 transform transition-transform rotate-90" alt=""
+          src="{% static 'asset_home/Chevron.png' %}" />
+      </div>
+
+      <ul id="submenu3" class="hidden ml-5 mt-2 mb-0">
+        <a href="{% url 'buat_soal' %}" class="no-underline text-gray-400">
+          <li class="py-2 text-[13px] cursor-pointer">Buat Soal</li>
+        </a>
+        <a href="#" class="no-underline text-gray-400">
+          <li class="py-2 text-[13px] cursor-pointer">Assign Penilaian</li>
+        </a>
+        <a href="#" class="no-underline text-gray-400">
+          <li class="py-2 text-[13px] cursor-pointer">Riwayat</li>
+        </a>
+      </ul>
+    </div>
+
     <!-- Periode Berjalan -->
-    <div
-      class="flex flex-col items-start justify-start px-7 py-4 cursor-pointer">
+    <div class="flex flex-col items-start justify-start px-7 py-4 cursor-pointer">
       <div class="flex items-center gap-6 w-48" id="toggle-periode">
         <i class="fa-solid fa-chart-line text-[18px]"></i>
         <div class="relative font-semibold leading-[150%]">
           Periode Berjalan
         </div>
-        <img
-          class="w-5 h-5 transform transition-transform rotate-90"
-          alt=""
+        <img class="w-5 h-5 transform transition-transform rotate-90" alt=""
           src="{% static 'asset_home/Chevron.png' %}" />
       </div>
 
@@ -85,24 +95,15 @@
     </div>
   </div>
 
-  <img
-    class="absolute bottom-0 left-0 w-64 h-[172.1px] z-20"
-    alt=""
+  <img class="absolute bottom-0 left-0 w-64 h-[172.1px] z-20" alt=""
     src="{% static 'asset_home/element_bottom.png' %}" />
-  <img
-    class="absolute top-[441px] left-[-45%] w-[140%] h-[30%] object-contain rotate-90 z-30"
-    alt=""
+  <img class="absolute top-[441px] left-[-45%] w-[140%] h-[30%] object-contain rotate-90 z-30" alt=""
     src="{% static 'logo-bumn-tanpa-background-1-jasalogocepat 1.png' %}" />
-  <img
-    class="absolute top-[71px] left-1 w-64 max-h-full z-40"
-    alt=""
-    src="{% static 'Vector 2.svg' %}" />
+  <img class="absolute top-[71px] left-1 w-64 max-h-full z-40" alt="" src="{% static 'Vector 2.svg' %}" />
 </div>
 
 <!-- Tombol buka sidebar di mobile -->
-<button
-  id="toggleSidebar"
-  class="fixed top-4 left-4 z-50 p-2 text-black rounded md:hidden">
+<button id="toggleSidebar" class="fixed top-4 left-4 z-50 p-2 text-black rounded md:hidden">
   <i id="toggleIcon" class="fa fa-bars"></i>
 </button>
 

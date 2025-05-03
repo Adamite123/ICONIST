@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="p-10 bg-white">
+    <div class="flex justify-between items-center">
+        <h1 class="text-2xl font-bold text-gray-900">Buat Soal</h1>
+        <a href="#"
+            class="bg-gray-400 text-white px-6 py-2 rounded-xl text-sm font-semibold hover:bg-gray-500 transition">
+            Selesai
+        </a>
+    </div>
+
+    <div class="grid grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div class="col-span-1">
+            <label class="block text-gray-800 font-semibold mb-1">Nama Soal</label>
+            <input type="text" placeholder="Masukkan Nama Soal"
+                class="w-full border border-gray-300 rounded px-3 py-2 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400" />
+        </div>
+
+        <div class="col-span-1">
+            <label class="block text-gray-800 font-semibold mb-1">Tahun Pembuatan Soal</label>
+            <input type="text" placeholder="Masukkan Tahun Pembuatan Soal"
+                class="w-full border border-gray-300 rounded px-3 py-2 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400" />
+        </div>
+
+        <div class="col-span-2">
+            <label class="block text-gray-800 font-semibold mb-1">Referensi Soal 1</label>
+            <select
+                class="w-full border border-gray-300 rounded px-3 py-2 bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-400">
+                <option>Pilih Referensi</option>
+                <option>Referensi A</option>
+                <option>Referensi B</option>
+            </select>
+        </div>
+
+        <div class="col-span-1 flex items-end justify-end">
+            <button type="submit" class="bg-gray-600 hover:bg-gray-700 text-white px-6 py-2 rounded">
+                Load
+            </button>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

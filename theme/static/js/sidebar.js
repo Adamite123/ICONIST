@@ -4,9 +4,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const overlay = document.getElementById("overlay");
   const toggleIcon = document.getElementById("toggleIcon");
   const toggleMaster = document.getElementById("toggle-master");
+  const toogleKonfigurasi = document.getElementById("toggle-konfigurasi");
   const togglePeriode = document.getElementById("toggle-periode");
   const submenu = document.getElementById("submenu");
   const submenu2 = document.getElementById("submenu2");
+  const submenu3 = document.getElementById("submenu3");
 
   // Sidebar show/hide for mobile
   toggleSidebar.addEventListener("click", function () {
@@ -30,6 +32,14 @@ document.addEventListener("DOMContentLoaded", function () {
     submenu.classList.toggle("transition-all");
     submenu.classList.toggle("duration-500");
     toggleChevron(toggleMaster);
+  });
+
+  // Konfigurasi submenu toggle with smooth transition
+  toogleKonfigurasi.addEventListener("click", function () {
+    submenu3.classList.toggle("hidden");
+    submenu3.classList.toggle("transition-all");
+    submenu3.classList.toggle("duration-500");
+    toggleChevron(toogleKonfigurasi);
   });
 
   // Periode Berjalan submenu toggle with smooth transition
