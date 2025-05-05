@@ -16,6 +16,12 @@ def employee_list(request):
     employees = paginator.get_page(page_number)
     return render(request, 'karyawan/index.html', {'employees': employees, 'query': query,'active_page': 'employee_list'})
 
+def employee_history(request):
+    return render(request, 'karyawan/master/history.html', {'active_page': 'employee_history'})
+
+def employee_history_detail(request):
+    return render(request, 'karyawan/master/history_detail.html', {'active_page': 'employee_history_detail'})
+
 # def employee_create(request):
 #     form = EmployeeForm(request.POST or None)
 #     if form.is_valid():

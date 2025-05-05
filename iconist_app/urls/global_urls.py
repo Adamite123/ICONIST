@@ -11,7 +11,7 @@ urlpatterns = [
 
     # === MASTER Karyawan START ===
     path('penilaian/', views.penilaian, name='penilaian'),
-    path('riwayat/', views.riwayat, name='riwayat'),
+    # path('riwayat/', views.riwayat, name='riwayat'),
     path('detail_riwayat_Karyawan/', views.detail_riwayat_Karyawan, name='detail_riwayat_Karyawan'),
     # === MASTER Karyawan END ===
 
