@@ -22,6 +22,9 @@ def employee_history(request):
 def employee_history_detail(request):
     return render(request, 'karyawan/master/history_detail.html', {'active_page': 'employee_history_detail'})
 
+def evaluation(request):
+    return render(request, 'karyawan/master/evaluation.html', {'active_page': 'evaluation'})
+
 # def employee_create(request):
 #     form = EmployeeForm(request.POST or None)
 #     if form.is_valid():
