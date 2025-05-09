@@ -87,10 +87,12 @@
       </div>
 
       <ul id="submenu2" class="hidden ml-5 mt-2 mb-0">
-        <a href="{% url 'score_Karyawan' %}" class="no-underline text-gray-400">
+        <a href="{% url 'employee_score' %}" class="no-underline text-gray-400">
           <li class="py-2 text-[13px] cursor-pointer">Score Karyawan</li>
         </a>
-        <li class="py-2 text-[13px] cursor-pointer">MTTR Performance</li>
+        <a href="{% url 'mttr_performance' %}" class="no-underline text-gray-400">
+          <li class="py-2 text-[13px] cursor-pointer">MTTR Performance</li>
+        </a>
       </ul>
     </div>
   </div>

@@ -1,0 +1,143 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<div class="p-10">
+  <div class="flex flex-col w-full gap-5">
+    <div class="grid grid-cols-2 justify-between items-center">
+      <span class="font-bold text-base">Top 10 Karyawan Tertinggi</span>
+      <span class="font-bold text-base text-end">Periode 1 (2025)</span>
+    </div>
+
+    {% for data in "123" %}
+    <div
+      class="bg-white flex flex-col lg:flex-row gap-5 justify-between items-center px-8 py-11">
+      <div
+        class="border h-[130px] items-center text-center justify-center p-3 rounded-lg border-black">
+        1
+      </div>
+
+      <div class="flex flex-col gap-4 lg:ml-9 min-w-[300px]">
+        <div class="flex flex-row gap-4">
+          <div>
+            <img
+              src="{% static 'asset_home/p1.png' %}"
+              alt="image"
+              class="rounded-full w-[75px]" />
+          </div>
+          <div>
+            <p class="font-normal text-sm text-[#A0AEC0]">Data Karyawan</p>
+            <h3 class="font-medium text-lg">Ananda Agta Ramadan</h3>
+            <span class="font-normal text-sm text-[#27A3B8]"
+              >Pelayanan - LPC</span
+            >
+          </div>
+        </div>
+        <div class="flex flex-row gap-4">
+          <div class="w-[75px]">
+            <p class="font-normal text-sm text-[#A0AEC0]">Aplikasi</p>
+            <p class="font-normal text-sm">VIP</p>
+          </div>
+          <div>
+            <p class="font-normal text-sm text-[#A0AEC0]">Email</p>
+            <p class="font-normal text-sm">ananda.agta@iconpln.co.id</p>
+          </div>
+        </div>
+      </div>
+
+      <table
+        class="table-auto border border-black w-full text-center border-collapse max-w-[300px]">
+        <tr class="border border-black">
+          <td
+            colspan="3"
+            class="p-1 font-semibold text-xl bg-[#ECECEC] border border-black">
+            Skor Kinerja
+          </td>
+        </tr>
+        <tr class="border border-black">
+          <td
+            class="p-1 bg-[#ECECEC] font-semibold text-sm border border-black">
+            SKOR
+          </td>
+          <td
+            class="p-1 bg-[#ECECEC] font-semibold text-sm border border-black">
+            TOTAL SKOR
+          </td>
+          <td
+            class="p-1 bg-[#ECECEC] font-semibold text-sm border border-black">
+            TINGKAT
+          </td>
+        </tr>
+        <tr class="border border-black">
+          <td
+            class="p-1 bg-[#FFC000] font-semibold text-sm border border-black">
+            1.18
+          </td>
+          <td rowspan="3" class="font-semibold text-sm border border-black">
+            3.77
+          </td>
+          <td rowspan="3" class="font-semibold text-sm border border-black">
+            FAIR
+          </td>
+        </tr>
+        <tr class="border border-black">
+          <td
+            class="p-1 bg-[#FFC000] font-semibold text-sm border border-black">
+            1.15
+          </td>
+        </tr>
+        <tr class="border border-black">
+          <td
+            class="p-1 bg-[#FFC000] font-semibold text-sm border border-black">
+            1.44
+          </td>
+        </tr>
+      </table>
+
+      <div class="flex flex-col min-w-[350px]">
+        <div class="grid grid-cols-2 justify-between mt-5">
+          <span class="text-start font-medium text-base">Total Feedback</span>
+          <span class="text-end font-normal text-xs">5 Orang</span>
+        </div>
+        <div class="grid grid-cols-5 justify-between mt-3 items-center">
+          <div
+            class="bg-white rounded-lg border border-gray-300 mt-3 p-3 col-span-4">
+            <div class="flex flex-col">
+              <h2 class="font-medium text-sm">Ali Nurfuad</h2>
+              <p class="text-[#AEAEAE] text-xs font-normal">
+                ali.nurfuad@iconpln.co.id
+              </p>
+              <hr class="mt-4" />
+            </div>
+            <div class="grid grid-cols-2 justify-between">
+              <p>Skor</p>
+              <p class="text-[#02AF64]">4,32 (GOOD)</p>
+            </div>
+          </div>
+          <div
+            class="text-xs text-[#8B8B8B] text-center items-center justify-center">
+            <p>5+</p>
+            <p>See more</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+
+    <div class="flex flex-row items-center justify-center gap-3">
+      <div class="px-4 py-3 bg-[#0097B2] text-white">
+        1
+      </div>
+      <div class="px-4 py-3 bg-white text-black">
+        2
+      </div>
+      <div class="px-4 py-3 bg-white text-black">
+        3
+      </div>
+      <div class="px-4 py-3 bg-white text-black">
+        4
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}
