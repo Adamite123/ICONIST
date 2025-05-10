@@ -7,7 +7,7 @@
     <img class="absolute top-0 left-0 w-16 h-[57px] object-cover" alt="" src="{% static 'asset_home/logo.png' %}" />
   </div>
 
-  <div class="flex flex-col items-end justify-start w-full text-sm">
+  <div class="flex flex-col items-end justify-start w-full text-sm z-50">
     <!-- Dashboard -->
     <a href="{% url 'home' %}" class="no-underline text-gray-400">
       <div
@@ -16,6 +16,42 @@
           <i class="fa-solid fa-house text-[18px]"></i>
           <div class="flex-1 relative font-semibold leading-[150%]">
             Dashboard
+          </div>
+        </div>
+      </div>
+    </a>
+
+    <a href="{% url 'dashboard_sdm' %}" class="no-underline text-gray-400">
+      <div
+        class="{% if active_page == 'dashboard_sdm' %}bg-gray-100 text-[#0097B2] border-[#0097B2] border-l-8 {% else %}karyawan{% endif %} flex flex-col items-start justify-start px-7 py-4">
+        <div class="flex items-center gap-6 w-48">
+          <i class="fa-solid fa-house text-[18px]"></i>
+          <div class="flex-1 relative font-semibold leading-[150%]">
+            Dashboard SDM
+          </div>
+        </div>
+      </div>
+    </a>
+
+    <a href="{% url 'dashboard_officer' %}" class="no-underline text-gray-400">
+      <div
+        class="{% if active_page == 'dashboard_officer' %}bg-gray-100 text-[#0097B2] border-[#0097B2] border-l-8 {% else %}karyawan{% endif %} flex flex-col items-start justify-start px-7 py-4">
+        <div class="flex items-center gap-6 w-48">
+          <i class="fa-solid fa-house text-[18px]"></i>
+          <div class="flex-1 relative font-semibold leading-[150%]">
+            Dashboard Officer
+          </div>
+        </div>
+      </div>
+    </a>
+
+    <a href="{% url 'feedback' %}" class="no-underline text-gray-400">
+      <div
+        class="{% if active_page == 'feedback' %}bg-gray-100 text-[#0097B2] border-[#0097B2] border-l-8 {% else %}karyawan{% endif %} flex flex-col items-start justify-start px-7 py-4">
+        <div class="flex items-center gap-6 w-48">
+          <i class="fa-solid fa-user-group text-[18px]"></i>
+          <div class="flex-1 relative font-semibold leading-[150%]">
+            Feedback Officer
           </div>
         </div>
       </div>

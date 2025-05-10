@@ -4,6 +4,9 @@ from ..views import global_views as views
 
 urlpatterns = [
     path('', views.home, name='home'),
+    path('dash-sdm', views.dashboard_sdm, name='dashboard_sdm'),
+    path('dash-officer', views.dashboard_officer, name='dashboard_officer'),
+    path('feedback', views.feedback, name='feedback'),
     path('admin/', admin.site.urls),
     path('login/', views.login, name='login'),
     path('', views.home, name='home'),
