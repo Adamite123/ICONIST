@@ -1,0 +1,326 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Score Karyawan{% endblock %}
+
+{% block content %}
+
+<div style="display: flex ; flex-direction: column; flex-wrap: wrap; gap: 20px;">
+    <div class="content" style="color:black;margin-top: 20px;width: 100%;">
+
+        <!-- Two texts added on left and right -->
+        <div class="flex justify-between" style="width: 85%; margin: 0 auto; padding-top: 20px;">
+            <div class="text-left" style="font-size: 16px; font-weight: bold;">
+                Top 10 Karyawan Saat ini
+            </div>
+            <div class="text-right" style="font-size: 16px; font-weight: bold;">
+                Periode 1(2025)
+            </div>
+        </div>
+
+        <div class="list_profile" style="width: 85%; margin: 0 auto; border-radius: 10px; padding-top: 20px; margin-top: 20px; padding: 20px; display: flex; justify-content: center; gap: 5%; background-color: white; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);">
+            <div class="border-2 border-black rounded-lg p-2 font-bold flex items-center justify-center" style="width: auto;">
+                1
+            </div>
+            <div class="p-2 border border-[#e8e8e8] rounded-xl shadow-sm" style="width: auto;">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td><img src="/static/asset_home/p1.png" alt="" style="border-radius: 50%;width: 70px;"></td>
+                            <td style="padding: 10px; padding-left: 20px;">
+                                <div style="font-size: 10px; padding: 5px; color: #A0AEC0;">Data Karyawan</div>
+                                <div style="padding: 5px; font-weight: bold; font-size: 15px;">Ananda Agta Ramadan</div>
+                                <div style="padding-left: 5px; padding-bottom: 8px; color: #27A3B8; font-size: 13px; font-family: emoji;">
+                                    Pelayanan LPC
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="font-size: 12px; color: #A0AEC0; padding-bottom: 5px;">Aplikasi</div>
+                                <div style="font-family: sans-serif;">VIP</div>
+                            </td>
+                            <td>
+                                <div style="font-size: 12px; color: #A0AEC0; padding-bottom: 5px;">Email</div>
+                                <div style="font-family: sans-serif;">ananda.agta@iconpln.co.id</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div style="width: auto;">
+                <table id="score" class="text-sm table-auto w-full border-collapse">
+                    <thead>
+                        <tr>
+                            <td colspan="3" class="text-center font-bold py-2 border border-black">SCORE KINERJA</td>
+                        </tr>
+                        <tr class="bg-gray-100">
+                            <td class="px-4 py-2 border border-black font-bold">Score</td>
+                            <td class="px-4 py-2 border border-black font-bold">Total Score</td>
+                            <td class="px-4 py-2 border border-black font-bold">Tingkat</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-t border-b border-black">
+                            <td class="bg-yellow-400 px-4 py-2 border border-black">1.55</td>
+                            <td rowspan="3" class="px-4 py-2 border border-black">4.77</td>
+                            <td rowspan="3" class="px-4 py-2 border border-black">Good</td>
+                        </tr>
+                        <tr class="border-b border-black">
+                            <td class="bg-yellow-400 px-4 py-2 border border-black">1.69</td>
+                        </tr>
+                        <tr class="border-b border-black">
+                            <td class="bg-yellow-400 px-4 py-2 border border-black">1.48</td>
+                        </tr>
+                    </tbody>
+                </table>                                     
+            </div>
+            <div style="width: auto;">
+                <div class="flex justify-between">
+                    <table style="width: 500px; border-radius: 10px; overflow: hidden; font-family: Arial, sans-serif;">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div style="font-weight: bold; font-size: 18px; font-family: sans-serif; padding-bottom: 10px;">
+                                        Total Feedback
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="text-align: center; padding-bottom: 10px; font-family: monospace;">5 Orang</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 15px 20px; text-align: left; border: 1px solid #DADADA; border-radius: 10px;">
+                                    <div style="font-size: 15px; font-weight: bold; color: #333; margin-bottom: 5px;">
+                                        Ali Nurfuad
+                                    </div>
+                                    <div style="color: #555; font-size: 14px; margin-bottom: 12px; color:#AEAEAE; padding-bottom: 15px;">
+                                        ali.nurfuad@iconpln.co.id
+                                    </div>
+                                    <div style="border-top: 2px solid red; margin: 10px 0; padding-bottom: 15px;"></div>
+                                    <div style="display: flex; justify-content: space-between; font-size: 16px; color: #222;">
+                                        <div style="font-weight: bold;">Score</div>
+                                        <div style="color: #02AF64; font-weight: 600;">4.5 (GOOD)</div>
+                                    </div>
+                                </td>
+                                <td style="text-align: center; color: #8B8B8B; text-decoration: underline;">
+                                    <div>5+ <br> See More</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="list_profile" style="width: 85%; margin: 0 auto; border-radius: 10px; padding-top: 20px; margin-top: 20px; padding: 20px; display: flex; justify-content: center; gap: 5%; background-color: white; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);">
+            <div class="border-2 border-black rounded-lg p-2 font-bold flex items-center justify-center" style="width: auto;">
+                2
+            </div>
+            <div class="p-2 border border-[#e8e8e8] rounded-xl shadow-sm" style="width: auto;">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td><img src="/static/asset_home/p2.png" alt="" style="border-radius: 50%;width: 70px;"></td>
+                            <td style="padding: 10px; padding-left: 20px;">
+                                <div style="font-size: 10px; padding: 5px; color: #A0AEC0;">Data Karyawan</div>
+                                <div style="padding: 5px; font-weight: bold; font-size: 15px;">Khuzen</div>
+                                <div style="padding-left: 5px; padding-bottom: 8px; color: #27A3B8; font-size: 13px; font-family: emoji;">
+                                    Pelayanan LPC
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="font-size: 12px; color: #A0AEC0; padding-bottom: 5px;">Aplikasi</div>
+                                <div style="font-family: sans-serif;">VIP</div>
+                            </td>
+                            <td>
+                                <div style="font-size: 12px; color: #A0AEC0; padding-bottom: 5px;">Email</div>
+                                <div style="font-family: sans-serif;">khuzen@iconpln.co.id</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div style="width: auto;">
+                <table id="score" class="text-sm table-auto w-full border-collapse">
+                    <thead>
+                        <tr>
+                            <td colspan="3" class="text-center font-bold py-2 border border-black">SCORE KINERJA</td>
+                        </tr>
+                        <tr class="bg-gray-100">
+                            <td class="px-4 py-2 border border-black font-bold">Score</td>
+                            <td class="px-4 py-2 border border-black font-bold">Total Score</td>
+                            <td class="px-4 py-2 border border-black font-bold">Tingkat</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-t border-b border-black">
+                            <td class="bg-yellow-400 px-4 py-2 border border-black">1.55</td>
+                            <td rowspan="3" class="px-4 py-2 border border-black">4.77</td>
+                            <td rowspan="3" class="px-4 py-2 border border-black">Good</td>
+                        </tr>
+                        <tr class="border-b border-black">
+                            <td class="bg-yellow-400 px-4 py-2 border border-black">1.69</td>
+                        </tr>
+                        <tr class="border-b border-black">
+                            <td class="bg-yellow-400 px-4 py-2 border border-black">1.48</td>
+                        </tr>
+                    </tbody>
+                </table>                                     
+            </div>
+            <div style="width: auto;">
+                <div class="flex justify-between">
+                    <table style="width: 500px; border-radius: 10px; overflow: hidden; font-family: Arial, sans-serif;">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div style="font-weight: bold; font-size: 18px; font-family: sans-serif; padding-bottom: 10px;">
+                                        Total Feedback
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="text-align: center; padding-bottom: 10px; font-family: monospace;">5 Orang</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 15px 20px; text-align: left; border: 1px solid #DADADA; border-radius: 10px;">
+                                    <div style="font-size: 15px; font-weight: bold; color: #333; margin-bottom: 5px;">
+                                        Ali Nurfuad
+                                    </div>
+                                    <div style="color: #555; font-size: 14px; margin-bottom: 12px; color:#AEAEAE; padding-bottom: 15px;">
+                                        ali.nurfuad@iconpln.co.id
+                                    </div>
+                                    <div style="border-top: 2px solid red; margin: 10px 0; padding-bottom: 15px;"></div>
+                                    <div style="display: flex; justify-content: space-between; font-size: 16px; color: #222;">
+                                        <div style="font-weight: bold;">Score</div>
+                                        <div style="color: #02AF64; font-weight: 600;">4.5 (GOOD)</div>
+                                    </div>
+                                </td>
+                                <td style="text-align: center; color: #8B8B8B; text-decoration: underline;">
+                                    <div>5+ <br> See More</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="list_profile" style="width: 85%; margin: 0 auto; border-radius: 10px; padding-top: 20px; margin-top: 20px; padding: 20px; display: flex; justify-content: center; gap: 5%; background-color: white; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);">
+            <div class="border-2 border-black rounded-lg p-2 font-bold flex items-center justify-center" style="width: auto;">
+                3
+            </div>
+            <div class="p-2 border border-[#e8e8e8] rounded-xl shadow-sm" style="width: auto;">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td><img src="/static/asset_home/p3.png" alt="" style="border-radius: 50%;width: 70px;"></td>
+                            <td style="padding: 10px; padding-left: 20px;">
+                                <div style="font-size: 10px; padding: 5px; color: #A0AEC0;">Data Karyawan</div>
+                                <div style="padding: 5px; font-weight: bold; font-size: 15px;">Melly</div>
+                                <div style="padding-left: 5px; padding-bottom: 8px; color: #27A3B8; font-size: 13px; font-family: emoji;">
+                                    Pelayanan LPC
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="font-size: 12px; color: #A0AEC0; padding-bottom: 5px;">Aplikasi</div>
+                                <div style="font-family: sans-serif;">p2apst</div>
+                            </td>
+                            <td>
+                                <div style="font-size: 12px; color: #A0AEC0; padding-bottom: 5px;">Email</div>
+                                <div style="font-family: sans-serif;">melly@iconpln.co.id</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div style="width: auto;">
+                <table id="score" class="text-sm table-auto w-full border-collapse">
+                    <thead>
+                        <tr>
+                            <td colspan="3" class="text-center font-bold py-2 border border-black">SCORE KINERJA</td>
+                        </tr>
+                        <tr class="bg-gray-100">
+                            <td class="px-4 py-2 border border-black font-bold">Score</td>
+                            <td class="px-4 py-2 border border-black font-bold">Total Score</td>
+                            <td class="px-4 py-2 border border-black font-bold">Tingkat</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-t border-b border-black">
+                            <td class="bg-yellow-400 px-4 py-2 border border-black">1.55</td>
+                            <td rowspan="3" class="px-4 py-2 border border-black">4.77</td>
+                            <td rowspan="3" class="px-4 py-2 border border-black">Good</td>
+                        </tr>
+                        <tr class="border-b border-black">
+                            <td class="bg-yellow-400 px-4 py-2 border border-black">1.69</td>
+                        </tr>
+                        <tr class="border-b border-black">
+                            <td class="bg-yellow-400 px-4 py-2 border border-black">1.48</td>
+                        </tr>
+                    </tbody>
+                </table>                                     
+            </div>
+            <div style="width: auto;">
+                <div class="flex justify-between">
+                    <table style="width: 500px; border-radius: 10px; overflow: hidden; font-family: Arial, sans-serif;">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div style="font-weight: bold; font-size: 18px; font-family: sans-serif; padding-bottom: 10px;">
+                                        Total Feedback
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="text-align: center; padding-bottom: 10px; font-family: monospace;">5 Orang</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 15px 20px; text-align: left; border: 1px solid #DADADA; border-radius: 10px;">
+                                    <div style="font-size: 15px; font-weight: bold; color: #333; margin-bottom: 5px;">
+                                        Ali Nurfuad
+                                    </div>
+                                    <div style="color: #555; font-size: 14px; margin-bottom: 12px; color:#AEAEAE; padding-bottom: 15px;">
+                                        ali.nurfuad@iconpln.co.id
+                                    </div>
+                                    <div style="border-top: 2px solid red; margin: 10px 0; padding-bottom: 15px;"></div>
+                                    <div style="display: flex; justify-content: space-between; font-size: 16px; color: #222;">
+                                        <div style="font-weight: bold;">Score</div>
+                                        <div style="color: #02AF64; font-weight: 600;">4.5 (GOOD)</div>
+                                    </div>
+                                </td>
+                                <td style="text-align: center; color: #8B8B8B; text-decoration: underline;">
+                                    <div>5+ <br> See More</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="flex justify-center space-x-2 py-2" style="margin-top:20px">
+    <div class="bg-[#0097B2] text-white px-3 py-1 rounded cursor-pointer hover:bg-[#0097B2] border border-[#0097B2] text-sm">
+        1
+    </div>
+    <div class="bg-[#FFFFFF] text-black px-3 py-1 rounded cursor-pointer hover:bg-gray-300 border border-gray-300 text-sm">
+        2
+    </div>
+    <div class="bg-[#FFFFFF] text-black px-3 py-1 rounded cursor-pointer hover:bg-gray-300 border border-gray-300 text-sm">
+        3
+    </div>
+    <div class="bg-[#FFFFFF] text-black px-3 py-1 rounded cursor-pointer hover:bg-gray-300 border border-gray-300 text-sm">
+        4
+    </div>
+</div>
+
+
+{% endblock %}
