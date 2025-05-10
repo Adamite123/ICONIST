@@ -9,6 +9,30 @@ def home(request):
     }
     return render(request, "home2.html", context)
 
+def dashboard_sdm(request):
+    dummy_data = [
+        {"sub_bidang": "PLN PBO Pelayanan PLN", "seksi": "OALPC", "status": "12/44"},
+        {"sub_bidang": "PLN PBO Pelayanan PLN", "seksi": "OALPC", "status": "12/44"},
+        {"sub_bidang": "PLN PBO Pelayanan PLN", "seksi": "OALPC", "status": "12/44"},
+    ]
+    context = {
+        'active_page': 'dashboard_sdm',
+        'data': dummy_data,
+    }
+    return render(request, "dashboard/sdm.html", context)
+
+def dashboard_officer(request):
+    context = {
+        'active_page': 'dashboard_officer',
+    }
+    return render(request, "dashboard/officer.html", context)
+    
+def feedback(request):
+    context = {
+        'active_page': 'feedback',
+    }
+    return render(request, "feedback/index.html", context)
+
 def data_Karyawan(request):
     context = {
         'active_page': 'data_Karyawan',
