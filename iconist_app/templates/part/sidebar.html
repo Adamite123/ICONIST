@@ -11,7 +11,7 @@
     <!-- Dashboard -->
     <a href="{% url 'home' %}" class="no-underline text-gray-400">
       <div
-        class="{% if active_page == 'home' %}bg-gray-100 text-[#0097B2] border-[#0097B2] border-l-8 {% else %}karyawan{% endif %} flex flex-col items-start justify-start px-7 py-4">
+        class="menu_no_drop_down {% if active_page == 'home' %}bg-gray-100 text-[#0097B2] border-[#0097B2] border-l-8 {% else %}karyawan{% endif %} flex flex-col items-start justify-start px-7 py-4">
         <div class="flex items-center gap-6 w-48">
           <i class="fa-solid fa-house text-[18px]"></i>
           <div class="flex-1 relative font-semibold leading-[150%]">
@@ -23,7 +23,7 @@
 
     <a href="{% url 'dashboard_sdm' %}" class="no-underline text-gray-400">
       <div
-        class="{% if active_page == 'dashboard_sdm' %}bg-gray-100 text-[#0097B2] border-[#0097B2] border-l-8 {% else %}karyawan{% endif %} flex flex-col items-start justify-start px-7 py-4">
+        class="menu_no_drop_down {% if active_page == 'dashboard_sdm' %}bg-gray-100 text-[#0097B2] border-[#0097B2] border-l-8 {% else %}karyawan{% endif %} flex flex-col items-start justify-start px-7 py-4">
         <div class="flex items-center gap-6 w-48">
           <i class="fa-solid fa-house text-[18px]"></i>
           <div class="flex-1 relative font-semibold leading-[150%]">
@@ -35,7 +35,7 @@
 
     <a href="{% url 'dashboard_officer' %}" class="no-underline text-gray-400">
       <div
-        class="{% if active_page == 'dashboard_officer' %}bg-gray-100 text-[#0097B2] border-[#0097B2] border-l-8 {% else %}karyawan{% endif %} flex flex-col items-start justify-start px-7 py-4">
+        class="menu_no_drop_down {% if active_page == 'dashboard_officer' %}bg-gray-100 text-[#0097B2] border-[#0097B2] border-l-8 {% else %}karyawan{% endif %} flex flex-col items-start justify-start px-7 py-4">
         <div class="flex items-center gap-6 w-48">
           <i class="fa-solid fa-house text-[18px]"></i>
           <div class="flex-1 relative font-semibold leading-[150%]">
@@ -47,7 +47,7 @@
 
     <a href="{% url 'feedback' %}" class="no-underline text-gray-400">
       <div
-        class="{% if active_page == 'feedback' %}bg-gray-100 text-[#0097B2] border-[#0097B2] border-l-8 {% else %}karyawan{% endif %} flex flex-col items-start justify-start px-7 py-4">
+        class="menu_no_drop_down {% if active_page == 'feedback' %}bg-gray-100 text-[#0097B2] border-[#0097B2] border-l-8 {% else %}karyawan{% endif %} flex flex-col items-start justify-start px-7 py-4">
         <div class="flex items-center gap-6 w-48">
           <i class="fa-solid fa-user-group text-[18px]"></i>
           <div class="flex-1 relative font-semibold leading-[150%]">
@@ -60,7 +60,7 @@
     <!-- Data Karyawan -->
     <a href="{% url 'employee_list' %}" class="no-underline text-gray-400">
       <div
-        class="{% if active_page == 'employee_list' %}bg-gray-100 text-[#0097B2] border-[#0097B2] border-l-8 {% else %}karyawan{% endif %} flex flex-col items-start justify-start px-7 py-4">
+        class="menu_no_drop_down {% if active_page == 'employee_list' %}bg-gray-100 text-[#0097B2] border-[#0097B2] border-l-8 {% else %}karyawan{% endif %} flex flex-col items-start justify-start px-7 py-4">
         <div class="flex items-center gap-6 w-48">
           <i class="fa-solid fa-user-group text-[18px]"></i>
           <div class="flex-1 relative font-semibold leading-[150%]">
@@ -70,84 +70,72 @@
       </div>
     </a>
 
+    <!-- Master Karyawan -->
     <div class="dropdown" onclick="setActive(this)">
-    <div class="flex flex-col items-start justify-start px-7 py-4 cursor-pointer">
+      <div class="flex flex-col items-start justify-start px-7 py-4 cursor-pointer">
         <div class="flex items-center gap-6 w-48" id="toggle-master">
             <i class="fa-solid fa-users-gear text-[18px]"></i>
-            <div class="relative font-semibold leading-[150%]" id="master-karyawan">Master Karyawan</div>
+            <div class="relative font-semibold leading-[150%]">Master Karyawan</div>
             <img class="w-5 h-5 ml-6 transform transition-transform rotate-90" alt=""
                 src="{% static 'asset_home/Chevron.png' %}" />
         </div>
-    
-        <!-- Submenu -->
-        <ul id="submenu" class="ml-12 mt-2 mb-0 pl-4 max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+
+        <ul id="submenu" class="hidden ml-12 mt-2 mb-0">
             <a href="{% url 'employee_evaluation' %}" class="no-underline text-gray-400">
                 <li class="py-2 text-[13px] cursor-pointer">Penilaian</li>
             </a>
             <a href="{% url 'employee_history' %}" class="no-underline text-gray-400">
                 <li class="py-2 text-[13px] cursor-pointer">Riwayat</li>
-            </a>
+            </a>  
         </ul>
-    </div>
-  </div>
-  
-  <script>
-      // Function to set the active class on menu item
-      function setActive(item) {
-          // Remove the 'active' class from all items
-          const items = document.querySelectorAll('#dropdown');
-          items.forEach(function(el) {
-              el.classList.remove('bg-gray-100', 'text-[#0097B2]', 'border-[#0097B2]', 'border-l-8');
-          });
-  
-          // Add the 'active' class to the clicked item
-          item.classList.add('bg-gray-100', 'text-[#0097B2]', 'border-[#0097B2]', 'border-l-8');
-      }
-  </script>
-
-    
-
-    <!-- Master Karyawan -->
-    <div class="flex flex-col items-start justify-start px-7 py-4 cursor-pointer">
-      <div class="flex items-center gap-6 w-48" id="toggle-konfigurasi">
-        <i class="fa-solid fa-chart-bar text-[18px]"></i>
-        <div class="relative font-semibold leading-[150%]">Master Konfigurasi</div>
-        <img class="w-5 h-5 ml-6 transform transition-transform rotate-90" alt=""
-          src="{% static 'asset_home/Chevron.png' %}" />
       </div>
+    </div>
 
-      <ul id="submenu3" class="hidden ml-5 mt-2 mb-0">
-        <a href="{% url 'create_question' %}" class="no-underline text-gray-400">
-          <li class="py-2 text-[13px] cursor-pointer">Buat Soal</li>
-        </a>
-        <a href="{% url 'assign_assessment' %}" class="no-underline text-gray-400">
-          <li class="py-2 text-[13px] cursor-pointer">Assign Penilaian</li>
-        </a>
-        <a href="{% url 'configuration_history' %}" class="no-underline text-gray-400">
-          <li class="py-2 text-[13px] cursor-pointer">Riwayat</li>
-        </a>
-      </ul>
+    <!-- Master Konfigurasi -->
+    <div class="dropdown" onclick="setActive(this)">
+      <div class="flex flex-col items-start justify-start px-7 py-4 cursor-pointer">
+        <div class="flex items-center gap-6 w-48" id="toggle-konfigurasi">
+          <i class="fa-solid fa-chart-bar text-[18px]"></i>
+          <div class="relative font-semibold leading-[150%]">Master Konfigurasi</div>
+          <img class="w-5 h-5 ml-6 transform transition-transform rotate-90" alt=""
+            src="{% static 'asset_home/Chevron.png' %}" />
+        </div>
+
+        <ul id="submenu3" class="hidden ml-12 mt-2 mb-0">
+          <a href="{% url 'create_question' %}" class="no-underline text-gray-400">
+            <li class="py-2 text-[13px] cursor-pointer">Buat Soal</li>
+          </a>
+          <a href="{% url 'assign_assessment' %}" class="no-underline text-gray-400">
+            <li class="py-2 text-[13px] cursor-pointer">Assign Penilaian</li>
+          </a>
+          <a href="{% url 'configuration_history' %}" class="no-underline text-gray-400">
+            <li class="py-2 text-[13px] cursor-pointer">Riwayat</li>
+          </a>
+        </ul>
+      </div>
     </div>
 
     <!-- Periode Berjalan -->
-    <div class="flex flex-col items-start justify-start px-7 py-4 cursor-pointer">
-      <div class="flex items-center gap-6 w-48" id="toggle-periode">
-        <i class="fa-solid fa-chart-line text-[18px]"></i>
-        <div class="relative font-semibold leading-[150%]">
-          Periode Berjalan
+    <div class="dropdown" onclick="setActive(this)">
+      <div class="flex flex-col items-start justify-start px-7 py-4 cursor-pointer">
+        <div class="flex items-center gap-6 w-48" id="toggle-periode">
+          <i class="fa-solid fa-chart-line text-[18px]"></i>
+          <div class="relative font-semibold leading-[150%]">
+            Periode Berjalan
+          </div>
+          <img class="w-5 h-5 transform transition-transform rotate-90" alt=""
+            src="{% static 'asset_home/Chevron.png' %}" />
         </div>
-        <img class="w-5 h-5 transform transition-transform rotate-90" alt=""
-          src="{% static 'asset_home/Chevron.png' %}" />
-      </div>
 
-      <ul id="submenu2" class="hidden ml-5 mt-2 mb-0">
-        <a href="{% url 'employee_score' %}" class="no-underline text-gray-400">
-          <li class="py-2 text-[13px] cursor-pointer">Score Karyawan</li>
-        </a>
-        <a href="{% url 'mttr_performance' %}" class="no-underline text-gray-400">
-          <li class="py-2 text-[13px] cursor-pointer">MTTR Performance</li>
-        </a>
-      </ul>
+        <ul id="submenu2" class="hidden ml-5 mt-2 mb-0">
+          <a href="{% url 'employee_score' %}" class="no-underline text-gray-400">
+            <li class="py-2 text-[13px] cursor-pointer">Score Karyawan</li>
+          </a>
+          <a href="{% url 'mttr_performance' %}" class="no-underline text-gray-400">
+            <li class="py-2 text-[13px] cursor-pointer">MTTR Performance</li>
+          </a>
+        </ul>
+      </div>
     </div>
   </div>
 
@@ -165,3 +153,43 @@
 
 <!-- Overlay untuk menutup sidebar ketika diklik -->
 <div id="overlay" class="fixed inset-0 bg-black opacity-50 z-20 hidden"></div>
+
+<!-- onclick menu drop down -->
+<script>
+  // Function to set the active class on menu item and remove active class from all non-dropdown menus
+  function setActive(item) {
+      // Toggle the visibility of the submenu
+      // console.log(item);
+      // const submenu = item.querySelector('#submenu');
+      const submenu = item.querySelector('[id^="submenu"]');
+      const isVisible = submenu.style.maxHeight;
+
+      if (isVisible) {
+          submenu.style.maxHeight = null; // Hide submenu
+      } else {
+          submenu.style.maxHeight = submenu.scrollHeight + "px"; // Show submenu
+      }
+
+      // Remove the active style from all non-dropdown menus
+      const allDropdowns = document.querySelectorAll('.dropdown');
+      const nonDropdownMenus = document.querySelectorAll('.menu_no_drop_down');
+      
+      // Hapus Aktif Non Dropdown Menu 
+      nonDropdownMenus.forEach(function(el) {
+          el.classList.remove('bg-gray-100', 'text-[#0097B2]', 'border-[#0097B2]', 'border-l-8');
+      });
+
+      // Hapus Aktif Dropdown Menu 
+      allDropdowns.forEach(function(dropdown) {
+          const dropdownSubmenu = dropdown.querySelector('[id^="submenu"]');
+          if (dropdown !== item) {
+              dropdownSubmenu.classList.add('hidden'); // Hide all other submenus
+              dropdownSubmenu.style.maxHeight = null; // Reset the max-height for other submenus
+          }
+          dropdown.classList.remove('bg-gray-100', 'text-[#0097B2]', 'border-[#0097B2]', 'border-l-8'); // Remove active class from all dropdowns
+      });
+
+      // Set active class for the clicked dropdown item
+      item.classList.add('bg-gray-100', 'text-[#0097B2]', 'border-[#0097B2]', 'border-l-8');
+  }
+</script>
