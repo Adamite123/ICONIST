@@ -29,6 +29,10 @@ def set_bank_soal(request):
 def penilaian(request):
     return render(request, 'karyawan/master/penilaian.html', {'active_page': 'penilaian'})
 
+def penilaian_detail(request):
+    return render(request, 'karyawan/master/penilaian_detail.html', {'active_page': 'penilaian_detail'})
+
+
 # def employee_create(request):
 #     form = EmployeeForm(request.POST or None)
 #     if form.is_valid():
