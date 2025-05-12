@@ -1,0 +1,264 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<div class="p-10">
+  <div class="bg-white">
+    <div class="grid grid-cols-1 xl:grid-cols-5 p-7 gap-3 items-center">
+      <div class="xl:col-span-4 relative">
+        <input
+          type="text"
+          class="rounded-md w-full"
+          placeholder="Cari berdasarkan nama" />
+        <i
+          class="fa-solid fa-magnifying-glass absolute right-3 top-1/2 transform -translate-y-1/2"></i>
+      </div>
+
+      <div class="grid grid-cols-1 xl:grid-cols-2 gap-3 xl:col-span-1">
+        <button
+          class="rounded-full bg-[#27A3B8] p-3 text-white w-full"
+          id="exportBtn">
+          <span class="mr-1">Export Excel</span>
+          <i class="fa-solid fa-file-excel"></i>
+        </button>
+
+        <!-- Wrapper button + menu -->
+        <div class="relative inline-block text-left">
+          <!-- Filter Button -->
+          <button
+            id="filterBtn"
+            class="rounded-full bg-[#3A4970] p-3 text-white w-full">
+            <span class="mr-1">Filter</span>
+            <i class="fa-solid fa-arrow-up-z-a"></i>
+          </button>
+
+          <!-- Dropdown menu -->
+          <div
+            id="filterMenu"
+            class="hidden absolute z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+            <div class="py-1">
+              <label
+                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                <input type="checkbox" class="mr-2" /> App A
+              </label>
+              <label
+                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                <input type="checkbox" class="mr-2" /> App B
+              </label>
+              <label
+                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                <input type="checkbox" class="mr-2" /> Mitra X
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="px-7 pb-7">
+      <div class="overflow-x-auto">
+        <table
+          class="min-w-[800px] table-auto w-full text-center border border-gray-300 rounded-t-xl">
+          <thead class="bg-[#F9FBFC]">
+            <tr>
+              <th class="p-3">No</th>
+              <th class="p-3">NIP</th>
+              <th class="p-3">Nama</th>
+              <th class="p-3">Sub Bidang</th>
+              <th class="p-3">Seksi</th>
+              <th class="p-3">Jumlah Penilaian Rekan</th>
+              <th class="p-3">Status</th>
+              <th class="p-3">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr>
+              <td class="p-3">1</td>
+              <td class="p-3">123456</td>
+              <td class="p-3">John Doe</td>
+              <td class="p-3">PBO</td>
+              <td class="p-3">OALPC</td>
+              <td class="p-3">0/5</td>
+              <td class="p-3">
+                <button type="button" class="rounded-xl bg-[#FF5454] p-1 text-white w-[12rem]" id="btn-load" disabled>Belum Dinilai</button>
+              </td>
+              <td class="p-3">
+                <i
+                  class="fa-solid fa-pencil text-[#019fff] mr-2 hover:cursor-pointer"></i>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="p-3">2</td>
+              <td class="p-3">654321</td>
+              <td class="p-3">Jane Smith</td>
+              <td class="p-3">PBO</td>
+              <td class="p-3">OALPC</td>
+              <td class="p-3">1/5</td>
+              <td class="p-3">
+                <button type="button" class="rounded-xl bg-[#eac500] p-1 text-white w-[12rem]" id="btn-load" disabled>Dinilai SPV</button>
+              </td>
+              <td class="p-3">
+                <i
+                  class="fa-solid fa-pencil text-[#019fff] mr-2 hover:cursor-pointer"></i>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="p-3">3</td>
+              <td class="p-3">654321</td>
+              <td class="p-3">Joni Swombing</td>
+              <td class="p-3">PBO</td>
+              <td class="p-3">OALPC</td>
+              <td class="p-3">5/5</td>
+              <td class="p-3">
+                <button type="button" class="rounded-xl bg-[#00E60F] p-1 text-white w-[12rem]" id="btn-load" disabled>Dinilai SPV & Team</button>
+
+
+              </td>
+              <td class="p-3">
+                <i
+                  class="fa-solid fa-pencil text-[#019fff] mr-2 hover:cursor-pointer"></i>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="p-3">4</td>
+              <td class="p-3">654321</td>
+              <td class="p-3">Bima Adi Nugraha</td>
+              <td class="p-3">PBO</td>
+              <td class="p-3">OALPC</td>
+              <td class="p-3">5/5</td>
+              <td class="p-3">
+                <button type="button" class="rounded-xl bg-[#6B36FF] p-1 text-white w-[12rem]" id="btn-load" disabled>Dinilai SPV</button>
+              </td>
+              <td class="p-3">
+                <i
+                  class="fa-solid fa-pencil text-[#019fff] mr-2 hover:cursor-pointer"></i>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- pagination -->
+    <div class="flex justify-end items-center px-7 py-3">
+      <div class="flex space-x-2">
+        <button class="px-2 py-1 hover:bg-[#3a4970] hover:text-white">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button class="bg-[#3A4970] text-white px-2 py-1 rounded-md">1</button>
+        <button class="px-2 py-1 hover:bg-[#3a4970] hover:text-white">2</button>
+        <button class="px-2 py-1 hover:bg-[#3a4970] hover:text-white">3</button>
+        <button class="px-2 py-1 hover:bg-[#3a4970] hover:text-white">4</button>
+        <span class="px-2 py-1">....</span>
+        <button class="px-2 py-1 hover:bg-[#3a4970] hover:text-white">
+          20
+        </button>
+        <button class="px-2 py-1 hover:bg-[#3a4970] hover:text-white">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% include 'karyawan/modal.html' %} {% endblock %} {% block js %}
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const filterBtn = document.getElementById("filterBtn");
+    const filterMenu = document.getElementById("filterMenu");
+
+    filterBtn.addEventListener("click", () => {
+      filterMenu.classList.toggle("hidden");
+    });
+
+    // Optional: close menu when click outside
+    window.addEventListener("click", function (e) {
+      if (!filterBtn.contains(e.target) && !filterMenu.contains(e.target)) {
+        filterMenu.classList.add("hidden");
+      }
+    });
+
+    // Delete confirmation modal
+    const deleteBtns = document.querySelectorAll(".delete-btn");
+    const deleteModal = document.getElementById("deleteModal");
+
+    deleteBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        deleteModal.classList.remove("hidden");
+      });
+    });
+
+    const cancelDelete = document.getElementById("cancelDelete");
+    const confirmDelete = document.getElementById("confirmDelete");
+
+    cancelDelete.addEventListener("click", () => {
+      closeModal();
+    });
+
+    confirmDelete.addEventListener("click", () => {
+      closeModal();
+    });
+
+    const modalContent = document.getElementById("deleteModalContent");
+    deleteModal.addEventListener("click", (e) => {
+      if (e.target === deleteModal) {
+        closeModal();
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        closeModal();
+      }
+    });
+
+    const importBtn = document.getElementById("importBtn");
+    const importModal = document.getElementById("importModal");
+    const fileInput = document.getElementById("fileInput");
+
+    importBtn.addEventListener("click", () => {
+      importModal.classList.remove("hidden");
+    });
+
+    importModal.addEventListener("click", (e) => {
+      if (e.target === importModal) {
+        importModal.classList.add("hidden");
+      }
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        importModal.classList.add("hidden");
+      }
+    });
+
+    const addBtn = document.getElementById("addBtn");
+    const addModal = document.getElementById("addModal");
+    const addModalContent = document.getElementById("addModalContent");
+
+    addBtn.addEventListener("click", () => {
+      addModal.classList.remove("hidden");
+    });
+
+    addModal.addEventListener("click", (e) => {
+      if (e.target === addModal) {
+        addModal.classList.add("hidden");
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        addModal.classList.add("hidden");
+      }
+    });
+
+    function closeModal() {
+      deleteModal.classList.add("hidden");
+      selectedRow = null;
+    }
+  });
+</script>
+
+{% endblock %}

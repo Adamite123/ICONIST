@@ -6,9 +6,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const toggleMaster = document.getElementById("toggle-master");
   const toogleKonfigurasi = document.getElementById("toggle-konfigurasi");
   const togglePeriode = document.getElementById("toggle-periode");
-  const submenu = document.getElementsById("submenu");
+  const submenu = document.getElementById("submenu");
   const submenu2 = document.getElementById("submenu2");
   const submenu3 = document.getElementById("submenu3");
+
+  console.log("Sidebar script loaded");
 
   // Sidebar show/hide for mobile
   toggleSidebar.addEventListener("click", function () {

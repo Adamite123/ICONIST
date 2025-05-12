@@ -1,0 +1,320 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block content %}
+
+<div style="padding: 10px;">
+<div class="p-10 bg-white shadow-md rounded-lg">
+  <div class="flex flex-col gap-3 w-full">
+
+    <!-- Bank Soal Option -->
+    <div>
+      <h2 class="font-bold text-base">
+        Periode Penilaian pada Tanggal 3 - 7 Februari 2025, Silahkan melakukan Penilaian Sebelum Tanggal Jatuh Tempo!
+      </h2>
+      <form action="#" class="mt-3 mb-10">
+        <label for="evaluation_date" class="mr-3">Bank Soal</label>
+        <select name="evaluation_bank" id="evaluation_bank" class="rounded-md border border-gray-300 w-60 px-2 py-1 text-sm">
+          <option value="1">SOAL KOPINTI 2024 VER 1.1</option>
+          <option value="2">SOAL KOPINTI 2024 VER 1.2</option>
+          <option value="3">SOAL KOPINTI 2024 VER 1.3</option>
+        </select>
+        <button type="button" class="rounded-xl bg-[#3A4970] p-1 text-white mt-5 w-32 ml-5" id="btn-load">Load</button>
+      </form>
+    </div>
+
+    <div class="hidden" id="p1">
+      <!-- A. KOMPETENSI INTI -->
+      <div class="mt-10">
+        <h1 class="font-bold text-xl">A. KOMPETENSI INTI <span class="float-right">40%</span></h1>
+
+        <!-- Integritas -->
+        <div class="grid grid-cols-4 gap-4 mt-6">
+          <div class="col-span-2 space-y-2">
+            <p class="text-sm font-bold">Bobot Soal 20%</p>
+            <div class="text-sm leading-relaxed">
+              <span class="mr-2">1.</span> Berkomitmen mematuhi kode etik yang berlaku di tempat kerja/perusahaan
+            </div>
+          </div>
+
+          <div class="col-span-1 space-y-2">
+            <label for="evaluation_source1" class="text-sm font-bold">Pilih Sumber Penilaian</label>
+            <select name="evaluation_source1" id="evaluation_source1" class="rounded-md border border-gray-300 w-full px-2 py-1 text-sm">
+              <option value="">ICONAPPS</option>
+              <option value="">ITSM</option>
+              <option value="">Team & SPV Survey</option>
+              <option value="">Manual by spv</option>
+            </select>
+          </div>
+
+          <div class="col-span-1 space-y-2">
+            <label for="jabatan1" class="text-sm font-bold">Pilih Jabatan</label>
+            <select name="jabatan1" id="jabatan1" class="rounded-md border border-gray-300 w-full px-2 py-1 text-sm">
+              <option value="">Technical Support</option>
+              <option value="">Data Recon</option>
+              <option value="">QA</option>
+              <option value="">Technical Writer</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Soal 2 -->
+        <div class="grid grid-cols-4 gap-4 mt-6">
+          <div class="col-span-2 space-y-2">
+            <p class="text-sm font-bold">Bobot Soal 20%</p>
+            <div class="text-sm leading-relaxed">
+              <span class="mr-2">2.</span> Memiliki karakter jujur dan dapat dipercaya/amanah dalam menyelesaikan pekerjaan
+            </div>
+          </div>
+
+          <div class="col-span-1 space-y-2">
+            <label for="evaluation_source2" class="text-sm font-bold">Pilih Sumber Penilaian</label>
+            <select name="evaluation_source2" id="evaluation_source2" class="rounded-md border border-gray-300 w-full px-2 py-1 text-sm">
+              <option value="">ICONAPPS</option>
+              <option value="">ITSM</option>
+              <option value="">Sumber 3</option>
+              <option value="">Manual by spv</option>
+            </select>
+          </div>
+
+          <div class="col-span-1 space-y-2">
+            <label for="jabatan2" class="text-sm font-bold">Pilih Jabatan</label>
+            <select name="jabatan2" id="jabatan2" class="rounded-md border border-gray-300 w-full px-2 py-1 text-sm">
+              <option value="">Technical Support</option>
+              <option value="">Data Recon</option>
+              <option value="">QA</option>
+              <option value="">Technical Writer</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Soal 3 -->
+        <div class="grid grid-cols-4 gap-4 mt-6">
+          <div class="col-span-2 space-y-2">
+            <p class="text-sm font-bold">Bobot Soal 20%</p>
+            <div class="text-sm leading-relaxed">
+              <span class="mr-2">3.</span> Mampu mempertanggungjawabkan pekerjaan yang dilakukan
+            </div>
+          </div>
+
+          <div class="col-span-1 space-y-2">
+            <label for="evaluation_source3" class="text-sm font-bold">Pilih Sumber Penilaian</label>
+            <select name="evaluation_source3" id="evaluation_source3" class="rounded-md border border-gray-300 w-full px-2 py-1 text-sm">
+              <option value="">ICONAPPS</option>
+              <option value="">ITSM</option>
+              <option value="">Sumber 3</option>
+              <option value="">Manual by spv</option>
+            </select>
+          </div>
+
+          <div class="col-span-1 space-y-2">
+            <label for="jabatan3" class="text-sm font-bold">Pilih Jabatan</label>
+            <select name="jabatan3" id="jabatan3" class="rounded-md border border-gray-300 w-full px-2 py-1 text-sm">
+              <option value="">Technical Support</option>
+              <option value="">Data Recon</option>
+              <option value="">QA</option>
+              <option value="">Technical Writer</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kompetensi Teknis & Hasil Kerja -->
+
+      <!-- B. KOMPETENSI TEKNIS & HASIL KERJA -->
+      <div class="mt-10">
+        <h1 class="font-bold text-xl">B. KOMPETENSI TEKNIS & HASIL KERJA<span class="float-right">30%</span></h1>
+        
+        <!-- Operasional -->
+        <div class="grid grid-cols-4 gap-4 mt-6">
+          <div class="col-span-2 space-y-2">
+            <p class="text-sm font-bold">Bobot Soal 40%</p>
+            <div class="text-sm leading-relaxed">
+              <span class="mr-2">1.</span> Memahami Proses Bisnis pekerjaan - pengelolaan support user
+            </div>
+          </div>
+
+          <div class="col-span-1 space-y-2">
+            <label for="evaluation_source4" class="text-sm font-bold">Pilih Sumber Penilaian</label>
+            <select name="evaluation_source4" id="evaluation_source4" class="rounded-md border border-gray-300 w-full px-2 py-1 text-sm">
+              <option value="">ICONAPPS</option>
+              <option value="">ITSM</option>
+              <option value="">Sumber 3</option>
+              <option value="">Manual by spv</option>
+            </select>
+          </div>
+
+          <div class="col-span-1 space-y-2">
+            <label for="jabatan4" class="text-sm font-bold">Pilih Jabatan</label>
+            <select name="jabatan4" id="jabatan4" class="rounded-md border border-gray-300 w-full px-2 py-1 text-sm">
+              <option value="">Technical Support</option>
+              <option value="">Data Recon</option>
+              <option value="">QA</option>
+              <option value="">Technical Writer</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Efisiensi, Efektivitas & Produktifitas Kerja -->
+        <div class="grid grid-cols-4 gap-4 mt-6">
+          <div class="col-span-2 space-y-2">
+            <p class="text-sm font-bold">Bobot Soal 30%</p>
+            <div class="text-sm leading-relaxed">
+              <span class="mr-2">2.</span> Mampu mengelola waktu dengan baik (time efficiency) ketika menyelesaikan pekerjaan
+            </div>
+          </div>
+
+          <div class="col-span-1 space-y-2">
+            <label for="evaluation_source5" class="text-sm font-bold">Pilih Sumber Penilaian</label>
+            <select name="evaluation_source5" id="evaluation_source5" class="rounded-md border border-gray-300 w-full px-2 py-1 text-sm">
+              <option value="">ICONAPPS</option>
+              <option value="">ITSM</option>
+              <option value="">Sumber 3</option>
+              <option value="">Manual by spv</option>
+            </select>
+          </div>
+
+          <div class="col-span-1 space-y-2">
+            <label for="jabatan5" class="text-sm font-bold">Pilih Jabatan</label>
+            <select name="jabatan5" id="jabatan5" class="rounded-md border border-gray-300 w-full px-2 py-1 text-sm">
+              <option value="">Technical Support</option>
+              <option value="">Data Recon</option>
+              <option value="">QA</option>
+              <option value="">Technical Writer</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Kualitas Kerja -->
+        <div class="grid grid-cols-4 gap-4 mt-6">
+          <div class="col-span-2 space-y-2">
+            <p class="text-sm font-bold">Bobot Soal 30%</p>
+            <div class="text-sm leading-relaxed">
+              <span class="mr-2">3.</span> Memiliki kompetensi, keterampilan (skill) dan ketelitian dalam menyelesaikan pekerjaan
+            </div>
+          </div>
+
+          <div class="col-span-1 space-y-2">
+            <label for="evaluation_source6" class="text-sm font-bold">Pilih Sumber Penilaian</label>
+            <select name="evaluation_source6" id="evaluation_source6" class="rounded-md border border-gray-300 w-full px-2 py-1 text-sm">
+              <option value="">ICONAPPS</option>
+              <option value="">ITSM</option>
+              <option value="">Sumber 3</option>
+              <option value="">Manual by spv</option>
+            </select>
+          </div>
+
+          <div class="col-span-1 space-y-2">
+            <label for="jabatan6" class="text-sm font-bold">Pilih Jabatan</label>
+            <select name="jabatan6" id="jabatan6" class="rounded-md border border-gray-300 w-full px-2 py-1 text-sm">
+              <option value="">Technical Support</option>
+              <option value="">Data Recon</option>
+              <option value="">QA</option>
+              <option value="">Technical Writer</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- C. SIKAP & PERILAKU -->
+      <div class="mt-10">
+        <h1 class="font-bold text-xl">C. SIKAP & PERILAKU<span class="float-right">30%</span></h1>
+        
+        <!-- Kedisiplinan & Tanggung Jawab -->
+        <div class="grid grid-cols-4 gap-4 mt-6">
+          <div class="col-span-2 space-y-2">
+            <p class="text-sm font-bold">Bobot Soal 85%</p>
+            <div class="text-sm leading-relaxed">
+              <span class="mr-2">1.</span> Berperilaku baik, patuh terhadap peraturan yang berlaku serta peduli dengan lingkungan kerja
+            </div>
+          </div>
+
+          <div class="col-span-1 space-y-2">
+            <label for="evaluation_source7" class="text-sm font-bold">Pilih Sumber Penilaian</label>
+            <select name="evaluation_source7" id="evaluation_source7" class="rounded-md border border-gray-300 w-full px-2 py-1 text-sm">
+              <option value="">ICONAPPS</option>
+              <option value="">ITSM</option>
+              <option value="">Sumber 3</option>
+              <option value="">Manual by spv</option>
+            </select>
+          </div>
+
+          <div class="col-span-1 space-y-2">
+            <label for="jabatan7" class="text-sm font-bold">Pilih Jabatan</label>
+            <select name="jabatan7" id="jabatan7" class="rounded-md border border-gray-300 w-full px-2 py-1 text-sm">
+              <option value="">Technical Support</option>
+              <option value="">Data Recon</option>
+              <option value="">QA</option>
+              <option value="">Technical Writer</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Penampilan & Kebersihan -->
+        <div class="grid grid-cols-4 gap-4 mt-6">
+          <div class="col-span-2 space-y-2">
+            <p class="text-sm font-bold">Bobot Soal 15%</p>
+            <div class="text-sm leading-relaxed">
+              <span class="mr-2">2.</span> Mampu menunjukan kerapian diri dengan selalu berpenampilan rapi dan bersih
+            </div>
+          </div>
+
+          <div class="col-span-1 space-y-2">
+            <label for="evaluation_source8" class="text-sm font-bold">Pilih Sumber Penilaian</label>
+            <select name="evaluation_source8" id="evaluation_source8" class="rounded-md border border-gray-300 w-full px-2 py-1 text-sm">
+              <option value="">ICONAPPS</option>
+              <option value="">ITSM</option>
+              <option value="">Sumber 3</option>
+              <option value="">Manual by spv</option>
+            </select>
+          </div>
+
+          <div class="col-span-1 space-y-2">
+            <label for="jabatan8" class="text-sm font-bold">Pilih Jabatan</label>
+            <select name="jabatan8" id="jabatan8" class="rounded-md border border-gray-300 w-full px-2 py-1 text-sm">
+              <option value="">Technical Support</option>
+              <option value="">Data Recon</option>
+              <option value="">QA</option>
+              <option value="">Technical Writer</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <button type="button" class="rounded-xl bg-[#00ad2f] p-1 text-white  w-32 " id="btn-load" style="margin-top: 20px;">Simpan</button>
+
+    </div>
+  </div>
+</div>
+</div>
+
+{% endblock %}
+
+{% block js %}
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const btnLoad = document.getElementById('btn-load');
+    btnLoad.addEventListener('click', function () {
+      const evaluationBank = document.getElementById('evaluation_bank');
+      const p1 = document.getElementById('p1');
+      const p2 = document.getElementById('p2');
+      const p3 = document.getElementById('p3');
+
+      const selectedValue = evaluationBank.value;
+
+      if (selectedValue == 1) {
+        p1.classList.remove('hidden');
+        p2.classList.add('hidden');
+        p3.classList.add('hidden');
+      } else if(selectedValue == 2) {
+        p1.classList.add('hidden');
+        p2.classList.remove('hidden');
+        p3.classList.add('hidden');
+      } else if (selectedValue == 3) {
+        p1.classList.add('hidden');
+        p2.classList.add('hidden');
+        p3.classList.remove('hidden');
+      }
+    });
+  });
+</script>
+{% endblock %}

@@ -81,12 +81,15 @@
         </div>
 
         <ul id="submenu" class="hidden ml-12 mt-2 mb-0">
-            <a href="{% url 'employee_evaluation' %}" class="no-underline text-gray-400">
+            <a href="{% url 'employee_penilaian' %}" class="no-underline text-gray-400">
                 <li class="py-2 text-[13px] cursor-pointer">Penilaian</li>
             </a>
             <a href="{% url 'employee_history' %}" class="no-underline text-gray-400">
                 <li class="py-2 text-[13px] cursor-pointer">Riwayat</li>
-            </a>  
+            </a>
+            <a href="{% url 'employee_evaluation' %}" class="no-underline text-gray-400">
+              <li class="py-2 text-[13px] cursor-pointer">Setting Bank Soal</li>
+            </a>
         </ul>
       </div>
     </div>
@@ -165,9 +168,11 @@
       const isVisible = submenu.style.maxHeight;
 
       if (isVisible) {
+        console.log('true');
           submenu.style.maxHeight = null; // Hide submenu
       } else {
           submenu.style.maxHeight = submenu.scrollHeight + "px"; // Show submenu
+          console.log('else');
       }
 
       // Remove the active style from all non-dropdown menus

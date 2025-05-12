@@ -23,8 +23,11 @@ def employee_history_detail(request):
     query = request.GET.get('from', '')
     return render(request, 'karyawan/master/history_detail.html', {'active_page': 'employee_history_detail', 'query': query})
 
-def evaluation(request):
-    return render(request, 'karyawan/master/evaluation.html', {'active_page': 'evaluation'})
+def set_bank_soal(request):
+    return render(request, 'karyawan/master/set_bank_soal.html', {'active_page': 'evaluation'})
+
+def penilaian(request):
+    return render(request, 'karyawan/master/penilaian.html', {'active_page': 'penilaian'})
 
 # def employee_create(request):
 #     form = EmployeeForm(request.POST or None)
