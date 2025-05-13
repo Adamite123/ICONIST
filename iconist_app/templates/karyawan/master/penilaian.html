@@ -62,54 +62,80 @@
               <th class="p-3">No</th>
               <th class="p-3">NIP</th>
               <th class="p-3">Nama</th>
-              <th class="p-3">Jabatan</th>
               <th class="p-3">Sub Bidang</th>
-              <th class="p-3">Aplikasi</th>
-              <th class="p-3">Mitra</th>
-              <th class="p-3">Periode</th>
-              <th class="p-3">Score</th>
+              <th class="p-3">Seksi</th>
+              <th class="p-3">Jumlah Penilaian Rekan</th>
+              <th class="p-3">Status</th>
               <th class="p-3">Action</th>
             </tr>
           </thead>
           <tbody>
+
             <tr>
               <td class="p-3">1</td>
               <td class="p-3">123456</td>
               <td class="p-3">John Doe</td>
-              <td class="p-3">john.doe@example.com</td>
-              <td class="p-3">App A</td>
-              <td class="p-3">Mitra X</td>
-              <td class="p-3">2023-01-01</td>
-              <td class="p-3">1 Year</td>
-              <td class="p-3">4.0</td>
+              <td class="p-3">PBO</td>
+              <td class="p-3">OALPC</td>
+              <td class="p-3">0/5</td>
               <td class="p-3">
-                <a href="{% url 'employee_history_detail' %}">
-                  <i
-                    class="fa-solid fa-eye text-[#27A3B8] mr-2 hover:cursor-pointer"></i>
-                </a>
-                <i
-                  class="fa-solid fa-pencil text-[#FFA500] mr-2 hover:cursor-pointer"></i>
+                <button type="button" class="rounded-xl bg-[#FF5454] p-1 text-white w-[12rem]" id="btn-load" disabled>Belum Dinilai</button>
+              </td>
+              <td class="p-3">
+                <a href="{% url 'penilaian_detail' %}"><i class="fa-solid fa-pencil text-[#019fff] mr-2 hover:cursor-pointer"></i></a>
               </td>
             </tr>
+
             <tr>
               <td class="p-3">2</td>
               <td class="p-3">654321</td>
               <td class="p-3">Jane Smith</td>
-              <td class="p-3">jane.smith@example.com</td>
-              <td class="p-3">App B</td>
-              <td class="p-3">Mitra Y</td>
-              <td class="p-3">2022-06-15</td>
-              <td class="p-3">1.5 Years</td>
-              <td class="p-3">3.5</td>
+              <td class="p-3">PBO</td>
+              <td class="p-3">OALPC</td>
+              <td class="p-3">1/5</td>
               <td class="p-3">
-                <a href="{% url 'employee_history_detail' %}">
-                  <i
-                    class="fa-solid fa-eye text-[#27A3B8] mr-2 hover:cursor-pointer"></i>
-                </a>
+                <button type="button" class="rounded-xl bg-[#eac500] p-1 text-white w-[12rem]" id="btn-load" disabled>Dinilai SPV</button>
+              </td>
+              <td class="p-3">
                 <i
-                  class="fa-solid fa-pencil text-[#FFA500] mr-2 hover:cursor-pointer"></i>
+                  class="fa-solid fa-pencil text-[#019fff] mr-2 hover:cursor-pointer"></i>
               </td>
             </tr>
+
+            <tr>
+              <td class="p-3">3</td>
+              <td class="p-3">654321</td>
+              <td class="p-3">Joni Swombing</td>
+              <td class="p-3">PBO</td>
+              <td class="p-3">OALPC</td>
+              <td class="p-3">5/5</td>
+              <td class="p-3">
+                <button type="button" class="rounded-xl bg-[#00E60F] p-1 text-white w-[12rem]" id="btn-load" disabled>Dinilai SPV & Team</button>
+
+
+              </td>
+              <td class="p-3">
+                <i
+                  class="fa-solid fa-pencil text-[#019fff] mr-2 hover:cursor-pointer"></i>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="p-3">4</td>
+              <td class="p-3">654321</td>
+              <td class="p-3">Bima Adi Nugraha</td>
+              <td class="p-3">PBO</td>
+              <td class="p-3">OALPC</td>
+              <td class="p-3">5/5</td>
+              <td class="p-3">
+                <button type="button" class="rounded-xl bg-[#6B36FF] p-1 text-white w-[12rem]" id="btn-load" disabled>Dinilai SPV</button>
+              </td>
+              <td class="p-3">
+                <i
+                  class="fa-solid fa-pencil text-[#019fff] mr-2 hover:cursor-pointer"></i>
+              </td>
+            </tr>
+
           </tbody>
         </table>
       </div>

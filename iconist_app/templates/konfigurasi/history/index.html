@@ -1,0 +1,95 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<div class="p-10">
+  <div class="bg-white">
+    <div class="grid grid-cols-1 xl:grid-cols-5 p-7 gap-3 items-center">
+      <div class="xl:col-span-4 relative">
+        <input
+          type="text"
+          class="rounded-md w-full"
+          placeholder="Cari berdasarkan nama" />
+        <i
+          class="fa-solid fa-magnifying-glass absolute right-3 top-1/2 transform -translate-y-1/2"></i>
+      </div>
+
+      <div class="grid grid-cols-1 gap-3 xl:col-span-1">
+        <!-- Wrapper button + menu -->
+        <div class="relative inline-block text-left">
+          <!-- Filter Button -->
+          <button
+            id="filterBtn"
+            class="rounded-full bg-[#3A4970] p-3 text-white w-full">
+            <span class="mr-1">Filter</span>
+            <i class="fa-solid fa-arrow-up-z-a"></i>
+          </button>
+
+          <!-- Dropdown menu -->
+          <div
+            id="filterMenu"
+            class="hidden absolute z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+            <div class="py-1">
+              <label
+                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                <input type="checkbox" class="mr-2" /> App A
+              </label>
+              <label
+                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                <input type="checkbox" class="mr-2" /> App B
+              </label>
+              <label
+                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                <input type="checkbox" class="mr-2" /> Mitra X
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="px-7 pb-7">
+      <div class="overflow-x-auto">
+        <table
+          class="min-w-[800px] table-auto w-full text-center border border-gray-300 rounded-t-xl">
+          <thead class="bg-[#F9FBFC]">
+            <tr>
+              <th class="p-3">No</th>
+              <th class="p-3">Nama Seksi</th>
+              <th class="p-3">Jumlah</th>
+              <th class="p-3">Progress</th>
+              <th class="p-3">Status</th>
+              <th class="p-3">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for dummy_data in data %}
+            <tr>
+              <td class="p-5">{{ forloop.counter }}</td>
+              <td class="p-5">{{ dummy_data.name }}</td>
+              <td class="p-5">{{ dummy_data.total }}</td>
+              <td class="p-5">{{ dummy_data.progress }}</td>
+              <td class="p-5">
+                <span
+                  class="rounded-full p-2 text-white w-full"
+                  style="background-color: 
+                  {% if dummy_data.status == 'Completed' %}#00E60F
+                  {% elif dummy_data.status == 'In Progress' %}#FFC916
+                  {% elif dummy_data.status == 'Not Yet' %}#FF2D50
+                  {% else %}#CCCCCC{% endif %};">
+                  {{ dummy_data.status }}
+                </span>
+              </td>
+              <td class="p-5">
+                <a href="{% url 'configuration_employee' %}">
+                  <i
+                  class="fa-solid fa-eye text-[#27A3B8] mr-2 hover:cursor-pointer"></i>
+                </a>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

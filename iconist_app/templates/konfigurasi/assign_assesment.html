@@ -1,0 +1,186 @@
+{% extends 'base.html' %} {% block content %}
+<div class="p-10">
+  <div class="flex flex-col gap-3 w-full">
+    <div class="flex flex-col gap-5 w-full lg:w-[50%]">
+      <div class="grid grid-cols-3 w-full gap-3 items-center font-semibold">
+        <label for="direktorat" class="mr-3 col-span-1">Direktorat</label>
+        <select
+          name="direktorat"
+          id="direktorat"
+          class="rounded-md border-none w-full col-span-2">
+          <option value="">Select a direktorat</option>
+          <option value="1">Direktorat 1</option>
+          <option value="2">Direktorat 2</option>
+        </select>
+      </div>
+      <div class="grid grid-cols-3 w-full gap-3 items-center font-semibold">
+        <label for="bidang" class="mr-3 col-span-1">Bidang</label>
+        <select
+          name="bidang"
+          id="bidang"
+          class="rounded-md border-none w-full col-span-2">
+          <option value="">Select a Bidang</option>
+          <option value="1">Bidang 1</option>
+          <option value="2">Bidang 2</option>
+        </select>
+      </div>
+      <div class="grid grid-cols-3 w-full gap-3 items-center font-semibold">
+        <label for="subBidang" class="mr-3 col-span-1">Sub bidang</label>
+        <select
+          name="subBidang"
+          id="subBidang"
+          class="rounded-md border-none w-full col-span-2">
+          <option value="">Select a subBidang</option>
+          <option value="1">subBidang 1</option>
+          <option value="2">subBidang 2</option>
+        </select>
+      </div>
+      <div class="grid grid-cols-3 w-full gap-3 items-center font-semibold">
+        <label for="soal" class="mr-3 col-span-1">Pilih Soal</label>
+        <select
+          name="soal"
+          id="soal"
+          class="rounded-md border-none w-full col-span-2">
+          <option value="">Select a Soal</option>
+          <option value="1">Soal 1</option>
+          <option value="2">Soal 2</option>
+        </select>
+      </div>
+      <div class="grid grid-cols-3 w-full gap-3 items-center font-semibold">
+        <label class="mr-3"
+          >Input Periode Penilaian Akhir
+          <span class="text-center">(maks 1 tahun)</span></label
+        >
+        <input
+          type="date"
+          name="periode_penilaian_start"
+          id="periode_penilaian_start"
+          class="rounded-md border-none w-full col-span-1" />
+        <input
+          type="date"
+          name="periode_penilaian_end"
+          id="periode_penilaian_end"
+          class="rounded-md border-none w-full col-span-1" />
+      </div>
+      <div class="grid grid-cols-3 w-full gap-3 items-center font-semibold">
+        <label class="mr-3"
+          >Input Waktu Penilaian
+          <span class="text-center">(maks 1 tahun)</span></label
+        >
+        <input
+          type="date"
+          name="waktu_penilaian_start"
+          id="waktu_penilaian_start"
+          class="rounded-md border-none w-full col-span-1" />
+        <input
+          type="date"
+          name="waktu_penilaian_end"
+          id="waktu_penilaian_end"
+          class="rounded-md border-none w-full col-span-1" />
+      </div>
+      <div class="flex justify-end mt-5">
+        <button
+          type="button"
+          class="rounded-xl bg-[#3A4970] p-3 text-white w-32">
+          Kirim
+        </button>
+      </div>
+    </div>
+
+    <!-- table bank soal -->
+
+    <div class="bg-white">
+      <div class="grid grid-cols-1 xl:grid-cols-5 p-7 gap-3 items-center">
+        <div class="xl:col-span-4 relative">
+          <input
+            type="text"
+            class="rounded-md w-full"
+            placeholder="Cari berdasarkan nama" />
+          <i
+            class="fa-solid fa-magnifying-glass absolute right-3 top-1/2 transform -translate-y-1/2"></i>
+        </div>
+
+        <div class="xl:col-span-1">
+          <button
+            class="rounded-full bg-[#3A4970] p-3 text-white w-full"
+            id="exportBtn">
+            <span class="mr-1">Tambah Data</span>
+            <i class="fa-solid fa-plus"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="px-7 pb-7">
+        <div class="overflow-x-auto">
+          <table
+            class="min-w-[800px] table-auto w-full text-center border border-gray-300 rounded-t-xl">
+            <thead class="bg-[#F9FBFC]">
+              <tr>
+                <th class="p-3">No</th>
+                <th class="p-3">Soal</th>
+                <th class="p-3">Tahun</th>
+                <th class="p-3">Last Modified</th>
+                <th class="p-3">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="p-3">1</td>
+                <td class="p-3">SOAL KOPINT SDM23</td>
+                <td class="p-3">2023</td>
+                <td class="p-3">9/01/2025, 23:10:00</td>
+                <td class="p-3">
+                  <a href="#">
+                    <i
+                      class="fa-solid fa-eye text-[#27A3B8] mr-2 hover:cursor-pointer"></i>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td class="p-3">1</td>
+                <td class="p-3">SOAL KOPINT SDM23</td>
+                <td class="p-3">2023</td>
+                <td class="p-3">9/01/2025, 23:10:00</td>
+                <td class="p-3">
+                  <a href="#">
+                    <i
+                      class="fa-solid fa-eye text-[#27A3B8] mr-2 hover:cursor-pointer"></i>
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- pagination -->
+      <div class="flex justify-end items-center px-7 py-3">
+        <div class="flex space-x-2">
+          <button class="px-2 py-1 hover:bg-[#3a4970] hover:text-white">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <button class="bg-[#3A4970] text-white px-2 py-1 rounded-md">
+            1
+          </button>
+          <button class="px-2 py-1 hover:bg-[#3a4970] hover:text-white">
+            2
+          </button>
+          <button class="px-2 py-1 hover:bg-[#3a4970] hover:text-white">
+            3
+          </button>
+          <button class="px-2 py-1 hover:bg-[#3a4970] hover:text-white">
+            4
+          </button>
+          <span class="px-2 py-1">....</span>
+          <button class="px-2 py-1 hover:bg-[#3a4970] hover:text-white">
+            20
+          </button>
+          <button class="px-2 py-1 hover:bg-[#3a4970] hover:text-white">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,286 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<div class="p-10">
+  <a
+    href="{% url 'employee_history' %}"
+    class="rounded-lg bg-white p-2 text-base font-medium">
+    <i class="fas fa-arrow-left"></i>
+    Kembali
+  </a>
+
+  <div class="flex lg:flex-row justify-start mt-3 gap-5 flex-col">
+    <div class="flex flex-col min-w-[400px]">
+      <div class="bg-white rounded-lg px-8 py-6">
+        <div class="flex flex-col gap-8">
+          <img
+            src="{% static 'asset_home/p1.png' %}"
+            alt="image"
+            class="rounded-full w-[200px]" />
+          <div class="flex flex-col">
+            <span class="text-[#A0AEC0] font-normal text-xs"
+              >Data Karyawan</span
+            >
+            <h2 class="text-lg font-medium">Bima Agta Nugraha</h2>
+            <p class="text-[#27A3B8] font-normal text-sm">Pelayanan - LPC</p>
+          </div>
+          <div class="grid lg:grid-cols-2 gap-1 grid-cols-1">
+            <div>
+              <p class="text-[#A0AEC0] text-xs">Aplikasi</p>
+              <p>VIP</p>
+            </div>
+            <div>
+              <p class="text-[#A0AEC0] text-xs">Email</p>
+              <p>bima.adi@iconpln.co.id</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <table
+        class="table-auto border border-black w-full text-center border-collapse mt-5">
+        <tr class="border border-black">
+          <td
+            colspan="3"
+            class="p-3 font-semibold text-xl bg-[#ECECEC] border border-black">
+            Skor Kinerja
+          </td>
+        </tr>
+        <tr class="border border-black">
+          <td
+            class="p-3 bg-[#ECECEC] font-semibold text-sm border border-black">
+            SKOR
+          </td>
+          <td
+            class="p-3 bg-[#ECECEC] font-semibold text-sm border border-black">
+            TOTAL SKOR
+          </td>
+          <td
+            class="p-3 bg-[#ECECEC] font-semibold text-sm border border-black">
+            TINGKAT
+          </td>
+        </tr>
+        <tr class="border border-black">
+          <td
+            class="p-3 bg-[#FFC000] font-semibold text-sm border border-black">
+            1.18
+          </td>
+          <td rowspan="3" class="font-semibold text-sm border border-black">
+            3.77
+          </td>
+          <td rowspan="3" class="font-semibold text-sm border border-black">
+            FAIR
+          </td>
+        </tr>
+        <tr class="border border-black">
+          <td
+            class="p-3 bg-[#FFC000] font-semibold text-sm border border-black">
+            1.15
+          </td>
+        </tr>
+        <tr class="border border-black">
+          <td
+            class="p-3 bg-[#FFC000] font-semibold text-sm border border-black">
+            1.44
+          </td>
+        </tr>
+      </table>
+
+      <div class="flex flex-col">
+        <div class="grid grid-cols-2 justify-between mt-5">
+          <span class="text-start font-medium text-base">Total Feedback</span>
+          <span class="text-end font-normal text-xs">5 Orang</span>
+        </div>
+        <div class="grid grid-cols-5 justify-between mt-3 items-center">
+          <div
+            class="bg-white rounded-lg border border-gray-300 mt-3 p-3 col-span-4">
+            <div class="flex flex-col">
+              <h2 class="font-medium text-sm">Ali Nurfuad</h2>
+              <p class="text-[#AEAEAE] text-xs font-normal">
+                ali.nurfuad@iconpln.co.id
+              </p>
+              <hr class="mt-4" />
+            </div>
+            <div class="grid grid-cols-2 justify-between">
+              <p>Skor</p>
+              <p class="text-[#02AF64]">4,32 (GOOD)</p>
+            </div>
+          </div>
+          <div
+            class="text-xs text-[#8B8B8B] text-center items-center justify-center">
+            <p>5+</p>
+            <p>See more</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col w-full">
+      <div
+        class="grid lg:grid-cols-5 justify-center items-center grid-cols-1 gap-3">
+        <h1 class="lg:col-span-3 font-semibold text-xl">RIWAYAT SKOR</h1>
+        <div class="lg:col-span-2 flex flex-row justify-end gap-3">
+          <button class="rounded-full bg-[#27A3B8] p-3 text-white">
+            <span class="mr-1">Export Excel</span>
+            <i class="fa-solid fa-file-excel"></i>
+          </button>
+          <button class="rounded-full bg-[#3A4970] p-3 text-white">
+            <span class="mr-1">Periode 2 ( Desember 2024)</span>
+            <i class="fa-solid fa-file-excel"></i>
+          </button>
+        </div>
+      </div>
+      {% if query == 'history-config' %}
+      <div class="bg-white rounded-xl p-5 gap-3 mt-5">
+        <div class="font-semibold text-center">
+          Riwayat Skor (3 Tahun Terakhir)
+        </div>
+        <div class="mt-3" id="diagramHistory"></div>
+      </div>
+      {% endif %}
+      <div class="flex flex-col">
+        <div
+          class="grid grid-cols-2 justify-between mt-8 font-medium text-base">
+          <p class="text-start">KOMPETENSI INTI</p>
+          <p class="text-end">Total Maksimal Skor : 40%</p>
+        </div>
+        <div class="overflow-x-auto">
+          <table
+            class="table-auto border border-[#D2D5DA] w-full text-center mt-5 rounded-t-xl">
+            <thead>
+              <tr class="border-b border-[#D2D5DA]">
+                <th class="p-9 text-[#6D7280]">Integritas 20%</th>
+                <th class="p-9 text-[#6D7280]">
+                  Orientasi Seksi dan Perusahaan (20%)
+                </th>
+                <th class="p-9 text-[#6D7280]">Komunikasi (20%)</th>
+                <th class="p-9 text-[#6D7280]">Teamwork & Inisiatif (20%)</th>
+                <th class="p-9 text-[#6D7280]">Kehandalan (20%)</th>
+              </tr>
+            </thead>
+            <tbody class="bg-white">
+              <tr class="border-b border-[#D2D5DA]">
+                <td class="p-5">4</td>
+                <td class="p-5">3</td>
+                <td class="p-5">3</td>
+                <td class="p-5">3</td>
+                <td class="p-5">4</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="flex flex-col">
+        <div
+          class="grid grid-cols-2 justify-between mt-8 font-medium text-base">
+          <p class="text-start">KOMPETENSI INTI</p>
+          <p class="text-end">Total Maksimal Skor : 40%</p>
+        </div>
+        <div class="overflow-x-auto">
+          <table
+            class="table-auto border border-[#D2D5DA] w-full text-center mt-5 rounded-t-xl">
+            <thead>
+              <tr class="border-b border-[#D2D5DA]">
+                <th class="p-9 text-[#6D7280]">Integritas 20%</th>
+                <th class="p-9 text-[#6D7280]">
+                  Orientasi Seksi dan Perusahaan (20%)
+                </th>
+                <th class="p-9 text-[#6D7280]">Komunikasi (20%)</th>
+                <th class="p-9 text-[#6D7280]">Teamwork & Inisiatif (20%)</th>
+                <th class="p-9 text-[#6D7280]">Kehandalan (20%)</th>
+              </tr>
+            </thead>
+            <tbody class="bg-white">
+              <tr class="border-b border-[#D2D5DA]">
+                <td class="p-5">4</td>
+                <td class="p-5">3</td>
+                <td class="p-5">3</td>
+                <td class="p-5">3</td>
+                <td class="p-5">4</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="flex flex-col">
+        <div
+          class="grid grid-cols-2 justify-between mt-8 font-medium text-base">
+          <p class="text-start">KOMPETENSI INTI</p>
+          <p class="text-end">Total Maksimal Skor : 40%</p>
+        </div>
+        <div class="overflow-x-auto">
+          <table
+            class="table-auto border border-[#D2D5DA] w-full text-center mt-5 rounded-t-xl">
+            <thead>
+              <tr class="border-b border-[#D2D5DA]">
+                <th class="p-9 text-[#6D7280]">Integritas 20%</th>
+                <th class="p-9 text-[#6D7280]">
+                  Orientasi Seksi dan Perusahaan (20%)
+                </th>
+                <th class="p-9 text-[#6D7280]">Komunikasi (20%)</th>
+                <th class="p-9 text-[#6D7280]">Teamwork & Inisiatif (20%)</th>
+                <th class="p-9 text-[#6D7280]">Kehandalan (20%)</th>
+              </tr>
+            </thead>
+            <tbody class="bg-white">
+              <tr class="border-b border-[#D2D5DA]">
+                <td class="p-5">4</td>
+                <td class="p-5">3</td>
+                <td class="p-5">3</td>
+                <td class="p-5">3</td>
+                <td class="p-5">4</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %} {% block js %}
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var options2 = {
+      series: [
+        {
+          name: "Desktops",
+          data: [10, 41, 35],
+        },
+      ],
+      chart: {
+        height: 350,
+        type: "line",
+        zoom: {
+          enabled: false,
+        },
+        markers: {
+          size: 5,
+          shape: "circle",
+          strokeColors: "#fff",
+          strokeWidth: 2,
+          strokeOpacity: 0.9,
+          strokeDashArray: 0,
+        },
+      },
+      dataLabels: {
+        enabled: false,
+      },
+      stroke: {
+        curve: "straight",
+      },
+      xaxis: {
+        categories: [
+          "2022",
+          "2023",
+          "2024"
+        ],
+      },
+    };
+
+    var chart2 = new ApexCharts(
+      document.querySelector("#diagramHistory"),
+      options2
+    );
+    chart2.render();
+  });
+</script>
+{% endblock %}

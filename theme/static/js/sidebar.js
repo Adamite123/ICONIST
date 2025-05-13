@@ -10,6 +10,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const submenu2 = document.getElementById("submenu2");
   const submenu3 = document.getElementById("submenu3");
 
+  console.log("Sidebar script loaded");
+
   // Sidebar show/hide for mobile
   toggleSidebar.addEventListener("click", function () {
     sidebar.classList.toggle("-translate-x-full");
@@ -55,4 +57,5 @@ document.addEventListener("DOMContentLoaded", function () {
     img.classList.toggle("rotate-90");
     img.classList.toggle("rotate-0");
   }
+  
 });

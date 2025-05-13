@@ -1,56 +1,317 @@
-{% extends 'base.html' %}
-{% load static %}
-{% block content %}
-<div class="p-10 bg-white">
+{% extends 'base.html' %} {% block content %}
+<div class="p-10">
+  <div class="flex flex-col gap-3 w-full">
     <div class="flex justify-between items-center">
-        <h1 class="text-2xl font-bold text-gray-900">Buat Soal</h1>
-        <a href="#"
-            class="bg-gray-400 text-white px-6 py-2 rounded-xl text-sm font-semibold hover:bg-gray-500 transition">
-            Selesai
-        </a>
+      <h1 class="text-2xl font-bold text-gray-900">Buat Soal</h1>
+      <a
+        href="#"
+        class="bg-[#B7B7B7] text-white px-6 py-2 rounded-xl text-sm font-semibold">
+        Selesai
+      </a>
+    </div>
+    <div class="flex flex-col gap-6">
+      <div class="max-w-[50%]">
+        <label class="block text-gray-800 font-semibold mb-1">Nama Soal</label>
+        <input
+          type="text"
+          placeholder="Masukkan Nama Soal"
+          class="w-full border border-gray-300 rounded px-3 py-2 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400" />
+      </div>
+
+      <div class="max-w-[50%]">
+        <label class="block text-gray-800 font-semibold mb-1"
+          >Tahun Pembuatan Soal</label
+        >
+        <input
+          type="text"
+          placeholder="Masukkan Tahun Pembuatan Soal"
+          class="w-full border border-gray-300 rounded px-3 py-2 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400" />
+      </div>
+
+      <div
+        class="max-w-[50%] grid grid-cols-3 items-center justify-center gap-3">
+        <label class="block text-gray-800 font-semibold"
+          >Referensi Soal 1</label
+        >
+        <select
+          class="w-full border border-gray-300 rounded px-3 py-2 bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-400">
+          <option>Pilih Referensi</option>
+          <option>Referensi A</option>
+          <option>Referensi B</option>
+        </select>
+        <button
+          class="bg-[#BDBDBD] px-6 py-2 rounded-xl text-sm font-semibold text-white">
+          Load
+        </button>
+      </div>
     </div>
 
-    <div class="space-y-6 mt-4">
-        <div class="max-w-2xl space-y-6">
-            <!-- Nama Soal -->
-            <div>
-                <label class="block text-gray-800 font-semibold mb-1">Nama Soal</label>
-                <input type="text" placeholder="Masukkan Nama Soal"
-                    class="w-full border-b border-gray-400 focus:outline-none py-2 placeholder-gray-400 bg-transparent" />
-            </div>
-            <!-- Tahun Pembuatan Soal -->
-            <div>
-                <label class="block text-gray-800 font-semibold mb-1">Tahun Pembuatan Soal</label>
-                <div class="relative">
-                    <input type="date"
-                        class="w-full border-b border-gray-400 focus:outline-none py-2 pr-10 placeholder-gray-400 bg-transparent" />
-                </div>
-            </div>
+    <div class="mt-5">
+      <div class="bg-[#673AB7] h-5 rounded-t-lg"></div>
+      <div class="bg-white">
+        <div class="py-6 px-8">
+          <input
+            type="text"
+            name="title"
+            id="title"
+            value="Untitled"
+            class="border-none w-full mb-3" />
+          <textarea
+            type="text"
+            name="description"
+            id="description"
+            class="border-none w-full pt-0 h-6">
+description
+            </textarea
+          >
         </div>
+      </div>
+      <div class="bg-white mt-5 border border-gray-300 rounded-lg shadow-sm">
+        <div class="flex flex-row">
+          <div class="bg-[#4285F4] w-4 rounded-l-lg"></div>
+          <div class="flex-1 p-4">
+            <div class="grid grid-cols-3 gap-4 justify-center items-center">
+              <div class="col-span-2">
+                <input
+                  type="text"
+                  name="title"
+                  id="title"
+                  value="Untitled Question"
+                  class="w-full font-medium focus:outline-none border-none pb-1 mb-2" />
 
-        <!-- Referensi + Tombol Load -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-end">
-            <!-- Referensi -->
-            <div class="md:col-span-2">
-                <label class="block text-gray-800 font-semibold mb-1">Referensi Soal</label>
+                <textarea
+                  name="description"
+                  id="description"
+                  class="w-full text-sm text-gray-600 focus:outline-none border-none pb-1 mb-2 resize-none h-6 pt-0"
+                  placeholder="Form description">
+Description</textarea
+                >
+              </div>
+
+              <!-- Right section: Question type -->
+              <div>
                 <select
-                    class="w-full h-[42px] bg-white border border-gray-300 shadow-sm rounded-xl px-4 focus:outline-none">
-                    <option>Pilih Referensi</option>
-                    <option>Referensi 1</option>
-                    <option>Referensi 2</option>
+                  name="question_type"
+                  id="question_type"
+                  class="w-full border rounded px-3 py-2 bg-white text-gray-700">
+                  <option value="multiple_choice">Pilihan Ganda</option>
+                  <option value="short_answer">Jawaban Pendek</option>
                 </select>
+              </div>
             </div>
 
-            <!-- Tombol -->
-            <div class="text-right">
-                <button type="submit" class="w-full md:w-auto h-[42px] bg-gray-400 text-white px-6 py-2 rounded-full">
-                    Load
+            <!-- Jawaban contoh -->
+            <div class="mt-4">
+              <div class="flex items-center gap-2 mb-1">
+                <input type="radio" disabled class="text-gray-500" />
+                <input
+                  type="text"
+                  placeholder="Option 1"
+                  class="border-none focus:outline-none w-full text-sm" />
+                <button class="text-red-500 hover:text-red-700">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-4 w-4"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M6 18L18 6M6 6l12 12" />
+                  </svg>
                 </button>
+              </div>
+              <div class="flex items-center gap-2 mb-1">
+                <input type="radio" disabled class="text-gray-500" />
+                <input
+                  type="text"
+                  placeholder="Option 2"
+                  class="border-none focus:outline-none w-full text-sm" />
+                <button class="text-red-500 hover:text-red-700">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-4 w-4"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+              <!-- <button class="text-blue-600 text-sm mt-2">
+                + Tambahkan opsi
+              </button> -->
             </div>
+
+            <!-- Action Buttons -->
+            <div
+              class="flex justify-end items-center gap-3 mt-4 text-sm text-gray-600">
+              <button class="hover:text-blue-600">
+                <i class="fas fa-copy"></i>
+              </button>
+              <button class="hover:text-red-600">
+                <i class="fas fa-trash"></i>
+              </button>
+
+              <!-- Required Switch -->
+              <label class="flex items-center gap-1">
+                <span>Wajib diisi</span>
+                <input
+                  type="checkbox"
+                  class="toggle-checkbox hidden"
+                  id="required_switch" />
+                <div
+                  class="w-10 h-5 flex items-center bg-gray-300 rounded-full p-1 cursor-pointer"
+                  onclick="toggleSwitch(this)">
+                  <div
+                    class="bg-white w-4 h-4 rounded-full shadow-md transform duration-300"></div>
+                </div>
+              </label>
+            </div>
+          </div>
         </div>
+      </div>
+
+      <div class="bg-white mt-5 border border-gray-300 rounded-lg shadow-sm">
+        <div class="flex flex-row">
+          <div class="bg-[#4285F4] w-4 rounded-l-lg"></div>
+          <div class="flex-1 p-4">
+            <div class="grid grid-cols-3 gap-4 justify-center items-center">
+              <div class="col-span-2">
+                <input
+                  type="text"
+                  name="title"
+                  id="title"
+                  value="Untitled Question"
+                  class="w-full font-medium focus:outline-none border-none pb-1 mb-2" />
+
+                <textarea
+                  name="description"
+                  id="description"
+                  class="w-full text-sm text-gray-600 focus:outline-none border-none pb-1 mb-2 resize-none h-6 pt-0"
+                  placeholder="Form description">
+Description</textarea
+                >
+              </div>
+
+              <!-- Right section: Question type -->
+              <div>
+                <select
+                  name="question_type"
+                  id="question_type"
+                  class="w-full border rounded px-3 py-2 bg-white text-gray-700">
+                  <option value="multiple_choice">Pilihan Ganda</option>
+                  <option value="short_answer">Jawaban Pendek</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Jawaban contoh -->
+            <div class="mt-4">
+              <div class="flex items-center gap-2 mb-1">
+                <input type="radio" disabled class="text-gray-500" />
+                <input
+                  type="text"
+                  placeholder="Option 1"
+                  class="border-none focus:outline-none w-full text-sm" />
+                <button class="text-red-500 hover:text-red-700">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-4 w-4"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+              <div class="flex items-center gap-2 mb-1">
+                <input type="radio" disabled class="text-gray-500" />
+                <input
+                  type="text"
+                  placeholder="Option 2"
+                  class="border-none focus:outline-none w-full text-sm" />
+                <button class="text-red-500 hover:text-red-700">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-4 w-4"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+              <!-- <button class="text-blue-600 text-sm mt-2">
+                + Tambahkan opsi
+              </button> -->
+            </div>
+
+            <!-- Action Buttons -->
+            <div
+              class="flex justify-end items-center gap-3 mt-4 text-sm text-gray-600">
+              <button class="hover:text-blue-600">
+                <i class="fas fa-copy"></i>
+              </button>
+              <button class="hover:text-red-600">
+                <i class="fas fa-trash"></i>
+              </button>
+
+              <!-- Required Switch -->
+              <label class="flex items-center gap-1">
+                <span>Wajib diisi</span>
+                <input
+                  type="checkbox"
+                  class="toggle-checkbox hidden"
+                  id="required_switch" />
+                <div
+                  class="w-10 h-5 flex items-center bg-gray-300 rounded-full p-1 cursor-pointer"
+                  onclick="toggleSwitch(this)">
+                  <div
+                    class="bg-white w-4 h-4 rounded-full shadow-md transform duration-300"></div>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <div class="mt-5">
+      <div class="flex flex-row items-center text-center justify-center gap-3">
+        <button class="border rounded-lg py-2 px-4">
+          <i class="fas fa-plus-circle"></i>
+          Tambah section
+        </button>
+        <button class="border rounded-lg py-2 px-4">
+          <i class="fas fa-plus-circle"></i>
+          Tambah soal
+        </button>
+      </div>
+    </div>
+  </div>
 </div>
-{% endblock %}
-{% block js %}
+{% endblock %} {% block js %}
+
+<script>
+  function toggleSwitch(container) {
+    container.classList.toggle("bg-green-500");
+    container.firstElementChild.classList.toggle("translate-x-5");
+  }
+</script>
 
 {% endblock %}

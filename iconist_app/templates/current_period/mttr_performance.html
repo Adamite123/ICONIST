@@ -1,0 +1,182 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<div class="p-10">
+  <div class="flex flex-col gap-3 w-full">
+    <div class="flex flex-col gap-5 w-full lg:w-[50%]">
+      <div class="grid grid-cols-3 w-full gap-3 items-center font-semibold">
+        <label for="category" class="mr-3 col-span-1">Kategori</label>
+        <select
+          name="category"
+          id="category"
+          class="rounded-md border-none w-full col-span-2">
+          <option value="">Select a Kategori</option>
+          <option value="1">Kategori 1</option>
+          <option value="2">Kategori 2</option>
+        </select>
+      </div>
+
+      <div class="grid grid-cols-3 w-full gap-3 items-center font-semibold">
+        <label for="category_detail" class="mr-3 col-span-1"
+          >Kategori Detail</label
+        >
+        <select
+          name="category_detail"
+          id="category_detail"
+          class="rounded-md border-none w-full col-span-2">
+          <option value="">Select a Kategori Detail</option>
+          <option value="1">Kategori 1</option>
+          <option value="2">Kategori 2</option>
+        </select>
+      </div>
+
+      <div class="flex justify-end mt-5">
+        <button
+          type="button"
+          class="rounded-xl bg-[#3A4970] p-3 text-white w-32">
+          Submit
+        </button>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-2 gap-10 justify-center">
+      <div class="bg-white rounded-xl p-5 gap-3 mt-5">
+        <div class="font-semibold text-center">Grafik Skor Karyawan</div>
+        <div class="mt-3" id="diagramEmployeeScore"></div>
+      </div>
+      <div class="flex flex-col mt-3 text-center">
+        <h3 class="text-[#464E5F] font-semibold text-lg">Keterangan</h3>
+        <div class="grid grid-cols-2 justify-between gap-5">
+          <p>Bulan</p>
+          <p>Skor Kinerja</p>
+        </div>
+        <div class="grid grid-cols-2 justify-between gap-5">
+          <p>September 2024</p>
+          <p>4,37</p>
+        </div>
+        <div class="grid grid-cols-2 justify-between gap-5">
+          <p>Oktober 2024</p>
+          <p>4,37</p>
+        </div>
+        <div class="grid grid-cols-2 justify-between gap-5">
+          <p>November 2024</p>
+          <p>4,37</p>
+        </div>
+        <div class="grid grid-cols-2 justify-between gap-5">
+          <p>Desember 2024</p>
+          <p>4,37</p>
+        </div>
+        <div class="grid grid-cols-2 justify-between gap-5">
+          <p>Januari 2024</p>
+          <p>4,37</p>
+        </div>
+        <div class="grid grid-cols-2 justify-between gap-5">
+          <p>Februari 2025</p>
+          <p>4,37</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-2 gap-10 justify-center">
+      <div class="bg-white rounded-xl p-5 gap-3 mt-5">
+        <div class="w-full flex flex-row items-center justify-between">
+          <div class="font-semibold">MTTR (Per Hari)</div>
+          <div class="flex flex-col items-end justify-end gap-1">
+            <span>Report Berjalan per 5 Hari</span>
+            <span class="text-[#FFA632]">Bar Kuning Batas nilai KKM pada SLA</span>
+          </div>
+        </div>
+        <div class="mt-3" id="diagramMttr"></div>
+      </div>
+      <div class="flex flex-col mt-3 text-center">
+        <h3 class="text-[#464E5F] font-semibold text-lg">Keterangan</h3>
+        <div class="grid grid-cols-2 justify-between gap-5">
+          <p>Bulan</p>
+          <p>Skor Kinerja</p>
+        </div>
+        <div class="grid grid-cols-2 justify-between gap-5">
+          <p>September 2024</p>
+          <p>4,37</p>
+        </div>
+        <div class="grid grid-cols-2 justify-between gap-5">
+          <p>Oktober 2024</p>
+          <p>4,37</p>
+        </div>
+        <div class="grid grid-cols-2 justify-between gap-5">
+          <p>November 2024</p>
+          <p>4,37</p>
+        </div>
+        <div class="grid grid-cols-2 justify-between gap-5">
+          <p>Desember 2024</p>
+          <p>4,37</p>
+        </div>
+        <div class="grid grid-cols-2 justify-between gap-5">
+          <p>Januari 2024</p>
+          <p>4,37</p>
+        </div>
+        <div class="grid grid-cols-2 justify-between gap-5">
+          <p>Februari 2025</p>
+          <p>4,37</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %} {% block js %}
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var options2 = {
+      series: [
+        {
+          name: "Desktops",
+          data: [10, 41, 35, 51, 49, 62, 69, 91, 148],
+        },
+      ],
+      chart: {
+        height: 350,
+        type: "line",
+        zoom: {
+          enabled: false,
+        },
+        markers: {
+          size: 5,
+          shape: "circle",
+          strokeColors: "#fff",
+          strokeWidth: 2,
+          strokeOpacity: 0.9,
+          strokeDashArray: 0,
+        },
+      },
+      dataLabels: {
+        enabled: false,
+      },
+      stroke: {
+        curve: "straight",
+      },
+      xaxis: {
+        categories: [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+        ],
+      },
+    };
+
+    var chart1 = new ApexCharts(
+      document.querySelector("#diagramEmployeeScore"),
+      options2
+    );
+    var chart2 = new ApexCharts(
+      document.querySelector("#diagramMttr"),
+      options2
+    );
+    chart1.render();
+    chart2.render();
+  });
+</script>
+{% endblock %}
