@@ -3,7 +3,9 @@ from django.db.models import Q
 from ..models import Employee
 from ..forms import EmployeeForm
 from django.core.paginator import Paginator
+from django.contrib.auth.decorators import login_required
 
+@login_required(login_url='/auth/login/')
 def employee_list(request):
     query = request.GET.get('q', '')
     employee_list = Employee.objects.all()

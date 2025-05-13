@@ -1,15 +1,15 @@
 from django.urls import path
 from django.contrib import admin
 from ..views import global_views as views
+from ..views import auth_views as auth_views
 
 urlpatterns = [
-    path('', views.home, name='home'),
+    path('', auth_views.login_view, name='login'),
+    path('dashboard', views.home, name='home'),
     path('dash-sdm', views.dashboard_sdm, name='dashboard_sdm'),
     path('dash-officer', views.dashboard_officer, name='dashboard_officer'),
     path('feedback', views.feedback, name='feedback'),
     path('admin/', admin.site.urls),
-    path('login/', views.login, name='login'),
-    path('', views.home, name='home'),
     path('data_Karyawan/', views.data_Karyawan, name='data_Karyawan'),
 
     # === MASTER Karyawan START ===
