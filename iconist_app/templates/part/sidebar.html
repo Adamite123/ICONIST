@@ -183,6 +183,20 @@
         </ul>
       </div>
     </div>
+
+    {% if user.role == 'officer' %}
+    <a href="{% url 'profil' %}" class="no-underline text-gray-400">
+      <div
+        class="menu_no_drop_down {% if active_page == 'profil' %}bg-gray-100 text-[#0097B2] border-[#0097B2] border-l-8 {% else %}karyawan{% endif %} flex flex-col items-start justify-start px-7 py-4">
+        <div class="flex items-center gap-6 w-48">
+          <i class="fa-solid fa-user-group text-[18px]"></i>
+          <div class="flex-1 relative font-semibold leading-[150%]">
+            Profil
+          </div>
+        </div>
+      </div>
+    </a>
+    {% endif %}
   </div>
 
   <img

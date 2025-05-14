@@ -9,6 +9,7 @@ urlpatterns = [
     path('dash-sdm', views.dashboard_sdm, name='dashboard_sdm'),
     path('dash-officer', views.dashboard_officer, name='dashboard_officer'),
     path('feedback', views.feedback, name='feedback'),
+    path('profil', views.profil, name='profil'),
     path('admin/', admin.site.urls),
     path('data_Karyawan/', views.data_Karyawan, name='data_Karyawan'),
 

@@ -37,6 +37,12 @@ def feedback(request):
     }
     return render(request, "feedback/index.html", context)
 
+def profil(request):
+    context = {
+        'active_page': 'profil',
+    }
+    return render(request, "profil/index.html", context)
+
 def data_Karyawan(request):
     context = {
         'active_page': 'data_Karyawan',
