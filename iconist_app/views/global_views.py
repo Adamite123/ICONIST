@@ -1,14 +1,17 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 
 def login(request):
     return render(request, "login.html")
 
+@login_required(login_url='/auth/login/')
 def home(request):
     context = {
         'active_page': 'home',
     }
     return render(request, "home2.html", context)
 
+@login_required(login_url='/auth/login/')
 def dashboard_sdm(request):
     dummy_data = [
         {"sub_bidang": "PLN PBO Pelayanan PLN", "seksi": "OALPC", "status": "12/44"},
@@ -21,6 +24,7 @@ def dashboard_sdm(request):
     }
     return render(request, "dashboard/sdm.html", context)
 
+@login_required(login_url='/auth/login/')
 def dashboard_officer(request):
     context = {
         'active_page': 'dashboard_officer',
@@ -42,6 +46,12 @@ def profile(request):
     return render(request, "officer/profile.html", context)
 
 # OFFICER ROLES END
+
+def profil(request):
+    context = {
+        'active_page': 'profil',
+    }
+    return render(request, "profil/index.html", context)
 
 def data_Karyawan(request):
     context = {

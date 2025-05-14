@@ -46,8 +46,26 @@
             Selamat Datang, Iconers!
           </h1>
 
+          {% if form.non_field_errors %}
+          <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4">
+            <strong class="font-medium">Error!</strong>
+            <ul class="list-disc pl-5">
+              {% for error in form.non_field_errors %}
+              <li>{{ error }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+          {% endif %}
+
           <form method="POST" class="flex flex-col gap-6">
             {% csrf_token %}
+
+            {% if request.GET.next %}
+            <input
+              type="hidden"
+              name="next"
+              value="{{ request.GET.next }}" />
+            {% endif %}
 
             <div class="flex flex-col gap-2">
               <label for="username" class="text-sm font-medium text-gray-700"

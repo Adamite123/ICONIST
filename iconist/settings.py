@@ -57,6 +57,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django_browser_reload.middleware.BrowserReloadMiddleware',
+    # 'iconist_app.middleware.role_middleware.RoleRequiredMiddleware',
 ]
 
 ROOT_URLCONF = 'iconist.urls'
@@ -79,6 +80,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'iconist.wsgi.application'
 
+AUTH_USER_MODEL = 'iconist_app.User'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases

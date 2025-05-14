@@ -31,3 +31,4 @@ from .penilaian_spv import PenilaianSpv
 from .bank_soal_survey_rekan import BankSoalSurveyRekan
 from .soal_survey_rekan import SoalSurveyRekan
 from .penialaian_rekan import PenilaianRekan
+from .user import User
