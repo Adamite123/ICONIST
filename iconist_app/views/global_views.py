@@ -26,12 +26,22 @@ def dashboard_officer(request):
         'active_page': 'dashboard_officer',
     }
     return render(request, "dashboard/officer.html", context)
-    
+
+# OFFICER ROLES START
+
 def feedback(request):
     context = {
         'active_page': 'feedback',
     }
-    return render(request, "feedback/index.html", context)
+    return render(request, "officer/feedback.html", context)
+
+def profile(request):
+    context = {
+        'active_page': 'profile',
+    }
+    return render(request, "officer/profile.html", context)
+
+# OFFICER ROLES END
 
 def data_Karyawan(request):
     context = {

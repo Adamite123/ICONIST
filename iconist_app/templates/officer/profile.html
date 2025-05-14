@@ -1,0 +1,209 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<div class="flex space-x-4">
+
+    <!-- Kolom 1 (1 row) -->
+    <div class="w-1/2 bg-white p-5 rounded-lg shadow-lg">
+        <!-- <h2 class="text-black">Kolom 1</h2>
+        <p class="text-black">Konten di kolom 1.</p> -->
+        <div class="bg-white rounded-lg px-8 py-6">
+        <div class="flex flex-col gap-8">
+          <img
+            src="{% static 'asset_home/p1.png' %}"
+            alt="image"
+            class="rounded-full w-[200px]" />
+          <div class="flex flex-col">
+            <span class="text-[#A0AEC0] font-normal text-xs"
+              >Data Karyawan</span
+            >
+            <h2 class="text-lg font-medium">Bima Agta Nugraha</h2>
+            <p class="text-[#27A3B8] font-normal text-sm">Pelayanan - LPC</p>
+          </div>
+          <div class="grid lg:grid-cols-2 gap-1 grid-cols-1">
+            <div>
+              <p class="text-[#A0AEC0] text-xs">Aplikasi</p>
+              <p>VIP</p>
+            </div>
+            <div>
+              <p class="text-[#A0AEC0] text-xs">Email</p>
+              <p>bima.adi@iconpln.co.id</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Kolom 2 (2 rows) -->
+    <div class="w-1/2 bg-white p-5 rounded-lg shadow-lg flex flex-col space-y-4">
+        
+        <!-- Row 1 in Kolom 2 -->
+        <div class="bg-blue-500 p-5 rounded-lg">
+            <!-- <h2 class="text-white">Row 1 - Kolom 2</h2>
+            <p class="text-white">Konten di row pertama pada kolom 2.</p> -->
+            
+
+<div class="max-w-sm w-full bg-white rounded-lg shadow-sm dark:bg-gray-800">
+  <div id="labels-chart" class="px-2.5"></div>
+  <div class="grid grid-cols-1 items-center border-gray-200 border-t dark:border-gray-700 justify-between mt-5 p-4 md:p-6 pt-0 md:pt-0">
+    <div class="flex justify-between items-center pt-5">
+      <!-- Dropdown menu -->
+      <div id="lastDaysdropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700">
+          <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
+            <li>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Yesterday</a>
+            </li>
+            <li>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Today</a>
+            </li>
+            <li>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Last 7 days</a>
+            </li>
+            <li>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Last 30 days</a>
+            </li>
+            <li>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Last 90 days</a>
+            </li>
+          </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+    
+
+const options = {
+// set the labels option to true to show the labels on the X and Y axis
+xaxis: {
+  show: true,
+  categories: ['Jan', 'Feb', 'Mar', 'April', 'Mei', 'Jun', 'Jul'],
+  labels: {
+    show: true,
+    style: {
+      fontFamily: "Inter, sans-serif",
+      cssClass: 'text-xs font-normal fill-gray-500 dark:fill-gray-400'
+    }
+  },
+  axisBorder: {
+    show: false,
+  },
+  axisTicks: {
+    show: false,
+  },
+},
+yaxis: {
+  show: true,
+  labels: {
+    show: true,
+    style: {
+      fontFamily: "Inter, sans-serif",
+      cssClass: 'text-xs font-normal fill-gray-500 dark:fill-gray-400'
+    },
+    formatter: function (value) {
+       const valueMap = {
+        0: '0',
+        50: '50',
+        100: '100',
+        250: '250',
+        350: '350',
+        500: '500+',
+      };
+
+    //   for (let key in valueMap) {
+    //     if (value == key) {
+    //       return valueMap[key];
+    //     }
+    //   }
+
+      return valueMap[0];
+    }
+  }
+},
+series: [
+  {
+    name: "Developer Edition",
+    data: [150, 141, 145, 152, 135, 125],
+    color: "#1A56DB",
+  },
+  {
+    name: "Designer Edition",
+    data: [43, 13, 65, 12, 42, 73],
+    color: "#7E3BF2",
+  },
+],
+chart: {
+  sparkline: {
+    enabled: false
+  },
+  height: "100%",
+  width: "100%",
+  type: "area",
+  fontFamily: "Inter, sans-serif",
+  dropShadow: {
+    enabled: false,
+  },
+  toolbar: {
+    show: false,
+  },
+},
+tooltip: {
+  enabled: true,
+  x: {
+    show: false,
+  },
+},
+fill: {
+  type: "gradient",
+  gradient: {
+    opacityFrom: 0.55,
+    opacityTo: 0,
+    shade: "#1C64F2",
+    gradientToColors: ["#1C64F2"],
+  },
+},
+dataLabels: {
+  enabled: true,
+},
+stroke: {
+  width: 6,
+},
+legend: {
+  show: false
+},
+grid: {
+  show: false,
+},
+}
+
+if (document.getElementById("labels-chart") && typeof ApexCharts !== 'undefined') {
+const chart = new ApexCharts(document.getElementById("labels-chart"), options);
+chart.render();
+}
+
+</script>
+        </div>
+
+        <!-- Row 2 in Kolom 2 with nested flex -->
+        <div class="flex space-x-4 bg-green-500 p-5 rounded-lg">
+            
+            <!-- Kolom pertama dalam row ke 2 -->
+            <div class="w-1/2 bg-yellow-500 p-5 rounded-lg">
+                <h2 class="text-black">Kolom 1 - Row 2</h2>
+                <p class="text-black">Konten di kolom pertama row ke 2.</p>
+            </div>
+
+            <!-- Kolom kedua dalam row ke 2 -->
+            <div class="w-1/2 bg-red-500 p-5 rounded-lg">
+                <h2 class="text-black">Kolom 2 - Row 2</h2>
+                <p class="text-black">Konten di kolom kedua row ke 2.</p>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+{% endblock %}
