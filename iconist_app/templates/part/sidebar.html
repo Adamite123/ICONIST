@@ -62,14 +62,14 @@
         <div class="flex items-center gap-6 w-48">
           <i class="fa-solid fa-user-group text-[18px]"></i>
           <div class="flex-1 relative font-semibold leading-[150%]">
-            Feedback Officer
+            Feedback
           </div>
         </div>
       </div>
     </a>
     {% endif %}
 
-    {% if user.role == 'spv' %}
+    {% if user.role == 'spv' or user.role == 'sdm' %}
     <!-- Data Karyawan -->
     <a href="{% url 'employee_list' %}" class="no-underline text-gray-400">
       <div
@@ -84,43 +84,10 @@
     </a>
     {% endif %}
 
-    <!-- Master Karyawan -->
-    <div class="dropdown" onclick="setActive(this)">
-      <div
-        class="flex flex-col items-start justify-start px-7 py-4 cursor-pointer">
-        <div class="flex items-center gap-6 w-48" id="toggle-master">
-          <i class="fa-solid fa-users-gear text-[18px]"></i>
-          <div class="relative font-semibold leading-[150%]">
-            Master Karyawan
-          </div>
-          <img
-            class="w-5 h-5 ml-6 transform transition-transform rotate-90"
-            alt=""
-            src="{% static 'asset_home/Chevron.png' %}" />
-        </div>
 
-        <ul id="submenu" class="hidden ml-12 mt-2 mb-0">
-          <a
-            href="{% url 'employee_penilaian' %}"
-            class="no-underline text-gray-400">
-            <li class="py-2 text-[13px] cursor-pointer">Penilaian</li>
-          </a>
-          <a
-            href="{% url 'employee_history' %}"
-            class="no-underline text-gray-400">
-            <li class="py-2 text-[13px] cursor-pointer">Riwayat</li>
-          </a>
-          <a
-            href="{% url 'employee_evaluation' %}"
-            class="no-underline text-gray-400">
-            <li class="py-2 text-[13px] cursor-pointer">Setting Bank Soal</li>
-          </a>
-        </ul>
-      </div>
-    </div>
-
+    {% if user.role == 'sdm' %}
     <!-- Master Konfigurasi -->
-    <div class="dropdown" onclick="setActive(this)">
+    <div class="dropdown" >
       <div
         class="flex flex-col items-start justify-start px-7 py-4 cursor-pointer">
         <div class="flex items-center gap-6 w-48" id="toggle-konfigurasi">
@@ -153,11 +120,50 @@
         </ul>
       </div>
     </div>
+    {% endif %}
 
+
+    {% if user.role == 'spv' %}
+    <!-- Master Karyawan -->
+    <div class="dropdown" >
+      <div class="flex flex-col items-start justify-start px-7 py-4 cursor-pointer">
+        <div class="flex items-center gap-6 w-48" id="toggle-master">
+          <i class="fa-solid fa-users-gear text-[18px]"></i>
+          <div class="relative font-semibold leading-[150%]">
+            Master Karyawan
+          </div>
+          <img
+            class="w-5 h-5 ml-6 transform transition-transform rotate-90"
+            alt=""
+            src="{% static 'asset_home/Chevron.png' %}" />
+        </div>
+
+        <ul id="submenu" class="hidden ml-12 mt-2 mb-0">
+          <a
+            href="{% url 'employee_penilaian' %}"
+            class="no-underline text-gray-400">
+            <li class="py-2 text-[13px] cursor-pointer">Penilaian</li>
+          </a>
+          <a
+            href="{% url 'employee_history' %}"
+            class="no-underline text-gray-400">
+            <li class="py-2 text-[13px] cursor-pointer">Riwayat</li>
+          </a>
+          <a
+            href="{% url 'employee_evaluation' %}"
+            class="no-underline text-gray-400">
+            <li class="py-2 text-[13px] cursor-pointer">Setting Bank Soal</li>
+          </a>
+        </ul>
+      </div>
+    </div>
+    {% endif %}
+
+
+    {% if user.role == 'spv' %}
     <!-- Periode Berjalan -->
-    <div class="dropdown" onclick="setActive(this)">
-      <div
-        class="flex flex-col items-start justify-start px-7 py-4 cursor-pointer">
+    <div class="dropdown" >
+      <div class="flex flex-col items-start justify-start px-7 py-4 cursor-pointer">
         <div class="flex items-center gap-6 w-48" id="toggle-periode">
           <i class="fa-solid fa-chart-line text-[18px]"></i>
           <div class="relative font-semibold leading-[150%]">
@@ -169,7 +175,7 @@
             src="{% static 'asset_home/Chevron.png' %}" />
         </div>
 
-        <ul id="submenu2" class="hidden ml-5 mt-2 mb-0">
+        <ul id="submenu2" class="hidden ml-12 mt-2 mb-0">
           <a
             href="{% url 'employee_score' %}"
             class="no-underline text-gray-400">
@@ -183,35 +189,22 @@
         </ul>
       </div>
     </div>
+    {% endif %}
+    
 
-<<<<<<< HEAD
-    <!-- Profile -->
-    <a href="{% url 'profile' %}" class="no-underline text-gray-400">
-      <div
-        class="menu_no_drop_down {% if active_page == 'profile' %}bg-gray-100 text-[#0097B2] border-[#0097B2] border-l-8 {% else %}karyawan{% endif %} flex flex-col items-start justify-start px-7 py-4">
-        <div class="flex items-center gap-6 w-48">
-          <i class="fa-solid fa-user-group text-[18px]"></i>
-          <div class="flex-1 relative font-semibold leading-[150%]">
-            Profile
-=======
     {% if user.role == 'officer' %}
-    <a href="{% url 'profil' %}" class="no-underline text-gray-400">
+    <a href="{% url 'profile' %}" class="no-underline text-gray-400">
       <div
         class="menu_no_drop_down {% if active_page == 'profil' %}bg-gray-100 text-[#0097B2] border-[#0097B2] border-l-8 {% else %}karyawan{% endif %} flex flex-col items-start justify-start px-7 py-4">
         <div class="flex items-center gap-6 w-48">
           <i class="fa-solid fa-user-group text-[18px]"></i>
           <div class="flex-1 relative font-semibold leading-[150%]">
             Profil
->>>>>>> 2df92bd318801a5911b7d586e7f56abac41a2f0a
           </div>
         </div>
       </div>
     </a>
-<<<<<<< HEAD
-
-=======
     {% endif %}
->>>>>>> 2df92bd318801a5911b7d586e7f56abac41a2f0a
   </div>
 
   <img

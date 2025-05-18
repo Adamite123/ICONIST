@@ -10,7 +10,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const submenu2 = document.getElementById("submenu2");
   const submenu3 = document.getElementById("submenu3");
 
-  console.log("Sidebar script loaded");
+  console.log("menu2 =", submenu2);
+  console.log("menu =", submenu);
+  console.log("togglePeriode:", togglePeriode);
+  console.log("toggleMaster:", toggleMaster);
+  
 
   // Sidebar show/hide for mobile
   toggleSidebar.addEventListener("click", function () {
@@ -27,30 +31,31 @@ document.addEventListener("DOMContentLoaded", function () {
     toggleIcon.classList.remove("fa-times");
     toggleIcon.classList.add("fa-bars"); // Change icon back to hamburger
   });
+  
+  // Event delegation for submenu toggles
+  document.addEventListener("click", function (e) {
+    if (e.target.closest("#toggle-master") && submenu) {
+      submenu.classList.toggle("hidden");
+      submenu.classList.toggle("transition-all");
+      submenu.classList.toggle("duration-500");
+      toggleChevron(e.target.closest("#toggle-master"));
+    }
 
-  // Master Karyawan submenu toggle with smooth transition
-  toggleMaster.addEventListener("click", function () {
-    submenu.classList.toggle("hidden");
-    submenu.classList.toggle("transition-all");
-    submenu.classList.toggle("duration-500");
-    toggleChevron(toggleMaster);
+    if (e.target.closest("#toggle-konfigurasi") && submenu3) {
+      submenu3.classList.toggle("hidden");
+      submenu3.classList.toggle("transition-all");
+      submenu3.classList.toggle("duration-500");
+      toggleChevron(e.target.closest("#toggle-konfigurasi"));
+    }
+
+    if (e.target.closest("#toggle-periode") && submenu2) {
+      submenu2.classList.toggle("hidden");
+      submenu2.classList.toggle("transition-all");
+      submenu2.classList.toggle("duration-500");
+      toggleChevron(e.target.closest("#toggle-periode"));
+    }
   });
 
-  // Konfigurasi submenu toggle with smooth transition
-  toogleKonfigurasi.addEventListener("click", function () {
-    submenu3.classList.toggle("hidden");
-    submenu3.classList.toggle("transition-all");
-    submenu3.classList.toggle("duration-500");
-    toggleChevron(toogleKonfigurasi);
-  });
-
-  // Periode Berjalan submenu toggle with smooth transition
-  togglePeriode.addEventListener("click", function () {
-    submenu2.classList.toggle("hidden");
-    submenu2.classList.toggle("transition-all");
-    submenu2.classList.toggle("duration-500");
-    toggleChevron(togglePeriode);
-  });
 
   function toggleChevron(element) {
     const img = element.querySelector("img");

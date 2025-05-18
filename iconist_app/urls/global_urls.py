@@ -8,11 +8,6 @@ urlpatterns = [
     path('dashboard', views.home, name='home'),
     path('dash-sdm', views.dashboard_sdm, name='dashboard_sdm'),
     path('dash-officer', views.dashboard_officer, name='dashboard_officer'),
-<<<<<<< HEAD
-=======
-    path('feedback', views.feedback, name='feedback'),
-    path('profil', views.profil, name='profil'),
->>>>>>> 2df92bd318801a5911b7d586e7f56abac41a2f0a
     path('admin/', admin.site.urls),
     path('data_Karyawan/', views.data_Karyawan, name='data_Karyawan'),
 

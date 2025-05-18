@@ -12,19 +12,19 @@ function master_Karyawan() {
     }
 }
 
-function kont_skor() {
-    var submenu = document.getElementById("submenu2");
-    var chevron = document.querySelector(".chevron-icon2");
+// function kont_skor() {
+//     var submenu = document.getElementById("submenu2");
+//     var chevron = document.querySelector(".chevron-icon2");
 
-    // Toggle the display of the submenu
-    if (submenu.style.display === "block") {
-        submenu.style.display = "none";
-        chevron.classList.remove("rotate");
-    } else {
-        submenu.style.display = "block";
-        chevron.classList.add("rotate");
-    }
-}
+//     // Toggle the display of the submenu
+//     if (submenu.style.display === "block") {
+//         submenu.style.display = "none";
+//         chevron.classList.remove("rotate");
+//     } else {
+//         submenu.style.display = "block";
+//         chevron.classList.add("rotate");
+//     }
+// }
 
 // Untuk sidebar
 function open_submenu() {
